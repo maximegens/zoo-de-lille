@@ -16,5 +16,13 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    
+    <style name="ZooTheme" parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/MyActionBarZoo</item>
+    </style>
+
+    <style name="MyActionBarZoo" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@color/color_theme_green_zoo</item>
+    </style>
 
 </resources>

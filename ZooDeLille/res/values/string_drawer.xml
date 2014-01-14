@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ 
+    <!-- Ce fichier contient tous les strings et ressources utilisés par le Drawer -->
+    
+    <string name="ouverture">ouverture</string>
+    <string name="fermeture">fermeture</string>
+    <string name="titre_menu_slider">Menu</string>
+    <string name="titre_apres_ouverture">Choissisez votre catégorie </string>
+    
+    <!-- Liste des items du slider correspondant aux catégories de l'application Zoo de Lille -->
+    <string name="accueil">Accueil</string>
+    <string name="animaux_du_zoo">Animaux du Zoo</string>
+   	<string name="plan_du_zoo">Plan du Zoo</string>
+    <string name="activite_pedagogique">Activités pédagogique</string>
+    <string name="jeux_interactif">Jeux interactif</string>
+    <string name="plan_acces">Plan d\'accès</string>
+    <string name="informations_pratique">Informations pratique</string>
+    <string name="aux_alentours">Aux alentours</string>
+    <string name="reglages">Réglages</string>
+    <string name="contact">Contact</string>
+    <string name="a_propos">A propos</string>
+   
+    <string-array name="items_slider">
+        <item>@string/accueil</item>
+        <item>@string/animaux_du_zoo</item>
+        <item>@string/plan_du_zoo</item>
+        <item>@string/activite_pedagogique</item>
+        <item>@string/jeux_interactif</item>
+        <item>@string/plan_acces</item>
+        <item>@string/informations_pratique</item>
+        <item>@string/aux_alentours</item>
+        <item>@string/reglages</item>
+        <item>@string/contact</item>
+        <item>@string/a_propos</item>
+    </string-array>
+    
+</resources>
