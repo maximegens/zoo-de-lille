@@ -20,6 +20,7 @@ public class AccueilFragment extends Fragment {
 		TextView t = (TextView) myInflatedView.findViewById(R.id.nom_categorie);
 		t.setText("Bienvenue sur l'accueil");
 		
+		 
 		return myInflatedView;
 	}
 }

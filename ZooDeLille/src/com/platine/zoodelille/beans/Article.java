@@ -7,7 +7,7 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 import com.platine.zoodelille.dao.ArticleDao;
 
-@DatabaseTable(tableName="cities", daoClass=ArticleDao.class)
+@DatabaseTable(daoClass=ArticleDao.class)
 public class Article {
 	
 	@DatabaseField(generatedId=true)

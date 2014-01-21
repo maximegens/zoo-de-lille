@@ -3,7 +3,10 @@
     <!-- Couleur propre au Zoo -->
 	<color name="color_theme_green_zoo">#a0be25</color>
 	<color name="color_separator_items_drawer">#333</color>
+	<color name="fond_meteo">#d9c4a7</color>
 
+	
+	
 	<!-- Couleur diverse -->
 	 <color name="White">#FFFFFF</color>
 	 <color name="Ivory">#FFFFF0</color>
