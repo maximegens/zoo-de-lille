@@ -15,10 +15,10 @@ public class Animal {
 	private int id;
 	@DatabaseField(canBeNull=false)
 	private String name;
-	@DatabaseField(canBeNull=false)
-	private int category_id;
-	@DatabaseField
-	private int country_id;
+	@DatabaseField(canBeNull=false, foreign = true)
+	private AnimalCategory category_id;
+	@DatabaseField(canBeNull=false, foreign = true)
+	private Country country_id;
 	@DatabaseField
 	private String description;
 	@DatabaseField
@@ -51,11 +51,13 @@ public class Animal {
 	 * @param gestation La durée de gestation de l'animal.
 	 * @param picture_location Le chemin de la photo de l'animal.
 	 */
-	public Animal(String name, int category_id, int country_id,
-			String description, String environnement, String longevity,
-			int protected_animal, float weight, int gestation,
-			String picture_location) {
+	
+	public Animal(int id, String name, AnimalCategory category_id,
+			Country country_id, String description, String environnement,
+			String longevity, int protected_animal, float weight,
+			int gestation, String picture_location) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.category_id = category_id;
 		this.country_id = country_id;
@@ -71,6 +73,7 @@ public class Animal {
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -80,18 +83,22 @@ public class Animal {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getCategory_id() {
+	public AnimalCategory getCategory_id() {
 		return category_id;
 	}
-	public void setCategory_id(int category_id) {
+
+	public void setCategory_id(AnimalCategory category_id) {
 		this.category_id = category_id;
 	}
-	public int getCountry_id() {
+
+	public Country getCountry_id() {
 		return country_id;
 	}
-	public void setCountry_id(int country_id) {
+
+	public void setCountry_id(Country country_id) {
 		this.country_id = country_id;
 	}
+
 	public String getDescription() {
 		return description;
 	}

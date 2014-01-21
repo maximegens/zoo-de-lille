@@ -4,7 +4,7 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 import com.platine.zoodelille.dao.Learning_activityDao;
 
-@DatabaseTable(tableName="cities", daoClass=Learning_activityDao.class)
+@DatabaseTable(daoClass=Learning_activityDao.class)
 public class Learning_activity {
 	
 	@DatabaseField(generatedId=true)
@@ -22,7 +22,9 @@ public class Learning_activity {
 	@DatabaseField(canBeNull=false)
 	public String time;
 	
+	@DatabaseField
 	public String picture_location_number1;
+	@DatabaseField
 	public String picture_location_number2;
 
 
@@ -53,5 +55,72 @@ public class Learning_activity {
 		this.picture_location_number1 = picture_location_number1;
 		this.picture_location_number2 = picture_location_number2;
 	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
+	public String getPicture_location_number1() {
+		return picture_location_number1;
+	}
+
+	public void setPicture_location_number1(String picture_location_number1) {
+		this.picture_location_number1 = picture_location_number1;
+	}
+
+	public String getPicture_location_number2() {
+		return picture_location_number2;
+	}
+
+	public void setPicture_location_number2(String picture_location_number2) {
+		this.picture_location_number2 = picture_location_number2;
+	}
+
+	@Override
+	public String toString() {
+		return "Learning_activity [id=" + id + ", title=" + title
+				+ ", description=" + description + ", date=" + date + ", time="
+				+ time + ", picture_location_number1="
+				+ picture_location_number1 + ", picture_location_number2="
+				+ picture_location_number2 + "]";
+	}
+	
+	
 
 }
