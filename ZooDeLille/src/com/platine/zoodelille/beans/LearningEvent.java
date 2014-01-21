@@ -2,10 +2,10 @@ package com.platine.zoodelille.beans;
 
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
-import com.platine.zoodelille.dao.Learning_activityDao;
+import com.platine.zoodelille.dao.LearningEventDao;
 
-@DatabaseTable(daoClass=Learning_activityDao.class)
-public class Learning_activity {
+@DatabaseTable(daoClass=LearningEventDao.class)
+public class LearningEvent {
 	
 	@DatabaseField(generatedId=true)
 	public int id;
@@ -29,11 +29,11 @@ public class Learning_activity {
 
 
 
-	public Learning_activity() {
+	public LearningEvent() {
 		super();
 	}
 	
-	public Learning_activity(int id, String title, String description,
+	public LearningEvent(int id, String title, String description,
 			String date, String time) {
 		super();
 		this.id = id;
@@ -43,7 +43,7 @@ public class Learning_activity {
 		this.time = time;
 	}
 
-	public Learning_activity(int id, String title, String description,
+	public LearningEvent(int id, String title, String description,
 			String date, String time, String picture_location_number1,
 			String picture_location_number2) {
 		super();

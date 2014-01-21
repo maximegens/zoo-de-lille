@@ -5,13 +5,13 @@ import java.util.List;
 
 import com.j256.ormlite.dao.BaseDaoImpl;
 import com.j256.ormlite.support.ConnectionSource;
-import com.platine.zoodelille.beans.Learning_activity;
+import com.platine.zoodelille.beans.LearningEvent;
 
-public class Learning_activityDao extends BaseDaoImpl<Learning_activity,Integer> {
+public class LearningEventDao extends BaseDaoImpl<LearningEvent,Integer> {
 	
-	public Learning_activityDao(ConnectionSource connectionSource)
+	public LearningEventDao(ConnectionSource connectionSource)
 			throws java.sql.SQLException {
-			super(connectionSource, Learning_activity.class);
+			super(connectionSource, LearningEvent.class);
 		}
  
 	/**
@@ -19,7 +19,7 @@ public class Learning_activityDao extends BaseDaoImpl<Learning_activity,Integer>
 	 * @param a L'access à sauvegarder.
 	 * @return Le résultat de l'insertion, 1 pour insertion réussi, 0 pour échec.
 	 */
-	public int save(Learning_activity a){
+	public int save(LearningEvent a){
 		try {
 			create(a);
 			return 1;
@@ -34,7 +34,7 @@ public class Learning_activityDao extends BaseDaoImpl<Learning_activity,Integer>
 	 * @param a L'access à mettre à jour.
 	 * @return Le nombre de lignes mises à jour dans la base de données. Cela doit être 1.
 	 */
-	public int update(Learning_activity a){
+	public int update(LearningEvent a){
 		return update(a);
 	}
 	
@@ -42,8 +42,8 @@ public class Learning_activityDao extends BaseDaoImpl<Learning_activity,Integer>
 	 * Liste de tous les access de la base de données.
 	 * @return Une liste des access de la base de données.
 	 */
-	public List<Learning_activity> findAll() {
-		List<Learning_activity> cities = null;
+	public List<LearningEvent> findAll() {
+		List<LearningEvent> cities = null;
 		try {
 			cities = queryForAll();
 		}catch(SQLException e) {
@@ -57,10 +57,10 @@ public class Learning_activityDao extends BaseDaoImpl<Learning_activity,Integer>
 	 * @param id L'id de l'access.
 	 * @return L'access correspondant à l'ID.
 	 */
-	public Learning_activity findById(int id) {
-		Learning_activity city = null;
+	public LearningEvent findById(int id) {
+		LearningEvent city = null;
 		try {
-			city = (Learning_activity) queryForId(id);
+			city = (LearningEvent) queryForId(id);
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
@@ -72,7 +72,7 @@ public class Learning_activityDao extends BaseDaoImpl<Learning_activity,Integer>
 	 * @param a L'access à supprimer.
 	 * @return Le nombre de lignes mises à jour dans la base de données. Cela doit être 1.
 .	 */
-	public int delete(Learning_activity a){
+	public int delete(LearningEvent a){
 		return delete(a);
 	}
 	
