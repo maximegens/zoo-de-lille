@@ -1,11 +1,17 @@
 package com.platine.zoodelille.meteo;
 
+/**
+ * Classe permettant de sauvegarder les données météo reçu depuis le site météorologique de Yahoo. 
+ *
+ */
 public class Entry {
+	
 	private long id;
 	private String link;
 	private String description;
 	
 	private String temperature;
+	private String code_image;
 
 	public Entry() {
 		super();
@@ -22,31 +28,21 @@ public class Entry {
 		return id;
 	}
 
-
-
 	public void setId(long id) {
 		this.id = id;
 	}
-
-
 
 	public String getLink() {
 		return link;
 	}
 
-
-
 	public void setLink(String link) {
 		this.link = link;
 	}
 
-
-
 	public String getDescription() {
 		return description;
 	}
-
-
 
 	public void setDescription(String description) {
 		this.description = description;
@@ -60,13 +56,19 @@ public class Entry {
 		this.temperature = temperature;
 	}
 
+	public String getCodeImage() {
+		return code_image;
+	}
+
+	public void setCodeImage(String code_image) {
+		this.code_image = code_image;
+	}
+
 	@Override
 	public String toString() {
 		return "Entry [id=" + id + ", link=" + link + ", description="
-				+ description + ", temperature=" + temperature + "]";
+				+ description + ", temperature=" + temperature
+				+ ", code_image=" + code_image + "]";
 	}
-
-
-
 
 }

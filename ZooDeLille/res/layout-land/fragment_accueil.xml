@@ -21,18 +21,26 @@
         android:layout_margin="10dp"
         android:background="@layout/shape_meteo" >
 
+         <ProgressBar
+		   android:id="@+id/progressBarMeteo"
+		   style="?android:attr/progressBarStyleLarge"
+		   android:layout_width="wrap_content"
+		   android:layout_height="wrap_content"
+		   android:layout_centerHorizontal="true" />
+         
         <TextView
             android:id="@+id/dans_heure"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
-            android:text="Météo du jour"
+            android:text="@string/meteo_lille"
             android:textColor="#886849" />
 
 
         <ImageView
             android:id="@+id/voyant"
+            android:contentDescription="@string/description_image_voyant_zoo"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_alignParentRight="true"
@@ -51,15 +59,16 @@
 			android:paddingBottom="5dp"
             android:text="Jusque 18h30"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textSize="10sp" />
+            android:textSize="12sp" />
 
          <ImageView
-             android:id="@+id/image_soleil"
+             android:id="@+id/icone_temps"
+             android:contentDescription="@string/description_image_meteo"
              android:layout_width="60dp"
              android:layout_height="60dp"
              android:layout_centerHorizontal="true"
              android:layout_centerVertical="true"
-             android:src="@drawable/sun" />
+              />
 
          <TextView
              android:id="@+id/temperature"
@@ -68,7 +77,7 @@
              android:layout_below="@+id/dans_heure"
              android:layout_marginLeft="27dp"
              android:layout_toRightOf="@+id/dans_heure"
-             android:text="22°C"
+             android:text=""
              android:textAppearance="?android:attr/textAppearanceLarge"
              android:textColor="#e5e533"
              android:textStyle="bold" />

@@ -21,6 +21,13 @@
         android:layout_margin="10dp"
         android:background="@layout/shape_meteo" >
 
+        <ProgressBar
+		   android:id="@+id/progressBarMeteo"
+		   style="?android:attr/progressBarStyleLarge"
+		   android:layout_width="wrap_content"
+		   android:layout_height="wrap_content"
+		   android:layout_centerHorizontal="true" />
+        
         <TextView
             android:id="@+id/dans_heure"
             android:layout_width="wrap_content"
@@ -31,15 +38,16 @@
             android:textColor="#886849" />
 
         <ImageView
-            android:id="@+id/image_soleil"
+            android:id="@+id/icone_temps"
             android:contentDescription="@string/description_image_meteo"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginLeft="20dp"
             android:layout_toRightOf="@+id/dans_heure"
             android:layout_centerInParent="true"
-            android:src="@drawable/sun" />
+            />
 
+        
         <TextView
             android:id="@+id/temperature"
             android:layout_width="wrap_content"
@@ -63,7 +71,7 @@
 
         <ImageView
             android:id="@+id/voyant"
-             android:contentDescription="@string/description_image_voyant_zoo"
+            android:contentDescription="@string/description_image_voyant_zoo"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_alignParentRight="true"
@@ -75,7 +83,7 @@
             android:id="@+id/etat_zoo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/image_soleil"
+            android:layout_alignTop="@+id/icone_temps"
             android:layout_toLeftOf="@+id/voyant"
             android:layout_marginRight="10dp"
             android:gravity="center"

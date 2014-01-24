@@ -68,6 +68,9 @@ public class ParserXMLHandler extends DefaultHandler {
 			if(attributes.getValue("temp") != null){
 				this.currentFeed.setTemperature(attributes.getValue("temp"));
 			}
+			if(attributes.getValue("code") != null){
+				this.currentFeed.setCodeImage(attributes.getValue("code"));
+			}
 		}
 		
 

@@ -21,6 +21,14 @@ public class Constantes {
             "com.platine.zoodelille.fragments.AProposFragment"
 	};
 	public static String URL_METEO_LILLE_XML = "http://weather.yahooapis.com/forecastrss?w=608105&u=c";
+	public static String URL_METEO_ICONE_DEBUT = "http://l.yimg.com/a/i/us/we/52/";
+	public static String URL_METEO_ICONE_FIN = ".gif";
 	public static String TEMPERATURE_C = " °C";
+	public static String CONNEXION_INTERNET_FAILED = "Aucune connexion";
+	
+	/** horaire Zoo.
+	 * Cela devra être modifier pour communiquer avec la base de donnée.
+	 */
+	
 	
 }
