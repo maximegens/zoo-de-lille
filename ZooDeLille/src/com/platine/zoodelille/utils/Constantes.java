@@ -20,5 +20,7 @@ public class Constantes {
             "com.platine.zoodelille.fragments.ContactFragment",
             "com.platine.zoodelille.fragments.AProposFragment"
 	};
+	public static String URL_METEO_LILLE_XML = "http://weather.yahooapis.com/forecastrss?w=608105&u=c";
+	public static String TEMPERATURE_C = " °C";
 	
 }

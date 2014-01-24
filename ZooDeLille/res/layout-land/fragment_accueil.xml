@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="" />
+        android:text="Bonjour" />
 
     <RelativeLayout
         android:id="@+id/layout_meteo"
@@ -27,63 +27,18 @@
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
-            android:text="@string/meteo_lille"
+            android:text="Météo du jour"
             android:textColor="#886849" />
-
-        <ImageView
-            android:id="@+id/image_soleil"
-            android:contentDescription="@string/description_image_meteo"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@+id/dans_heure"
-            android:layout_centerInParent="true"
-            android:src="@drawable/sun" />
-
-        <TextView
-            android:id="@+id/temperature"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/dans_heure"
-            android:layout_below="@+id/dans_heure"
-            android:text=""
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="#e5e533"
-            android:textStyle="bold" />
-
-        <View
-            android:id="@+id/separator"
-            android:layout_width="2dp"
-            android:layout_height="40dp"
-            android:layout_centerVertical="true"
-            android:layout_toLeftOf="@+id/etat_zoo"
-            android:layout_marginLeft="15dp"
-            android:background="#88694a" />
 
 
         <ImageView
             android:id="@+id/voyant"
-             android:contentDescription="@string/description_image_voyant_zoo"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
             android:src="@drawable/voyant_vert" />
-
-        <TextView
-            android:id="@+id/etat_zoo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/image_soleil"
-            android:layout_toLeftOf="@+id/voyant"
-            android:layout_marginRight="10dp"
-            android:gravity="center"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:text="Zoo\nouvert"
-            android:textColor="#349a18"
-            android:textSize="18sp" />
         
          <TextView
             android:id="@+id/horaire_actuel"
@@ -96,7 +51,50 @@
 			android:paddingBottom="5dp"
             android:text="Jusque 18h30"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textSize="12sp" />
+            android:textSize="10sp" />
+
+         <ImageView
+             android:id="@+id/image_soleil"
+             android:layout_width="60dp"
+             android:layout_height="60dp"
+             android:layout_centerHorizontal="true"
+             android:layout_centerVertical="true"
+             android:src="@drawable/sun" />
+
+         <TextView
+             android:id="@+id/temperature"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/dans_heure"
+             android:layout_marginLeft="27dp"
+             android:layout_toRightOf="@+id/dans_heure"
+             android:text="22°C"
+             android:textAppearance="?android:attr/textAppearanceLarge"
+             android:textColor="#e5e533"
+             android:textStyle="bold" />
+
+         <TextView
+             android:id="@+id/etat_zoo"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentTop="true"
+             android:layout_marginRight="16dp"
+             android:layout_toLeftOf="@+id/horaire_actuel"
+             android:gravity="center"
+             android:paddingLeft="10dp"
+             android:paddingTop="10dp"
+             android:text="Zoo\nouvert"
+             android:textColor="#349a18"
+             android:textSize="18sp" />
+
+         <View
+             android:id="@+id/separator"
+             android:layout_width="2dp"
+             android:layout_height="40dp"
+             android:layout_centerVertical="true"
+             android:layout_marginRight="20dp"
+             android:layout_toLeftOf="@+id/etat_zoo"
+             android:background="#88694a" />
 
     </RelativeLayout>
 

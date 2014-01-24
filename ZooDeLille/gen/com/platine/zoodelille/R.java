@@ -223,9 +223,14 @@ public final class R {
         public static final int app_name=0x7f06000f;
         public static final int aux_alentours=0x7f06000b;
         public static final int contact=0x7f06000d;
+        public static final int description_image_meteo=0x7f060012;
+        public static final int description_image_voyant_zoo=0x7f060013;
         public static final int fermeture=0x7f060001;
         public static final int informations_pratique=0x7f06000a;
         public static final int jeux_interactif=0x7f060008;
+        /**  string propre au fragment "Accueil" 
+         */
+        public static final int meteo_lille=0x7f060011;
         /**  Ce fichier contient tous les strings et ressources utilisés par le Drawer 
          */
         public static final int ouverture=0x7f060000;

@@ -4,5 +4,10 @@
     <string name="app_name">Zoo de Lille</string>
     <string name="action_settings">Settings</string>
     
+    <!-- string propre au fragment "Accueil" -->
+    <string name="meteo_lille">Météo de Lille</string>
+    <string name="description_image_meteo">Image représentant le temps actuel</string>
+    <string name="description_image_voyant_zoo">Image indiquant si le Zoo est ouvert (vcouleur verte) ou fermé (couleur rouge)</string>
+    
     
 </resources>
