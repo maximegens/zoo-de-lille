@@ -89,7 +89,6 @@
             android:gravity="center"
             android:paddingLeft="10dp"
             android:paddingTop="10dp"
-            android:text="Zoo\nouvert"
             android:textColor="#349a18"
             android:textSize="18sp" />
         

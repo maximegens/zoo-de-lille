@@ -31,6 +31,7 @@ import com.platine.zoodelille.meteo.ContainerData;
 import com.platine.zoodelille.meteo.Entry;
 import com.platine.zoodelille.utils.ConnexionInternet;
 import com.platine.zoodelille.utils.Constantes;
+import com.platine.zoodelille.utils.HoraireZoo;
 
 /**
  * Fragment représentant la page d'accueil avec la météo et la liste des news.
@@ -40,6 +41,8 @@ public class AccueilFragment extends Fragment {
 	
 	TextView temperature;
 	ImageView icone_temps;
+	TextView etatZoo;
+	ImageView voyant;
 	ProgressBar loader;
 	ArticleDao articleDao;
 	ListView listeViewArticle;
@@ -57,6 +60,8 @@ public class AccueilFragment extends Fragment {
 		listeViewArticle = (ListView) myInflatedView.findViewById(R.id.list_view_article);
 		temperature = (TextView) myInflatedView.findViewById(R.id.temperature);	
 		icone_temps = (ImageView) myInflatedView.findViewById(R.id.icone_temps);
+		etatZoo = (TextView) myInflatedView.findViewById(R.id.etat_zoo);	
+		voyant = (ImageView) myInflatedView.findViewById(R.id.voyant);
 		loader = (ProgressBar) myInflatedView.findViewById(R.id.progressBarMeteo);
 		
 		if(ConnexionInternet.isConnectedInternet(getActivity())){
@@ -66,6 +71,19 @@ public class AccueilFragment extends Fragment {
 			temperature.setPadding(50, 0, 0, 0);
 			temperature.setTextSize(12);
 			temperature.setText(Constantes.CONNEXION_INTERNET_FAILED);
+		}
+		
+		// Vérification de l'ouverture du Zoo
+		if(HoraireZoo.ZooOpen()){
+			voyant.setImageDrawable(getResources().getDrawable(R.drawable.voyant_vert));
+			etatZoo.setText(getResources().getString(R.string.zoo_ouvert));
+			etatZoo.setTextColor(getResources().getColor(R.color.zoo_ouvert));
+			etatZoo.setTextSize(18);
+		}else{
+			voyant.setImageDrawable(getResources().getDrawable(R.drawable.voyant_rouge));
+			etatZoo.setText(getResources().getString(R.string.zoo_ferme));
+			etatZoo.setTextColor(getResources().getColor(R.color.zoo_ferme));
+			etatZoo.setTextSize(18);
 		}
 
 		lesarticles = new ArrayList<Article>();

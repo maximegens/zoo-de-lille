@@ -9,6 +9,8 @@
     <string name="description_image_meteo">Image représentant le temps actuel</string>
     <string name="description_image_voyant_zoo">Image indiquant si le Zoo est ouvert (vcouleur verte) ou fermé (couleur rouge)</string>
     <string name="a_la_une">A la Une</string>
+    <string name="zoo_ouvert">Zoo\nouvert</string>
+    <string name="zoo_ferme">Zoo\nfermé</string>
     <string name="description_image_illustration_article">Image d\'illustration de l\'article</string>
     <string name="description_image_facebook">Partager l\'article sur Facebook</string>
     

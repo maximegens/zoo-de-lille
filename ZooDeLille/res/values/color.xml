@@ -7,6 +7,10 @@
 	<color name="fond_meteo">#d9c4a7</color>
 	<color name="a_la_une">#349a18</color>
 	
+	
+<!-- 	Couleur de la page d'accueil -->
+	<color name="zoo_ouvert">#349a18</color>
+	<color name="zoo_ferme">#E60101</color>
 
 	
 	
