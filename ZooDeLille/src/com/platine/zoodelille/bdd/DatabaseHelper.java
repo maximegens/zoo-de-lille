@@ -9,7 +9,9 @@ import com.j256.ormlite.dao.DaoManager;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 import com.platine.zoodelille.beans.Animal;
+import com.platine.zoodelille.beans.Article;
 import com.platine.zoodelille.dao.AnimalDao;
+import com.platine.zoodelille.dao.ArticleDao;
 import com.platine.zoodelille.utils.Constantes;
 
 /**
@@ -26,6 +28,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
 	/** Declaration des DAO **/
 	private AnimalDao animalDao = null;
+	private ArticleDao articleDao = null;
 
 	public DatabaseHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -43,6 +46,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 				
 				/** ajouter ici les tables à creers **/
 				TableUtils.createTable(connectionSource, Animal.class);
+				TableUtils.createTable(connectionSource, Article.class);
 				
 			} catch (java.sql.SQLException e) {
 				Log.e(DatabaseHelper.class.getName(), "Impossible de créer la BD", e);
@@ -78,6 +82,17 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 			}
 		}
 		return animalDao;
+	}
+	
+	public ArticleDao getArticleDao() {
+		if(null == articleDao) {
+			try {
+				articleDao = DaoManager.createDao(getConnectionSource(), Article.class);
+			}catch(java.sql.SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return articleDao;
 	}
 
 	/**

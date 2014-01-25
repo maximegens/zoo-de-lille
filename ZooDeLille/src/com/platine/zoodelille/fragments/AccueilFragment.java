@@ -4,31 +4,47 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.platine.zoodelille.R;
+import com.platine.zoodelille.adapter.ArticleAdapter;
+import com.platine.zoodelille.bdd.DatabaseManager;
+import com.platine.zoodelille.beans.Article;
+import com.platine.zoodelille.dao.ArticleDao;
 import com.platine.zoodelille.meteo.ContainerData;
 import com.platine.zoodelille.meteo.Entry;
 import com.platine.zoodelille.utils.ConnexionInternet;
 import com.platine.zoodelille.utils.Constantes;
 
-
+/**
+ * Fragment représentant la page d'accueil avec la météo et la liste des news.
+ *
+ */
 public class AccueilFragment extends Fragment {
 	
 	TextView temperature;
 	ImageView icone_temps;
-	ProgressBar loader;;
+	ProgressBar loader;
+	ArticleDao articleDao;
+	ListView listeViewArticle;
+	List<Article> lesarticles;
+	ArticleAdapter adapter;
 	
 	private RetreiveFeedMeteoTask retreiveFeedMeteoTask;
 	private RetreiveFeedMeteoDataTask retreiveFeedMeteoDataTask;
@@ -37,6 +53,8 @@ public class AccueilFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 		
 		View myInflatedView = inflater.inflate(R.layout.fragment_accueil, container,false);
+		
+		listeViewArticle = (ListView) myInflatedView.findViewById(R.id.list_view_article);
 		temperature = (TextView) myInflatedView.findViewById(R.id.temperature);	
 		icone_temps = (ImageView) myInflatedView.findViewById(R.id.icone_temps);
 		loader = (ProgressBar) myInflatedView.findViewById(R.id.progressBarMeteo);
@@ -50,6 +68,28 @@ public class AccueilFragment extends Fragment {
 			temperature.setText(Constantes.CONNEXION_INTERNET_FAILED);
 		}
 
+		lesarticles = new ArrayList<Article>();
+		articleDao = DatabaseManager.getDao().getArticleDao();
+		lesarticles = articleDao.findAll();
+		adapter = new ArticleAdapter(getActivity(), lesarticles);
+		listeViewArticle.setAdapter(adapter);
+		
+		listeViewArticle.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> a, View view, int position, long id) {
+				Article a1 =  (Article)listeViewArticle.getItemAtPosition(position);
+				AccueilFragmentAffichage fragment_affichage = new AccueilFragmentAffichage();
+			    Bundle args = new Bundle();
+			    args.putString("id", String.valueOf(a1.getId()));
+			    fragment_affichage.setArguments(args);
+				FragmentTransaction transaction = getFragmentManager().beginTransaction();
+				transaction.replace(R.id.frameLayout, fragment_affichage);
+				transaction.addToBackStack(null);
+				transaction.commit();
+			}
+		});
+		
 		return myInflatedView;
 	}
 	

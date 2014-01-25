@@ -1,6 +1,5 @@
 package com.platine.zoodelille.activity;
 
-
 import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -8,8 +7,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
-
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,7 +16,7 @@ import android.widget.ListView;
 
 import com.platine.zoodelille.R;
 import com.platine.zoodelille.bdd.DatabaseManager;
-import com.platine.zoodelille.dao.AnimalDao;
+import com.platine.zoodelille.dao.ArticleDao;
 import com.platine.zoodelille.utils.Constantes;
 import com.platine.zoodelille.utils.RemplirBdd;
 
@@ -29,7 +26,7 @@ public class MainActivity extends FragmentActivity {
 	private ListView myDrawer;
 	private DrawerLayout drawerLayout;
 	private ActionBarDrawerToggle mDrawerToggle;
-	private AnimalDao animalDao;
+	private ArticleDao articleDao;
 	private String categorieFragmentSave;
 	private ActionBar actionBar;
 	
@@ -42,13 +39,11 @@ public class MainActivity extends FragmentActivity {
 		/************* Creation et remplissage de la base de données *************/
 		// initialisation du databaseManager, Obligatoire et à faire qu'une seule fois dans toutes l'application
 		DatabaseManager.init(this);
-		animalDao = DatabaseManager.getDao().getAnimalDao();
+		articleDao = DatabaseManager.getDao().getArticleDao();
 		
-		// ajout des animaux dans la base si celle ci est vide
-		if (animalDao.count() == 0) {
-			Log.v("----- MainActivity", "Remplissage de la bdd en Animaux");
-			RemplirBdd.ajouterDesAnimaux(this);
-			Log.v("----- MainActivity", "Il y a "+animalDao.count()+" animaux dans la bdd");
+		// remplissage de la base de données.
+		if (articleDao.count() == 0) {
+			RemplirBdd.ajouterArticle(this);
 		}
 		
 		/************* Creation du Drawer *************/
@@ -99,8 +94,6 @@ public class MainActivity extends FragmentActivity {
 	private class MyDrawerItemClickListener implements ListView.OnItemClickListener {
 		@Override
 		public void onItemClick(AdapterView<?> adapter, View v, int pos, long id) {
-			String clickedItem = (String) adapter.getAdapter().getItem(pos);
-			Log.v("----- MainActivity", "Clic sur l'item "+clickedItem+" du Drawer Menu");
 			categorieFragmentSave = Constantes.fragments[pos];
 			FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
 			tx.setCustomAnimations(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
@@ -166,7 +159,6 @@ public class MainActivity extends FragmentActivity {
 	@Override
 	protected void onRestoreInstanceState(Bundle savedInstanceState) {
 		super.onRestoreInstanceState(savedInstanceState);
-		Log.v("onRestoreInstanceState", savedInstanceState.getString("categorieFragmentSave"));
 		categorieFragmentSave = savedInstanceState.getString("categorieFragmentSave");
 		actionBar.setTitle(nomCategorieActive(categorieFragmentSave));
 	}
@@ -176,7 +168,6 @@ public class MainActivity extends FragmentActivity {
 	 */
 	@Override
 	    protected void onSaveInstanceState(Bundle outState) {
-			Log.v("onSaveInstanceState", categorieFragmentSave);
         	outState.putString("categorieFragmentSave", categorieFragmentSave);
 	        super.onSaveInstanceState(outState);
 	    }

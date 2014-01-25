@@ -22,20 +22,23 @@ public class Article {
 	@DatabaseField(canBeNull=false)
 	public String summary;
 	
+	@DatabaseField(canBeNull=true)
+	public String lien_image;
+	
 	// Contructor
 	
 	public Article() {
 		super();
 	}
 	
-	public Article(int id, String title, String content, String publication_date,
-			String summary) {
+	public Article(String title, String content, String publication_date,
+			String summary, String lien_image) {
 		super();
-		this.id = id;
 		this.title = title;
 		this.content = content;
 		this.publication_date = publication_date;
 		this.summary = summary;
+		this.lien_image = lien_image;
 	}
 
 	// GETTER - SETTER
@@ -78,8 +81,27 @@ public class Article {
 	public void setSummary(String summary) {
 		this.summary = summary;
 	}
-	
+
+	public String getLien_image() {
+		return lien_image;
+	}
+
+	public void setLien_image(String lien_image) {
+		this.lien_image = lien_image;
+	}
+
+	@Override
+	public String toString() {
+		return "Article [id=" + id + ", title=" + title + ", content="
+				+ content + ", publication_date=" + publication_date
+				+ ", summary=" + summary + ", lien_image=" + lien_image + "]";
+	}
+
+
 	// methods
+	
+	
+	
 	
 	/**
 	 * Return List of article

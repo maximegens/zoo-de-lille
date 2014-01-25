@@ -107,5 +107,28 @@
             android:textSize="12sp" />
 
     </RelativeLayout>
+    
+   <TextView
+       android:id="@+id/a_la_une"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/layout_meteo"
+       android:text="@string/a_la_une"
+       android:textAppearance="?android:attr/textAppearanceLarge"
+       android:textColor="@color/a_la_une"
+       android:paddingLeft="12dp"
+       android:textStyle="bold" />
 
+    <ListView
+        android:id="@+id/list_view_article"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/a_la_une"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="5dp"
+        android:divider="@android:color/transparent"
+ 		android:dividerHeight="10.0sp"
+      />
+    
 </RelativeLayout>
