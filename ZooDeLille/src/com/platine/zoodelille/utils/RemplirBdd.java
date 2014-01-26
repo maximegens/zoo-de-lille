@@ -1,6 +1,5 @@
 package com.platine.zoodelille.utils;
 
-import java.util.Calendar;
 import java.util.Date;
 
 import android.content.Context;
@@ -167,42 +166,42 @@ public class RemplirBdd {
 		
 		PracticalInformationDao practicalInformationDao = DatabaseManager.getDao().getPracticalInformationDao();
 		
-		Calendar cal = Calendar.getInstance();
+		//Calendar cal = Calendar.getInstance();
 		
 	   //pour les heures d'ouverture et de fermeture, le mois et le jour ne sont pas pris en compte
 				
 		// ouvre a 9h
-		cal.set(2014, 1, 1, 9, 0);
-		Date summer_week_opening_time = cal.getTime();
+		//cal.set(2014, 1, 1, 9, 0);cal.getTime()
+		String summer_week_opening_time = "9";
 		// ferme a 18h
-		cal.set(2014, 1, 1, 18, 0);
-		Date summer_week_closing_time = cal.getTime();
+		//cal.set(2014, 1, 1, 18, 0);
+		String summer_week_closing_time = "18";
 		// ouvre 9h
-		cal.set(2014, 1, 1, 9, 0);
-		Date summer_weekend_opening_time = cal.getTime();
+		//cal.set(2014, 1, 1, 9, 0);
+		String summer_weekend_opening_time = "9";
 		// ferme a 19h
-		cal.set(2014, 1, 1, 19, 0);
-		Date summer_weekend_closing_time = cal.getTime();
+		//cal.set(2014, 1, 1, 19, 0);
+		String summer_weekend_closing_time = "19";
 		// ouvre a 10h
-		cal.set(2014, 1, 1, 10, 0);
-		Date winter_week_opening_time = cal.getTime();
+		//cal.set(2014, 1, 1, 10, 0);
+		String winter_week_opening_time = "10";
 		// ferme a 17h
-		cal.set(2014, 1, 1, 17, 0);
-		Date winter_week_closing_time = cal.getTime();
+		//cal.set(2014, 1, 1, 17, 0);
+		String winter_week_closing_time = "17";
 		// ouvre a 10h
-		cal.set(2014, 1, 1, 10, 0);
-		Date winter_weekend_opening_time = cal.getTime();
+		//cal.set(2014, 1, 1, 10, 0);
+		String winter_weekend_opening_time = "10";
 		// ferme a 17h
-		cal.set(2014, 1, 1, 17, 0);
-		Date winter_weekend_closing_time = cal.getTime();
+		//cal.set(2014, 1, 1, 17, 0);
+		String winter_weekend_closing_time = "17";
 		
 		// ferme 9 decembre (pour 2013)
-		cal.set(2014, 9, 12, 0, 0);
-		Date annual_closing = cal.getTime();
+		//cal.set(2014, 9, 12, 0, 0);
+		String annual_closing = "9/12/2013";
 		
 		// ouverture 9 février 2014
-		cal.set(2014, 2, 9, 10, 0);
-		Date annual_opening = cal.getTime();
+		//cal.set(2014, 2, 9, 10, 0);
+		String annual_opening = "09/02/2014";
 	
 		PracticalInformation p = new PracticalInformation(summer_week_opening_time,summer_week_closing_time,summer_weekend_opening_time,summer_weekend_closing_time,winter_week_opening_time,winter_week_closing_time,winter_weekend_opening_time,winter_weekend_closing_time,annual_closing,annual_opening);
 		practicalInformationDao.save(p);	
