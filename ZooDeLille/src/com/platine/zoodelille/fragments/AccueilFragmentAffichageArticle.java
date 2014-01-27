@@ -20,7 +20,7 @@ import com.platine.zoodelille.dao.ArticleDao;
  * Fragment appelé par AccueilFragment permettant d'afficher en détails un article sur le zoo.
  *
  */
-public class AccueilFragmentAffichage extends Fragment {
+public class AccueilFragmentAffichageArticle extends Fragment {
 	
 	TextView titreArticle;
 	TextView summaryArticle;

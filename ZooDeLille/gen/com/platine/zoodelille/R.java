@@ -200,7 +200,6 @@ public final class R {
         public static final int drawer_layout=0x7f0a0000;
         public static final int etat_zoo=0x7f0a000a;
         public static final int frameLayout=0x7f0a0001;
-        public static final int horaire_actuel=0x7f0a000c;
         public static final int icone_temps=0x7f0a0007;
         public static final int id_article_list_view=0x7f0a0017;
         public static final int img_article=0x7f0a0012;
@@ -211,6 +210,7 @@ public final class R {
         public static final int my_drawer=0x7f0a0002;
         public static final int nom_categorie=0x7f0a0003;
         public static final int partage_facebook=0x7f0a0014;
+        public static final int prochain_horaire=0x7f0a000c;
         public static final int progressBarMeteo=0x7f0a0005;
         public static final int separator=0x7f0a0009;
         public static final int summary_article=0x7f0a0013;

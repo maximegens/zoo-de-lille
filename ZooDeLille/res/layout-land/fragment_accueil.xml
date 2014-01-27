@@ -41,7 +41,7 @@
             android:src="@drawable/voyant_vert" />
         
          <TextView
-            android:id="@+id/horaire_actuel"
+            android:id="@+id/prochain_horaire"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -49,7 +49,6 @@
             android:layout_marginTop="25dp"
             android:paddingRight="5dp"
 			android:paddingBottom="5dp"
-            android:text="Jusque 18h30"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textSize="12sp" />
 
@@ -80,11 +79,10 @@
              android:layout_height="wrap_content"
              android:layout_alignParentTop="true"
              android:layout_marginRight="16dp"
-             android:layout_toLeftOf="@+id/horaire_actuel"
+             android:layout_toLeftOf="@+id/prochain_horaire"
              android:gravity="center"
              android:paddingLeft="10dp"
              android:paddingTop="10dp"
-             android:text="Zoo\nouvert"
              android:textColor="#349a18"
              android:textSize="18sp" />
 

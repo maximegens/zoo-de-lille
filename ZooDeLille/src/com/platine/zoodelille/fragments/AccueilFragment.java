@@ -42,12 +42,14 @@ public class AccueilFragment extends Fragment {
 	TextView temperature;
 	ImageView icone_temps;
 	TextView etatZoo;
+	TextView prochainHoraire;
 	ImageView voyant;
 	ProgressBar loader;
 	ArticleDao articleDao;
 	ListView listeViewArticle;
 	List<Article> lesarticles;
 	ArticleAdapter adapter;
+	HoraireZoo horaireZoo;
 	
 	private RetreiveFeedMeteoTask retreiveFeedMeteoTask;
 	private RetreiveFeedMeteoDataTask retreiveFeedMeteoDataTask;
@@ -61,8 +63,11 @@ public class AccueilFragment extends Fragment {
 		temperature = (TextView) myInflatedView.findViewById(R.id.temperature);	
 		icone_temps = (ImageView) myInflatedView.findViewById(R.id.icone_temps);
 		etatZoo = (TextView) myInflatedView.findViewById(R.id.etat_zoo);	
+		prochainHoraire = (TextView) myInflatedView.findViewById(R.id.prochain_horaire);	
 		voyant = (ImageView) myInflatedView.findViewById(R.id.voyant);
 		loader = (ProgressBar) myInflatedView.findViewById(R.id.progressBarMeteo);
+		
+		horaireZoo = new HoraireZoo();
 		
 		if(ConnexionInternet.isConnectedInternet(getActivity())){
 			retreiveFeedMeteoTask = new RetreiveFeedMeteoTask();
@@ -73,17 +78,19 @@ public class AccueilFragment extends Fragment {
 			temperature.setText(Constantes.CONNEXION_INTERNET_FAILED);
 		}
 		
-		// Vérification de l'ouverture du Zoo
-		if(HoraireZoo.ZooOpen()){
+		// Vérification de l'ouverture du Zoo	
+		if(horaireZoo.zooIsOpen()){
 			voyant.setImageDrawable(getResources().getDrawable(R.drawable.voyant_vert));
 			etatZoo.setText(getResources().getString(R.string.zoo_ouvert));
 			etatZoo.setTextColor(getResources().getColor(R.color.zoo_ouvert));
 			etatZoo.setTextSize(18);
+			prochainHoraire.setText(Constantes.PROCHAIN_HORAIRE+horaireZoo.getNextOpenning());
 		}else{
 			voyant.setImageDrawable(getResources().getDrawable(R.drawable.voyant_rouge));
 			etatZoo.setText(getResources().getString(R.string.zoo_ferme));
 			etatZoo.setTextColor(getResources().getColor(R.color.zoo_ferme));
 			etatZoo.setTextSize(18);
+			prochainHoraire.setText(Constantes.PROCHAIN_HORAIRE+horaireZoo.getNextOpenning());
 		}
 
 		lesarticles = new ArrayList<Article>();
@@ -97,7 +104,7 @@ public class AccueilFragment extends Fragment {
 			@Override
 			public void onItemClick(AdapterView<?> a, View view, int position, long id) {
 				Article a1 =  (Article)listeViewArticle.getItemAtPosition(position);
-				AccueilFragmentAffichage fragment_affichage = new AccueilFragmentAffichage();
+				AccueilFragmentAffichageArticle fragment_affichage = new AccueilFragmentAffichageArticle();
 			    Bundle args = new Bundle();
 			    args.putString("id", String.valueOf(a1.getId()));
 			    fragment_affichage.setArguments(args);
@@ -141,6 +148,7 @@ public class AccueilFragment extends Fragment {
 		
 		@Override
 		   protected void onPreExecute(){
+			loader.setVisibility(View.VISIBLE);
 			retreiveFeedMeteoDataTask = new RetreiveFeedMeteoDataTask();
 			retreiveFeedMeteoDataTask.execute();
 		   }

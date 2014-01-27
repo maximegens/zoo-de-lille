@@ -25,6 +25,8 @@ public class Constantes {
 	public static String URL_METEO_ICONE_FIN = ".gif";
 	public static String TEMPERATURE_C = " °C";
 	public static String CONNEXION_INTERNET_FAILED = "Aucune connexion";
+	public static String PROCHAIN_HORAIRE = "Jusque ";
+	public static String HEURE = "H ";
 	
 	/** horaire Zoo.
 	 * Cela devra être modifier pour communiquer avec la base de donnée.
