@@ -15,9 +15,9 @@ public class Animal {
 	private int id;
 	@DatabaseField(canBeNull=false)
 	private String name;
-	@DatabaseField(canBeNull=false, foreign = true)
+	@DatabaseField(canBeNull=false)
 	private int category_id;
-	@DatabaseField(canBeNull=false, foreign = true)
+	@DatabaseField(canBeNull=false)
 	private int country_id;
 	@DatabaseField
 	private String description;
@@ -57,7 +57,6 @@ public class Animal {
 			String longevity, int protected_animal, float weight,
 			int gestation, String picture_location) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.category_id = category_id;
 		this.country_id = country_id;
@@ -70,6 +69,7 @@ public class Animal {
 		this.picture_location = picture_location;
 	}
 	
+
 	public int getId() {
 		return id;
 	}
@@ -98,7 +98,6 @@ public class Animal {
 	public void setCountry_id(int country_id) {
 		this.country_id = country_id;
 	}
-
 	public String getDescription() {
 		return description;
 	}

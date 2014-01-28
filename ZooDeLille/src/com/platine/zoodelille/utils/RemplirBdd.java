@@ -2,8 +2,6 @@ package com.platine.zoodelille.utils;
 
 import java.util.Date;
 
-import android.content.Context;
-
 import com.platine.zoodelille.bdd.DatabaseManager;
 import com.platine.zoodelille.beans.Animal;
 import com.platine.zoodelille.beans.Article;
@@ -112,7 +110,7 @@ public class RemplirBdd {
 	
 	}	
 	
-	public static void ajouterArticle(Context context){
+	public static void ajouterArticle(){
 		ArticleDao articleDao = DatabaseManager.getDao().getArticleDao();
 		Article a1= new Article("Le Zoo se cherche un avenir", "Il est nécessaire de faire aboutir le projet d’agrandissement et modernisation du zoo de Lille. C’est le message que rappelle à la mairie l'association Zooalil, " +
 				"qui a participé à une étude préalable, lancée il y a trois ans par la municipalité."+
