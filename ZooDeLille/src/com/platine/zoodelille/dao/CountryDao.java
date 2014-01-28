@@ -15,8 +15,8 @@ public class CountryDao extends BaseDaoImpl<Country,Integer>  {
 		}
  
 	/**
-	 * Sauvegarde un access dans la base de données.
-	 * @param a L'access à sauvegarder.
+	 * Sauvegarde un country dans la base de données.
+	 * @param le country à sauvegarder.
 	 * @return Le résultat de l'insertion, 1 pour insertion réussi, 0 pour échec.
 	 */
 	public int save(Country a){
@@ -30,8 +30,8 @@ public class CountryDao extends BaseDaoImpl<Country,Integer>  {
 	}
 	
 	/**
-	 * Met à jour un access.
-	 * @param a L'access à mettre à jour.
+	 * Met à jour un country.
+	 * @param a L'country à mettre à jour.
 	 * @return Le nombre de lignes mises à jour dans la base de données. Cela doit être 1.
 	 */
 	public int update(Country a){
@@ -39,8 +39,8 @@ public class CountryDao extends BaseDaoImpl<Country,Integer>  {
 	}
 	
 	/**
-	 * Liste de tous les access de la base de données.
-	 * @return Une liste des access de la base de données.
+	 * Liste de tous les country de la base de données.
+	 * @return Une liste des country de la base de données.
 	 */
 	public List<Country> findAll() {
 		List<Country> cities = null;
@@ -53,9 +53,9 @@ public class CountryDao extends BaseDaoImpl<Country,Integer>  {
 	}
  
 	/**
-	 * Récupérer un access en particulier en fonction de son ID.
-	 * @param id L'id de l'access.
-	 * @return L'access correspondant à l'ID.
+	 * Récupérer un country en particulier en fonction de son ID.
+	 * @param id L'id de l'country.
+	 * @return la country correspondant à l'ID.
 	 */
 	public Country findById(int id) {
 		Country city = null;
@@ -68,8 +68,8 @@ public class CountryDao extends BaseDaoImpl<Country,Integer>  {
 	}
 	
 	/**
-	 * Supprime un access.
-	 * @param a L'access à supprimer.
+	 * Supprime un country.
+	 * @param la country à supprimer.
 	 * @return Le nombre de lignes mises à jour dans la base de données. Cela doit être 1.
 .	 */
 	public int delete(Country a){
@@ -77,8 +77,8 @@ public class CountryDao extends BaseDaoImpl<Country,Integer>  {
 	}
 	
 	/**
-	 * Le nombre d'access contenu dans la base de données.
-	 * @return Le nombre d'access.
+	 * Le nombre de country contenu dans la base de données.
+	 * @return Le nombre de country.
 	 */
 	public long count(){
 		try {

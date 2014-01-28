@@ -16,10 +16,10 @@ public class PracticalInformationDao extends
 	}
 
 	/**
-	 * Sauvegarde un access dans la base de données.
+	 * Sauvegarde un practicalInformation dans la base de données.
 	 * 
 	 * @param a
-	 *            L'access à sauvegarder.
+	 *            L'practicalInformation à sauvegarder.
 	 * @return Le résultat de l'insertion, 1 pour insertion réussi, 0 pour
 	 *         échec.
 	 */
@@ -34,10 +34,10 @@ public class PracticalInformationDao extends
 	}
 
 	/**
-	 * Met à jour un access.
+	 * Met à jour un practicalInformation.
 	 * 
 	 * @param a
-	 *            L'access à mettre à jour.
+	 *            L'practicalInformation à mettre à jour.
 	 * @return Le nombre de lignes mises à jour dans la base de données. Cela
 	 *         doit être 1.
 	 */
@@ -46,9 +46,9 @@ public class PracticalInformationDao extends
 	}
 
 	/**
-	 * Liste de tous les access de la base de données.
+	 * Liste de tous les practicalInformation de la base de données.
 	 * 
-	 * @return Une liste des access de la base de données.
+	 * @return Une liste des practicalInformation de la base de données.
 	 */
 	public List<PracticalInformation> findAll() {
 		List<PracticalInformation> cities = null;
@@ -61,11 +61,11 @@ public class PracticalInformationDao extends
 	}
 
 	/**
-	 * Récupérer un access en particulier en fonction de son ID.
+	 * Récupérer un practicalInformation en particulier en fonction de son ID.
 	 * 
 	 * @param id
-	 *            L'id de l'access.
-	 * @return L'access correspondant à l'ID.
+	 *            L'id de l'practicalInformation.
+	 * @return L'practicalInformation correspondant à l'ID.
 	 */
 	public PracticalInformation findById(int id) {
 		PracticalInformation city = null;
@@ -78,10 +78,10 @@ public class PracticalInformationDao extends
 	}
 
 	/**
-	 * Supprime un access.
+	 * Supprime un practicalInformation.
 	 * 
 	 * @param a
-	 *            L'access à supprimer.
+	 *            L'practicalInformation à supprimer.
 	 * @return Le nombre de lignes mises à jour dans la base de données. Cela
 	 *         doit être 1. .
 	 */
@@ -90,9 +90,9 @@ public class PracticalInformationDao extends
 	}
 
 	/**
-	 * Le nombre d'access contenu dans la base de données.
+	 * Le nombre d'practicalInformation contenu dans la base de données.
 	 * 
-	 * @return Le nombre d'access.
+	 * @return Le nombre d'practicalInformation.
 	 */
 	public long count() {
 		try {

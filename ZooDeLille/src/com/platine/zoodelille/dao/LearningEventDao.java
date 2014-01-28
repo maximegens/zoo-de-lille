@@ -15,8 +15,8 @@ public class LearningEventDao extends BaseDaoImpl<LearningEvent,Integer> {
 		}
  
 	/**
-	 * Sauvegarde un access dans la base de données.
-	 * @param a L'access à sauvegarder.
+	 * Sauvegarde un learningEvent dans la base de données.
+	 * @param a L'learningEvent à sauvegarder.
 	 * @return Le résultat de l'insertion, 1 pour insertion réussi, 0 pour échec.
 	 */
 	public int save(LearningEvent a){
@@ -30,8 +30,8 @@ public class LearningEventDao extends BaseDaoImpl<LearningEvent,Integer> {
 	}
 	
 	/**
-	 * Met à jour un access.
-	 * @param a L'access à mettre à jour.
+	 * Met à jour un learningEvent.
+	 * @param a L'learningEvent à mettre à jour.
 	 * @return Le nombre de lignes mises à jour dans la base de données. Cela doit être 1.
 	 */
 	public int update(LearningEvent a){
@@ -39,8 +39,8 @@ public class LearningEventDao extends BaseDaoImpl<LearningEvent,Integer> {
 	}
 	
 	/**
-	 * Liste de tous les access de la base de données.
-	 * @return Une liste des access de la base de données.
+	 * Liste de tous les learningEvent de la base de données.
+	 * @return Une liste des learningEvent de la base de données.
 	 */
 	public List<LearningEvent> findAll() {
 		List<LearningEvent> cities = null;
@@ -53,9 +53,9 @@ public class LearningEventDao extends BaseDaoImpl<LearningEvent,Integer> {
 	}
  
 	/**
-	 * Récupérer un access en particulier en fonction de son ID.
-	 * @param id L'id de l'access.
-	 * @return L'access correspondant à l'ID.
+	 * Récupérer un learningEvent en particulier en fonction de son ID.
+	 * @param id L'id de l'learningEvent.
+	 * @return L'learningEvent correspondant à l'ID.
 	 */
 	public LearningEvent findById(int id) {
 		LearningEvent city = null;
@@ -68,8 +68,8 @@ public class LearningEventDao extends BaseDaoImpl<LearningEvent,Integer> {
 	}
 	
 	/**
-	 * Supprime un access.
-	 * @param a L'access à supprimer.
+	 * Supprime un learningEvent.
+	 * @param a L'learningEvent à supprimer.
 	 * @return Le nombre de lignes mises à jour dans la base de données. Cela doit être 1.
 .	 */
 	public int delete(LearningEvent a){
@@ -77,8 +77,8 @@ public class LearningEventDao extends BaseDaoImpl<LearningEvent,Integer> {
 	}
 	
 	/**
-	 * Le nombre d'access contenu dans la base de données.
-	 * @return Le nombre d'access.
+	 * Le nombre d'learningEvent contenu dans la base de données.
+	 * @return Le nombre d'learningEvent.
 	 */
 	public long count(){
 		try {

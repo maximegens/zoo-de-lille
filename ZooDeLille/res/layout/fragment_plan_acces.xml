@@ -1,15 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout 
-	xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
     <TextView
-        android:id="@+id/nom_categorie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/plan_acces" />
+        android1:id="@+id/Accessadresse"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_alignParentTop="true"
+        android1:layout_marginLeft="50dp"
+        android1:layout_marginRight="50dp"
+        android1:layout_marginTop="20dp"
+        android1:text="Le Parc Zoologique de Lille est situé dans le Parc de la Citadelle, Avenue Mathias Delobel." />
+
+    <TextView
+        android1:id="@+id/acess"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_alignParentLeft="true"
+        android1:layout_below="@+id/Accessadresse"
+        android1:layout_marginLeft="23dp"
+        android1:layout_marginTop="20dp"
+        android1:text="Comment accéder :" />
+
+    <Button
+        android1:id="@+id/goToZooButton"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_alignParentBottom="true"
+        android1:layout_below="@+id/tabhost"
+        android1:layout_centerHorizontal="true"
+        android1:layout_marginBottom="132dp"
+        android1:text="Se rendre au Zoo" />
+
+    <TabHost
+        android1:id="@android:id/tabhost"
+        android1:layout_width="match_parent"
+        android1:layout_height="match_parent"
+        android1:layout_alignParentLeft="true"
+        android1:layout_below="@+id/acess"
+        android1:layout_marginTop="19dp" >
+
+        <LinearLayout
+            android1:layout_width="match_parent"
+            android1:layout_height="match_parent"
+            android1:orientation="vertical" >
+
+            <TabWidget
+                android1:id="@android:id/tabs"
+                android1:layout_width="match_parent"
+                android1:layout_height="wrap_content" >
+            </TabWidget>
+
+            <FrameLayout
+                android1:id="@android:id/tabcontent"
+                android1:layout_width="match_parent"
+                android1:layout_height="match_parent" >
+
+                <LinearLayout
+                    android1:id="@+id/tab1"
+                    android1:layout_width="match_parent"
+                    android1:layout_height="match_parent"
+                    android1:orientation="horizontal" >
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android1:id="@+id/tab2"
+                    android1:layout_width="match_parent"
+                    android1:layout_height="match_parent"
+                    android1:orientation="horizontal" >
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android1:id="@+id/tab3"
+                    android1:layout_width="match_parent"
+                    android1:layout_height="match_parent"
+                    android1:orientation="horizontal" >
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
 
 </RelativeLayout>
