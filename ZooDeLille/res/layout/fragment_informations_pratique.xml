@@ -1,15 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout 
-	xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
     <TextView
-        android:id="@+id/nom_categorie"
+        android:id="@+id/titre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/informations_pratique" />
+        android:layout_marginTop="26dp"
+        android:text="TextView" />
+
+    <TextView
+        android1:id="@+id/informationFermetureJour"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_alignTop="@+id/fermeture"
+        android1:layout_marginTop="70dp"
+        android1:layout_toLeftOf="@+id/titre"
+        android1:text="TextView" />
+
+    <TabHost
+        android1:id="@android:id/tabhost"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_alignParentLeft="true"
+        android1:layout_below="@+id/horraireDuJour" >
+
+        <LinearLayout
+            android1:layout_width="match_parent"
+            android1:layout_height="match_parent"
+            android1:orientation="vertical" >
+
+            <TabWidget
+                android1:id="@android:id/tabs"
+                android1:layout_width="320dp"
+                android1:layout_height="wrap_content" >
+            </TabWidget>
+
+            <FrameLayout
+                android1:id="@android:id/tabcontent"
+                android1:layout_width="match_parent"
+                android1:layout_height="match_parent" >
+
+                <LinearLayout
+                    android1:id="@+id/tab1"
+                    android1:layout_width="match_parent"
+                    android1:layout_height="match_parent"
+                    android1:orientation="horizontal" >
+                </LinearLayout>
+
+                <LinearLayout
+                    android1:id="@+id/tab2"
+                    android1:layout_width="match_parent"
+                    android1:layout_height="match_parent"
+                    android1:orientation="horizontal" >
+                </LinearLayout>
+
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+    <ImageView
+        android1:id="@+id/imageView1"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_alignParentBottom="true"
+        android1:layout_marginLeft="25dp"
+        android1:layout_toLeftOf="@+id/titre"
+        android1:src="@drawable/singe_information" />
+
+    <TextView
+        android1:id="@+id/fermeture"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_above="@+id/imageView1"
+        android1:layout_alignLeft="@+id/horraireDuJour"
+        android1:layout_marginBottom="18dp"
+        android1:text="TextView" />
+
+    <TextView
+        android1:id="@+id/horraireDuJour"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_alignLeft="@+id/imageView1"
+        android1:layout_below="@+id/titre"
+        android1:layout_marginLeft="20dp"
+        android1:layout_marginTop="16dp"
+        android1:text="TextView" />
 
 </RelativeLayout>
