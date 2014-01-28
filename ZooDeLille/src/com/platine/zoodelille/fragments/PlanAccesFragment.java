@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
-import android.widget.TextView;
 
 import com.platine.zoodelille.R;
 

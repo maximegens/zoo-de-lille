@@ -129,6 +129,7 @@
         android:layout_marginTop="5dp"
         android:divider="@android:color/transparent"
  		android:dividerHeight="10.0sp"
+ 		android:paddingBottom="10dp"
       />
     
 </RelativeLayout>

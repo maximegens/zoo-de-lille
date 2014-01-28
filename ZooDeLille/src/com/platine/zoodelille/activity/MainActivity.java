@@ -15,10 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.platine.zoodelille.R;
-import com.platine.zoodelille.bdd.DatabaseManager;
-import com.platine.zoodelille.dao.*;
 import com.platine.zoodelille.utils.Constantes;
-import com.platine.zoodelille.utils.RemplirBdd;
 
 public class MainActivity extends FragmentActivity {
 
@@ -26,8 +23,6 @@ public class MainActivity extends FragmentActivity {
 	private ListView myDrawer;
 	private DrawerLayout drawerLayout;
 	private ActionBarDrawerToggle mDrawerToggle;
-	private ArticleDao articleDao;
-	private PracticalInformationDao practicalInformationDao;
 	private String categorieFragmentSave;
 	private ActionBar actionBar;
 	
@@ -36,21 +31,7 @@ public class MainActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		/************* Creation et remplissage de la base de données *************/
-		// initialisation du databaseManager, Obligatoire et à faire qu'une seule fois dans toutes l'application
-		DatabaseManager.init(this);
-		articleDao = DatabaseManager.getDao().getArticleDao();
-		practicalInformationDao = DatabaseManager.getDao().getPracticalInformationDao();
-		
-		// remplissage de la base de données.
-		if (articleDao.count() == 0) {
-			RemplirBdd.ajouterArticle(this);
-		}
-		if (practicalInformationDao.count() == 0) {
-			RemplirBdd.ajouterPraticalInformation();
-		}
-		
+			
 		/************* Creation du Drawer *************/
 		drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
 		
