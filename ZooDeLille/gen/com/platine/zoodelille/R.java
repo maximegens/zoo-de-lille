@@ -173,13 +173,27 @@ public final class R {
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
+        public static final int singe_information=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0004;
+        public static final int Accessadresse=0x7f0a000c;
+        public static final int acess=0x7f0a000d;
+        public static final int action_settings=0x7f0a0011;
         public static final int drawer_layout=0x7f0a0000;
+        public static final int fermeture=0x7f0a0007;
         public static final int frameLayout=0x7f0a0001;
+        public static final int goToZooButton=0x7f0a000e;
+        public static final int horraireDuJour=0x7f0a0008;
+        public static final int imageView1=0x7f0a000b;
+        public static final int informationFermetureJour=0x7f0a0006;
         public static final int my_drawer=0x7f0a0002;
-        public static final int nom_categorie=0x7f0a0003;
+        public static final int nom_categorie=0x7f0a0004;
+        public static final int tab1=0x7f0a0009;
+        public static final int tab2=0x7f0a000a;
+        public static final int tab3=0x7f0a0010;
+        public static final int tabhost=0x7f0a000f;
+        public static final int textView1=0x7f0a0003;
+        public static final int titre=0x7f0a0005;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;

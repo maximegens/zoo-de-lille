@@ -15,8 +15,8 @@ public class AnimalCategoryDao  extends BaseDaoImpl<AnimalCategory,Integer>  {
 		}
  
 	/**
-	 * Sauvegarde un access dans la base de données.
-	 * @param a L'access à sauvegarder.
+	 * Sauvegarde un animalCategory dans la base de données.
+	 * @param a L'animalCategory à sauvegarder.
 	 * @return Le résultat de l'insertion, 1 pour insertion réussi, 0 pour échec.
 	 */
 	public int save(AnimalCategory a){
@@ -30,8 +30,8 @@ public class AnimalCategoryDao  extends BaseDaoImpl<AnimalCategory,Integer>  {
 	}
 	
 	/**
-	 * Met à jour un access.
-	 * @param a L'access à mettre à jour.
+	 * Met à jour un animalCategory.
+	 * @param a L'animalCategory à mettre à jour.
 	 * @return Le nombre de lignes mises à jour dans la base de données. Cela doit être 1.
 	 */
 	public int update(AnimalCategory a){
@@ -39,8 +39,8 @@ public class AnimalCategoryDao  extends BaseDaoImpl<AnimalCategory,Integer>  {
 	}
 	
 	/**
-	 * Liste de tous les access de la base de données.
-	 * @return Une liste des access de la base de données.
+	 * Liste de tous les animalCategory de la base de données.
+	 * @return Une liste des animalCategory de la base de données.
 	 */
 	public List<AnimalCategory> findAll() {
 		List<AnimalCategory> cities = null;
@@ -53,9 +53,9 @@ public class AnimalCategoryDao  extends BaseDaoImpl<AnimalCategory,Integer>  {
 	}
  
 	/**
-	 * Récupérer un access en particulier en fonction de son ID.
-	 * @param id L'id de l'access.
-	 * @return L'access correspondant à l'ID.
+	 * Récupérer un animalCategory en particulier en fonction de son ID.
+	 * @param id L'id de l'animalCategory.
+	 * @return L'animalCategory correspondant à l'ID.
 	 */
 	public AnimalCategory findById(int id) {
 		AnimalCategory city = null;
@@ -68,8 +68,8 @@ public class AnimalCategoryDao  extends BaseDaoImpl<AnimalCategory,Integer>  {
 	}
 	
 	/**
-	 * Supprime un access.
-	 * @param a L'access à supprimer.
+	 * Supprime un animalCategory.
+	 * @param a L'animalCategory à supprimer.
 	 * @return Le nombre de lignes mises à jour dans la base de données. Cela doit être 1.
 .	 */
 	public int delete(AnimalCategory a){
@@ -77,8 +77,8 @@ public class AnimalCategoryDao  extends BaseDaoImpl<AnimalCategory,Integer>  {
 	}
 	
 	/**
-	 * Le nombre d'access contenu dans la base de données.
-	 * @return Le nombre d'access.
+	 * Le nombre d'animalCategory contenu dans la base de données.
+	 * @return Le nombre d'animalCategory.
 	 */
 	public long count(){
 		try {
