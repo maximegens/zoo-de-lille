@@ -1,3 +1,4 @@
+
 package com.platine.zoodelille.beans;
 
 import com.j256.ormlite.field.DatabaseField;
@@ -5,7 +6,7 @@ import com.j256.ormlite.table.DatabaseTable;
 import com.platine.zoodelille.dao.AccessDao;
 
 
-@DatabaseTable(tableName="cities", daoClass=AccessDao.class)
+@DatabaseTable(daoClass=AccessDao.class)
 public class Access {
 	
 	
@@ -52,8 +53,12 @@ public class Access {
 	public void setExplanation(String explanation) {
 		this.explanation = explanation;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Access [id=" + id + ", transport_mode=" + transport_mode
+				+ ", explanation=" + explanation + "]";
+	}
 
 }
 
