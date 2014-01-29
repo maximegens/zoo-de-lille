@@ -270,8 +270,7 @@ public final class R {
         public static final int animaux_du_zoo=0x7f060005;
         public static final int app_name=0x7f06000f;
         public static final int aux_alentours=0x7f06000b;
-        public static final int body1=0x7f06001c;
-        public static final int body2=0x7f06001d;
+        public static final int bus=0x7f06001c;
         public static final int contact=0x7f06000d;
         public static final int description_image_chargement=0x7f060013;
         public static final int description_image_facebook=0x7f060019;
@@ -281,11 +280,10 @@ public final class R {
         public static final int fermeture=0x7f060001;
         public static final int informations_pratique=0x7f06000a;
         public static final int jeux_interactif=0x7f060008;
-        public static final int label1=0x7f06001a;
-        public static final int label2=0x7f06001b;
         /**  string propre au fragment "Accueil" 
          */
         public static final int meteo_lille=0x7f060011;
+        public static final int metro=0x7f06001b;
         /**  Ce fichier contient tous les strings et ressources utilisés par le Drawer 
          */
         public static final int ouverture=0x7f060000;
@@ -294,6 +292,10 @@ public final class R {
         public static final int reglages=0x7f06000c;
         public static final int titre_apres_ouverture=0x7f060003;
         public static final int titre_menu_slider=0x7f060002;
+        public static final int velo=0x7f06001d;
+        /**  string propre au fragment "Plan d'acces" 
+         */
+        public static final int voiture=0x7f06001a;
         public static final int zoo_ferme=0x7f060017;
         public static final int zoo_ouvert=0x7f060016;
     }

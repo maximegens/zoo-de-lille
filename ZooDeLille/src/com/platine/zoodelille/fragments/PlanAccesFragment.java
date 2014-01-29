@@ -1,20 +1,20 @@
 package com.platine.zoodelille.fragments;
 
 import android.app.ActionBar;
-import android.app.Activity;
 import android.app.ActionBar.Tab;
-import android.app.ActionBar.TabListener;
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.platine.zoodelille.R;
-import com.platine.zoodelille.tab.Tab1Fragment;
-import com.platine.zoodelille.tab.Tab2Fragment;
+import com.platine.zoodelille.tab.TabBusFragment;
+import com.platine.zoodelille.tab.TabMetroFragment;
+import com.platine.zoodelille.tab.TabVlilleFragment;
+import com.platine.zoodelille.tab.TabVoitureFragment;
 
 
 public class PlanAccesFragment extends Fragment{
@@ -29,20 +29,35 @@ public class PlanAccesFragment extends Fragment{
 
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-		String label1 = getResources().getString(R.string.label1);
-		Tab tab = actionBar.newTab();
-		tab.setText(label1);
-		
-		TabListener tl = new TabListener(getActivity(),label1, Tab1Fragment.class);
-		tab.setTabListener(tl);
-		actionBar.addTab(tab);
+		String en_voiture = getResources().getString(R.string.voiture);
+		Tab tab_voiture = actionBar.newTab();
+		tab_voiture.setText(en_voiture);
+		TabListener tl_voiture = new TabListener(getActivity(),en_voiture, TabVoitureFragment.class);
+		tab_voiture.setTabListener(tl_voiture);
+		actionBar.addTab(tab_voiture);
 
-		String label2 = getResources().getString(R.string.label2);
-		tab = actionBar.newTab();
-		tab.setText(label2);
-		TabListener tl2 = new TabListener(getActivity(),label2, Tab2Fragment.class);
-		tab.setTabListener(tl2);
-		actionBar.addTab(tab);
+		String en_metro = getResources().getString(R.string.metro);
+		Tab tab_metro = actionBar.newTab();
+		tab_metro.setText(en_metro);
+		TabListener tl_metro = new TabListener(getActivity(),en_metro, TabMetroFragment.class);
+		tab_metro.setTabListener(tl_metro);
+		actionBar.addTab(tab_metro);
+		
+		String en_bus = getResources().getString(R.string.bus);
+		Tab tab_bus = actionBar.newTab();
+		tab_bus = actionBar.newTab();
+		tab_bus.setText(en_bus);
+		TabListener tl_bus = new TabListener(getActivity(),en_bus, TabBusFragment.class);
+		tab_bus.setTabListener(tl_bus);
+		actionBar.addTab(tab_bus);
+		
+		String en_vlille = getResources().getString(R.string.velo);
+		Tab tab_vlille = actionBar.newTab();
+		tab_vlille = actionBar.newTab();
+		tab_vlille.setText(en_vlille);
+		TabListener tl_vlille = new TabListener(getActivity(),en_vlille, TabVlilleFragment.class);
+		tab_vlille.setTabListener(tl_vlille);
+		actionBar.addTab(tab_vlille);
 			
 		return myInflatedView;
 		

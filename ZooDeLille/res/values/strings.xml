@@ -15,10 +15,11 @@
     <string name="description_image_illustration_article">Image d\'illustration de l\'article</string>
     <string name="description_image_facebook">Partager l\'article sur Facebook</string>
     
-    <string name="label1">one</string>
-    <string name="label2">two</string>
-    <string name="body1"> body one</string>
-    <string name="body2">body two</string>
+     <!-- string propre au fragment "Plan d'acces" -->
+    <string name="voiture">En voiture</string>
+    <string name="metro">En métro</string>
+    <string name="bus">En bus</string>
+    <string name="velo">En V\'Lille</string>
     
     
 </resources>
