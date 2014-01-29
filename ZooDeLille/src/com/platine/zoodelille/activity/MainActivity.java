@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,7 +16,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.platine.zoodelille.R;
+import com.platine.zoodelille.bdd.DatabaseManager;
+import com.platine.zoodelille.dao.AnimalDao;
+import com.platine.zoodelille.dao.LocatableElementDao;
 import com.platine.zoodelille.utils.Constantes;
+import com.platine.zoodelille.utils.RemplirBdd;
 
 public class MainActivity extends FragmentActivity {
 
@@ -25,13 +30,44 @@ public class MainActivity extends FragmentActivity {
 	private ActionBarDrawerToggle mDrawerToggle;
 	private String categorieFragmentSave;
 	private ActionBar actionBar;
+	private AnimalDao animalDao;
 	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+		
+		/************* Creation et remplissage de la base de données *************/
+		// initialisation du databaseManager, Obligatoire et à faire qu'une seule fois dans toutes l'application
+		DatabaseManager.init(this);
+		
+		
+		LocatableElementDao locElmDao = DatabaseManager.getDao().getLocatableElementDao();
+		if(locElmDao.count() == 0)
+		{
+			Log.v("----- MainActivity", "Remplissage de la bdd en Elements localisables");
 			
+			RemplirBdd.addRestroom(this);
+			RemplirBdd.addGarbages(this);
+			RemplirBdd.addEnclosures(this);
+	
+		}
+		Log.v("----- MainActivity", "Il y a "+locElmDao.count()+" elements localisables dans la bdd");
+		
+		animalDao = DatabaseManager.getDao().getAnimalDao();
+		
+		// ajout des animaux dans la base si celle ci est vide
+		if (animalDao.count() == 0) {
+			Log.v("----- MainActivity", "Remplissage de la bdd en Animaux");
+			RemplirBdd.ajouterDesAnimaux();
+			
+		}
+		
+		Log.v("----- MainActivity", "Il y a "+animalDao.count()+" animaux dans la bdd");
+		
+
 		/************* Creation du Drawer *************/
 		drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
 		

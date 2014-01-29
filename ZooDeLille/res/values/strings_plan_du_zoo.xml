@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="show_enclosure">Enclos</string>
+    <string name="show_garbage">Poubelles</string>
+    <string name="show_restroom">Toilettes</string>
+    <string name="animal">Animal</string>
+    <string name="enclosure">ENCLOS</string>
+    <string name="default_enclosure">Aucune sélection</string>
+</resources>

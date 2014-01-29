@@ -34,6 +34,9 @@ public class Animal {
 	@DatabaseField
 	private String picture_location;
 	
+	@DatabaseField(canBeNull = true, foreign = true, foreignAutoRefresh = true)
+	private Enclosure enclosure;
+	
 	public Animal(){
 		
 	}
@@ -50,12 +53,12 @@ public class Animal {
 	 * @param weight Le poids de l'animal.
 	 * @param gestation La durée de gestation de l'animal.
 	 * @param picture_location Le chemin de la photo de l'animal.
+	 * @param enclosure L'enclos dans lequel l'animal se trouve.
 	 */
-	
-	public Animal(String name, int category_id,
-			int country_id, String description, String environnement,
-			String longevity, int protected_animal, float weight,
-			int gestation, String picture_location) {
+	public Animal(String name, int category_id, int country_id,
+			String description, String environnement, String longevity,
+			int protected_animal, float weight, int gestation,
+			String picture_locationn, Enclosure enclosure) {
 		super();
 		this.name = name;
 		this.category_id = category_id;
@@ -67,6 +70,7 @@ public class Animal {
 		this.weight = weight;
 		this.gestation = gestation;
 		this.picture_location = picture_location;
+		this.enclosure = enclosure;
 	}
 	
 
@@ -140,6 +144,17 @@ public class Animal {
 	public void setPicture_location(String picture_location) {
 		this.picture_location = picture_location;
 	}
+	
+	public void setEnclosure(Enclosure enclosure)
+	{
+		this.enclosure = enclosure;
+	}
+	
+	public Enclosure getEnclosure()
+	{
+		return enclosure;
+	}
+	
 	@Override
 	public String toString() {
 		return "Animal [id=" + id + ", name=" + name + ", category_id="
@@ -147,7 +162,7 @@ public class Animal {
 				+ description + ", environnement=" + environnement
 				+ ", longevity=" + longevity + ", protected_animal="
 				+ protected_animal + ", weight=" + weight + ", gestation="
-				+ gestation + ", picture_location=" + picture_location + "]";
+				+ gestation + ", picture_location=" + picture_location + ", enclosure=" + enclosure + "]";
 	}	
 	
 }
