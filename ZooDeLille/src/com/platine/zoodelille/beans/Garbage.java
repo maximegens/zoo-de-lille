@@ -27,6 +27,11 @@ public class Garbage {
 	{
 	}
 	
+	public Garbage(LocatableElement loc_elm)
+	{
+		this.locatable_element = loc_elm;
+	}
+	
 	public int getId()
 	{
 		return id;
@@ -49,6 +54,6 @@ public class Garbage {
 	
 	@Override
 	public String toString() {
-		return "Garbage [id=" + id + "]";
+		return "Garbage [id=" + id + ",locatable_element=" + locatable_element + "]";
 	}	
 }

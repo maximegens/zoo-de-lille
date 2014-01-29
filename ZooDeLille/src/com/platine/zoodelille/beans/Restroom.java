@@ -28,6 +28,11 @@ public class Restroom {
 	{
 	}
 	
+	public Restroom(LocatableElement loc_elm)
+	{
+		this.locatable_element = loc_elm;
+	}
+	
 	public int getId()
 	{
 		return id;
@@ -50,6 +55,6 @@ public class Restroom {
 	
 	@Override
 	public String toString() {
-		return "Restroom [id=" + id + "]";
+		return "Restroom [id=" + id + ",locatable_element=" + locatable_element + "]";
 	}	
 }

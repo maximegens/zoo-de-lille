@@ -18,6 +18,9 @@ public class Enclosure {
 	@DatabaseField(generatedId=true)
 	private int id;
 	
+	@DatabaseField(canBeNull = true)
+	private String name;
+	
 	@DatabaseField(canBeNull = false, foreign = true, foreignAutoCreate = true,foreignAutoRefresh = true)
 	private LocatableElement locatable_element;
 	
@@ -30,6 +33,12 @@ public class Enclosure {
 	public Enclosure()
 	{	
 	}
+	
+	public Enclosure(String name, LocatableElement loc_elm)
+	{	
+		this.name = name;
+		this.locatable_element = loc_elm;
+	}
 
 	public int getId()
 	{
@@ -39,6 +48,16 @@ public class Enclosure {
 	public void setId(int id)
 	{
 		this.id = id;
+	}
+	
+	public String getName()
+	{
+		return name;
+	}
+	
+	public void setName(String name)
+	{
+		this.name = name;
 	}
 	
 	public LocatableElement getLocatable_element()
@@ -63,6 +82,6 @@ public class Enclosure {
 	
 	@Override
 	public String toString() {
-		return "Enclosure [id=" + id + ",animals=" + animals + "]";
+		return "Enclosure [id=" + id + ",animals=" + animals + ",locatable_element=" + locatable_element +"]";
 	}	
 }

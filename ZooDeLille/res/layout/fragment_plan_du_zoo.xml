@@ -1,15 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout 
-	xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-
-    <TextView
-        android:id="@+id/nom_categorie"
+	
+    <RelativeLayout
+        android:id="@+id/map_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/plan_du_zoo" />
+        android:layout_above="@+id/action_layout"
+        
+         >
+
+        <ImageView
+            android:id="@+id/map_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/map_zoo_real_verti" />
+    </RelativeLayout>
+    
+    <LinearLayout
+        android:orientation="vertical"
+        
+        android:id="@+id/enclosure_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/map_layout"
+        android:background="@drawable/fond_pancarte"
+        android:paddingTop="25sp"
+        >
+
+        <TextView
+            android:id="@+id/enclosure_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            
+            android:gravity="center_horizontal"
+            android:text="@string/enclosure"
+            android:textColor="@color/White" />
+
+        <TextView
+            android:id="@+id/enclosure_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12sp"
+            
+            android:gravity="center_horizontal"
+            android:text="@string/default_enclosure"
+            android:textColor="@color/White" />
+    </LinearLayout>
+
+    
+	
+    <RelativeLayout
+        android:id="@+id/show_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/action_layout"
+        android:layout_alignParentRight="true"
+         >
+	<CheckBox
+            android:id="@+id/show_enclosure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            
+            android:checked="true"
+            android:text="@string/show_enclosure" />
+
+        <CheckBox
+            android:id="@+id/show_restroom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/show_enclosure"
+            android:checked="true"
+            android:text="@string/show_restroom" />
+
+        <CheckBox
+            android:id="@+id/show_garbage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/show_restroom"
+            android:checked="true"
+            android:text="@string/show_garbage" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@id/action_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        
+
+        <Spinner
+            android:id="@+id/animal_selection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             />
+    </RelativeLayout>
 
 </RelativeLayout>
