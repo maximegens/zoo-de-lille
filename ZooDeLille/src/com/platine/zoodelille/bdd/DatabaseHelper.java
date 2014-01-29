@@ -9,7 +9,15 @@ import com.j256.ormlite.dao.DaoManager;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 import com.platine.zoodelille.beans.Animal;
+import com.platine.zoodelille.beans.Enclosure;
+import com.platine.zoodelille.beans.Garbage;
+import com.platine.zoodelille.beans.LocatableElement;
+import com.platine.zoodelille.beans.Restroom;
 import com.platine.zoodelille.dao.AnimalDao;
+import com.platine.zoodelille.dao.EnclosureDao;
+import com.platine.zoodelille.dao.GarbageDao;
+import com.platine.zoodelille.dao.LocatableElementDao;
+import com.platine.zoodelille.dao.RestroomDao;
 import com.platine.zoodelille.utils.Constantes;
 
 /**
@@ -26,6 +34,10 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
 	/** Declaration des DAO **/
 	private AnimalDao animalDao = null;
+	private EnclosureDao enclosureDao = null;
+	private GarbageDao garbageDao = null;
+	private RestroomDao restroomDao = null;
+	private LocatableElementDao locElmDao = null;
 
 	public DatabaseHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -43,6 +55,11 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 				
 				/** ajouter ici les tables à creers **/
 				TableUtils.createTable(connectionSource, Animal.class);
+				TableUtils.createTable(connectionSource, LocatableElement.class);
+				TableUtils.createTable(connectionSource, Enclosure.class);
+				TableUtils.createTable(connectionSource, Garbage.class);
+				TableUtils.createTable(connectionSource, Restroom.class);
+				
 				
 			} catch (java.sql.SQLException e) {
 				Log.e(DatabaseHelper.class.getName(), "Impossible de créer la BD", e);
@@ -58,9 +75,14 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	public void onUpgrade(SQLiteDatabase db, ConnectionSource connectionSource, int oldVersion, int newVersion) {
 			
 			try {
-				onCreate(db, connectionSource);
+				
 				Log.i(DatabaseHelper.class.getName(), "Mise à jour de la DataBase");
 				TableUtils.dropTable(connectionSource, Animal.class, true);
+				TableUtils.dropTable(connectionSource, LocatableElement.class, true);
+				TableUtils.dropTable(connectionSource, Enclosure.class, true);
+				TableUtils.dropTable(connectionSource, Garbage.class, true);
+				TableUtils.dropTable(connectionSource, Restroom.class, true);
+				onCreate(db, connectionSource);
 			} catch (java.sql.SQLException e) {
 				Log.e(DatabaseHelper.class.getName(), "Impossible de supprimer la DataBase", e);
 			}
@@ -79,6 +101,51 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 		}
 		return animalDao;
 	}
+	
+	public EnclosureDao getEnclosureDao() {
+		if(null == enclosureDao) {
+			try {
+				enclosureDao = DaoManager.createDao(getConnectionSource(), Enclosure.class);
+			}catch(java.sql.SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return enclosureDao;
+	}
+	
+	public GarbageDao getGarbageDao() {
+		if(null == garbageDao) {
+			try {
+				garbageDao = DaoManager.createDao(getConnectionSource(), Garbage.class);
+			}catch(java.sql.SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return garbageDao;
+	}
+	
+	public RestroomDao getRestroomDao() {
+		if(null == restroomDao) {
+			try {
+				restroomDao = DaoManager.createDao(getConnectionSource(), Restroom.class);
+			}catch(java.sql.SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return restroomDao;
+	}
+	
+	public LocatableElementDao getLocatableElementDao() {
+		if(null == locElmDao) {
+			try {
+				locElmDao = DaoManager.createDao(getConnectionSource(), LocatableElement.class);
+			}catch(java.sql.SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return locElmDao;
+	}
+	
 
 	/**
 	 * Ferme la BD et nettoie le cache.

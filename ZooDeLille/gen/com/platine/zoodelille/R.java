@@ -172,14 +172,32 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int fond_pancarte=0x7f020000;
+        public static final int ic_launcher=0x7f020001;
+        public static final int icon_enclosure=0x7f020002;
+        public static final int icon_enclosure_selected=0x7f020003;
+        public static final int icon_garbage=0x7f020004;
+        public static final int icon_position=0x7f020005;
+        public static final int icon_restroom=0x7f020006;
+        public static final int map_zoo_real_verti=0x7f020007;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0004;
+        public static final int action_layout=0x7f0a0005;
+        public static final int action_settings=0x7f0a000f;
+        public static final int animal_selection=0x7f0a000e;
         public static final int drawer_layout=0x7f0a0000;
+        public static final int enclosure_info=0x7f0a0009;
+        public static final int enclosure_label=0x7f0a0008;
+        public static final int enclosure_layout=0x7f0a0007;
         public static final int frameLayout=0x7f0a0001;
+        public static final int map_img=0x7f0a0006;
+        public static final int map_layout=0x7f0a0004;
         public static final int my_drawer=0x7f0a0002;
         public static final int nom_categorie=0x7f0a0003;
+        public static final int show_enclosure=0x7f0a000b;
+        public static final int show_garbage=0x7f0a000d;
+        public static final int show_layout=0x7f0a000a;
+        public static final int show_restroom=0x7f0a000c;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -206,10 +224,13 @@ public final class R {
         public static final int accueil=0x7f060004;
         public static final int action_settings=0x7f060010;
         public static final int activite_pedagogique=0x7f060007;
+        public static final int animal=0x7f060014;
         public static final int animaux_du_zoo=0x7f060005;
         public static final int app_name=0x7f06000f;
         public static final int aux_alentours=0x7f06000b;
         public static final int contact=0x7f06000d;
+        public static final int default_enclosure=0x7f060016;
+        public static final int enclosure=0x7f060015;
         public static final int fermeture=0x7f060001;
         public static final int informations_pratique=0x7f06000a;
         public static final int jeux_interactif=0x7f060008;
@@ -219,6 +240,9 @@ public final class R {
         public static final int plan_acces=0x7f060009;
         public static final int plan_du_zoo=0x7f060006;
         public static final int reglages=0x7f06000c;
+        public static final int show_enclosure=0x7f060011;
+        public static final int show_garbage=0x7f060012;
+        public static final int show_restroom=0x7f060013;
         public static final int titre_apres_ouverture=0x7f060003;
         public static final int titre_menu_slider=0x7f060002;
     }

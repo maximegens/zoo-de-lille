@@ -25,17 +25,6 @@ public class LocatableElement
 	@DatabaseField(canBeNull=false)
 	private double y_location;
 	
-	//eager signifie que la collection doit etre chargée dès l'instanciation. 
-	//S'il est false, le chargera se fera dès l'utilisation
-	
-	@ForeignCollectionField(eager = false)
-    private ForeignCollection<Restroom> restrooms;
-	
-	@ForeignCollectionField(eager = false)
-	private ForeignCollection<Garbage> garbages;
-	
-	@ForeignCollectionField(eager = false)
-	private ForeignCollection<Enclosure> enclosures;
 	
 	public LocatableElement() {}
 	
@@ -74,36 +63,6 @@ public class LocatableElement
 	public double getY_location()
 	{
 		return y_location;
-	}
-	
-	public ForeignCollection<Garbage> getGarbages()
-	{
-		return garbages;
-	}
-	
-	public void setGarbages(ForeignCollection<Garbage> g)
-	{
-		garbages = g;
-	}
-	
-	public ForeignCollection<Enclosure> getEnclosures()
-	{
-		return enclosures;
-	}
-	
-	public void setEnclosures(ForeignCollection<Enclosure> e)
-	{
-		enclosures = e;
-	}
-	
-	public ForeignCollection<Restroom> getRestrooms()
-	{
-		return restrooms;
-	}
-	
-	public void setRestrooms(ForeignCollection<Restroom> r)
-	{
-		restrooms = r;
 	}
 	
 	@Override

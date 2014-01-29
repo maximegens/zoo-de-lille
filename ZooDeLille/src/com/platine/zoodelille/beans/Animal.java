@@ -33,7 +33,8 @@ public class Animal {
 	private int gestation;
 	@DatabaseField
 	private String picture_location;
-	@DatabaseField(foreign = true, foreignAutoRefresh = true)
+	
+	@DatabaseField(canBeNull = true, foreign = true, foreignAutoRefresh = true)
 	private Enclosure enclosure;
 	
 	public Animal(){
@@ -52,11 +53,12 @@ public class Animal {
 	 * @param weight Le poids de l'animal.
 	 * @param gestation La durée de gestation de l'animal.
 	 * @param picture_location Le chemin de la photo de l'animal.
+	 * @param enclosure L'enclos dans lequel l'animal se trouve.
 	 */
 	public Animal(String name, int category_id, int country_id,
 			String description, String environnement, String longevity,
 			int protected_animal, float weight, int gestation,
-			String picture_location) {
+			String picture_locationn, Enclosure enclosure) {
 		super();
 		this.name = name;
 		this.category_id = category_id;
@@ -68,6 +70,7 @@ public class Animal {
 		this.weight = weight;
 		this.gestation = gestation;
 		this.picture_location = picture_location;
+		this.enclosure = enclosure;
 	}
 	
 	public int getId() {
