@@ -22,46 +22,46 @@
         android1:layout_toLeftOf="@+id/titre"
         android1:text="TextView" />
 
-    <TabHost
-        android1:id="@android:id/tabhost"
-        android1:layout_width="wrap_content"
-        android1:layout_height="wrap_content"
-        android1:layout_alignParentLeft="true"
-        android1:layout_below="@+id/horraireDuJour" >
+<!--     <TabHost -->
+<!--         android1:id="@android:id/tabhost" -->
+<!--         android1:layout_width="wrap_content" -->
+<!--         android1:layout_height="wrap_content" -->
+<!--         android1:layout_alignParentLeft="true" -->
+<!--         android1:layout_below="@+id/horraireDuJour" > -->
 
-        <LinearLayout
-            android1:layout_width="match_parent"
-            android1:layout_height="match_parent"
-            android1:orientation="vertical" >
+<!--         <LinearLayout -->
+<!--             android1:layout_width="match_parent" -->
+<!--             android1:layout_height="match_parent" -->
+<!--             android1:orientation="vertical" > -->
 
-            <TabWidget
-                android1:id="@android:id/tabs"
-                android1:layout_width="320dp"
-                android1:layout_height="wrap_content" >
-            </TabWidget>
+<!--             <TabWidget -->
+<!--                 android1:id="@android:id/tabs" -->
+<!--                 android1:layout_width="320dp" -->
+<!--                 android1:layout_height="wrap_content" > -->
+<!--             </TabWidget> -->
 
-            <FrameLayout
-                android1:id="@android:id/tabcontent"
-                android1:layout_width="match_parent"
-                android1:layout_height="match_parent" >
+<!--             <FrameLayout -->
+<!--                 android1:id="@android:id/tabcontent" -->
+<!--                 android1:layout_width="match_parent" -->
+<!--                 android1:layout_height="match_parent" > -->
 
-                <LinearLayout
-                    android1:id="@+id/tab1"
-                    android1:layout_width="match_parent"
-                    android1:layout_height="match_parent"
-                    android1:orientation="horizontal" >
-                </LinearLayout>
+<!--                 <LinearLayout -->
+<!--                     android1:id="@+id/tab1" -->
+<!--                     android1:layout_width="match_parent" -->
+<!--                     android1:layout_height="match_parent" -->
+<!--                     android1:orientation="horizontal" > -->
+<!--                 </LinearLayout> -->
 
-                <LinearLayout
-                    android1:id="@+id/tab2"
-                    android1:layout_width="match_parent"
-                    android1:layout_height="match_parent"
-                    android1:orientation="horizontal" >
-                </LinearLayout>
+<!--                 <LinearLayout -->
+<!--                     android1:id="@+id/tab2" -->
+<!--                     android1:layout_width="match_parent" -->
+<!--                     android1:layout_height="match_parent" -->
+<!--                     android1:orientation="horizontal" > -->
+<!--                 </LinearLayout> -->
 
-            </FrameLayout>
-        </LinearLayout>
-    </TabHost>
+<!--             </FrameLayout> -->
+<!--         </LinearLayout> -->
+<!--     </TabHost> -->
 
     <ImageView
         android1:id="@+id/imageView1"

@@ -15,5 +15,10 @@
     <string name="description_image_illustration_article">Image d\'illustration de l\'article</string>
     <string name="description_image_facebook">Partager l\'article sur Facebook</string>
     
+    <string name="label1">one</string>
+    <string name="label2">two</string>
+    <string name="body1"> body one</string>
+    <string name="body2">body two</string>
+    
     
 </resources>

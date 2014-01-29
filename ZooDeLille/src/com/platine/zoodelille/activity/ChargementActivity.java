@@ -21,6 +21,7 @@ public class ChargementActivity extends FragmentActivity {
 	private ArticleDao articleDao;
 	private PracticalInformationDao practicalInformationDao;
 	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

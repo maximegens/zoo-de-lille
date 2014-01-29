@@ -70,6 +70,8 @@ public class MainActivity extends FragmentActivity {
 		}else
 			tx.replace(R.id.frameLayout,Fragment.instantiate(MainActivity.this, savedInstanceState.getString("categorieFragmentSave")));
         tx.commit();
+        
+        
 		
 	}
 
@@ -83,6 +85,7 @@ public class MainActivity extends FragmentActivity {
 			categorieFragmentSave = Constantes.fragments[pos];
 			FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
 			tx.setCustomAnimations(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+
 			tx.replace(R.id.frameLayout, Fragment.instantiate(MainActivity.this, categorieFragmentSave));
 			tx.commit();
 			drawerLayout.closeDrawer(myDrawer);

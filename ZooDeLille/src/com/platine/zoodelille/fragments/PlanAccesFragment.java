@@ -1,81 +1,115 @@
 package com.platine.zoodelille.fragments;
 
-import android.content.Intent;
-import android.net.Uri;
+import android.app.ActionBar;
+import android.app.Activity;
+import android.app.ActionBar.Tab;
+import android.app.ActionBar.TabListener;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TabHost;
-import android.widget.TabHost.TabSpec;
 
 import com.platine.zoodelille.R;
+import com.platine.zoodelille.tab.Tab1Fragment;
+import com.platine.zoodelille.tab.Tab2Fragment;
 
-public class PlanAccesFragment extends Fragment {
+
+public class PlanAccesFragment extends Fragment{
 	
-	private TabHost tabHost;
-	private TabSpec tabSpec = null;
-
-	@Override
+	ActionBar actionBar;
+	
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 
 		View myInflatedView = inflater.inflate(R.layout.fragment_plan_acces, container, false);
 		
-//		TextView tAccessadresse = (TextView) myInflatedView.findViewById(R.id.Accessadresse);
-//		tAccessadresse.setText("Le Parc Zoologique de Lille est situé dans le Parc de la Citadelle, Avenue Mathias Delobel.");
-//		
-//		TextView tacess = (TextView) myInflatedView.findViewById(R.id.acess);
-//		tacess.setText("Comment accéder :");
-		
-		Intent intent = new Intent();
-		
-		tabHost = (TabHost) myInflatedView.findViewById(android.R.id.tabhost);
-		tabHost.setup();
-		
-		/**
-		 * Ajoute les différentes partie du tableau.
-		 */
-		
-		//voiture
-		//intent.putExtra("valeur", "• Par l’A1 et l’A22 : suivre Lille Centre Ville. Le zoo se trouve au bout du boulevard de la Liberté.• Par l’A25 : sortie 5, Port Fluvial, suivre la direction Vauban et Citadelle.");
-		//tabSpec = tabHost.newTabSpec("plop");
-		//tabSpec.setIndicator("plop");
-		//tabSpec = tabHost.newTabSpec("Voiture").setIndicator("Voiture").setContent(intent);
-		//tabHost.addTab(tabSpec);
-		
-//		//metro
-//		intent.putExtra("valeur", "Métro ligne 1 : station République ( à 15 mintues à pied ou Bus (Ligne 12, liane 1)).");
-//		tabSpec = tabHost.newTabSpec("Metro").setIndicator("Metro").setContent(intent);
-//		tabHost.addTab(tabSpec);
-//
-//		
-//		//Bus
-//		intent.putExtra("valeur", "• Bus Liane 1 : arrêt champs de mars • Bus Liane 90 : arrêt champs de mars • Bus Liane 12 : arrêt Jardin Vauban.");
-//		tabSpec = tabHost.newTabSpec("Bus").setIndicator("Bus").setContent(intent);
-//		tabHost.addTab(tabSpec);
-//
-//		
-//		//Vlille
-//		intent.putExtra("valeur", "Station Jardin Vauban.");
-//		tabSpec = tabHost.newTabSpec("VLille").setIndicator("VLille").setContent(intent);
-//		tabHost.addTab(tabSpec);
-		
-		// Affecte au bouton le lancement de Gmap 
-		Button goToZoo= (Button) myInflatedView.findViewById(R.id.goToZooButton);
-		goToZoo.setOnClickListener(new View.OnClickListener() {
-             public void onClick(View v) {
-            	double latitude = 50.638221;
-            	double longitude = 3.04724;
-            	String name = "Zoo de lille";
-            	 
-            	Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:"+ latitude +", "+ longitude +"?q="+ latitude +", "+ longitude +"("+ name +")"));
-                startActivity(intent);
-            }
-         });
+		actionBar = getActivity().getActionBar();
 
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+
+		String label1 = getResources().getString(R.string.label1);
+		Tab tab = actionBar.newTab();
+		tab.setText(label1);
 		
+		TabListener tl = new TabListener(getActivity(),label1, Tab1Fragment.class);
+		tab.setTabListener(tl);
+		actionBar.addTab(tab);
+
+		String label2 = getResources().getString(R.string.label2);
+		tab = actionBar.newTab();
+		tab.setText(label2);
+		TabListener tl2 = new TabListener(getActivity(),label2, Tab2Fragment.class);
+		tab.setTabListener(tl2);
+		actionBar.addTab(tab);
+			
 		return myInflatedView;
+		
+	}
+
+
+	private class TabListener implements ActionBar.TabListener {
+	private Fragment mFragment;
+	private final Activity mActivity;
+	private final String mTag;
+	private final Class mClass;
+	
+	/**
+	 * Constructor used each time a new tab is created.
+	 * 
+	 * @param activity
+	 *            The host Activity, used to instantiate the fragment
+	 * @param tag
+	 *            The identifier tag for the fragment
+	 * @param clz
+	 *            The fragment's Class, used to instantiate the fragment
+	 */
+	public TabListener(Activity activity, String tag, Class clz) {
+		mActivity = activity;
+		mTag = tag;
+		mClass = clz;
+	}
+	
+	public void onTabSelected(Tab tab, FragmentTransaction ft) {
+		// Check if the fragment is already initialized
+		if (mFragment == null) {
+			// If not, instantiate and add it to the activity
+			mFragment = Fragment.instantiate(mActivity, mClass.getName());
+			ft.add(android.R.id.content, mFragment, mTag);
+		} else {
+			// If it exists, simply attach it in order to show it
+			ft.attach(mFragment);
+		}
+	}
+	
+	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+		if (mFragment != null) {
+			// Detach the fragment, because another one is being attached
+			ft.detach(mFragment);
+		}
+	}
+	
+	public void onTabReselected(Tab tab, FragmentTransaction ft) {
+		// User selected the already selected tab. Usually do nothing.
+	}
+
+	@Override
+	public void onTabReselected(Tab tab, android.app.FragmentTransaction ft) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onTabSelected(Tab tab, android.app.FragmentTransaction ft) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onTabUnselected(Tab tab, android.app.FragmentTransaction ft) {
+		// TODO Auto-generated method stub
+		
+	}
 	}
 }

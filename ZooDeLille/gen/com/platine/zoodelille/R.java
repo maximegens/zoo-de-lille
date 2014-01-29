@@ -194,10 +194,8 @@ public final class R {
         public static final int zoo_avenir_elephant=0x7f02000c;
     }
     public static final class id {
-        public static final int Accessadresse=0x7f0a0021;
         public static final int a_la_une=0x7f0a0011;
-        public static final int acess=0x7f0a0022;
-        public static final int action_settings=0x7f0a002a;
+        public static final int action_settings=0x7f0a0027;
         public static final int chargement_layout=0x7f0a0000;
         public static final int contenu_article=0x7f0a0019;
         public static final int dans_heure=0x7f0a000a;
@@ -206,14 +204,13 @@ public final class R {
         public static final int etat_zoo=0x7f0a000e;
         public static final int fermeture=0x7f0a001c;
         public static final int frameLayout=0x7f0a0004;
-        public static final int goToZooButton=0x7f0a0023;
-        public static final int horraireDuJour=0x7f0a001d;
+        public static final int horraireDuJour=0x7f0a001e;
         public static final int icone_temps=0x7f0a000b;
-        public static final int id_article_list_view=0x7f0a0027;
-        public static final int imageView1=0x7f0a0020;
+        public static final int id_article_list_view=0x7f0a0021;
+        public static final int imageView1=0x7f0a001d;
         public static final int imageViewChargement=0x7f0a0002;
         public static final int img_article=0x7f0a0016;
-        public static final int img_article_list_view=0x7f0a0026;
+        public static final int img_article_list_view=0x7f0a0020;
         public static final int informationFermetureJour=0x7f0a001b;
         public static final int layout_article=0x7f0a0014;
         public static final int layout_meteo=0x7f0a0008;
@@ -226,16 +223,16 @@ public final class R {
         public static final int progressBarMeteo=0x7f0a0009;
         public static final int separator=0x7f0a000d;
         public static final int summary_article=0x7f0a0017;
-        public static final int summary_article__list_view=0x7f0a0029;
-        public static final int tab1=0x7f0a001e;
-        public static final int tab2=0x7f0a001f;
-        public static final int tab3=0x7f0a0025;
-        public static final int tabhost=0x7f0a0024;
+        public static final int summary_article__list_view=0x7f0a0023;
+        public static final int tab1=0x7f0a0024;
+        public static final int tab2=0x7f0a0025;
         public static final int temperature=0x7f0a000c;
+        public static final int text=0x7f0a001f;
         public static final int textView1=0x7f0a0006;
+        public static final int textView2=0x7f0a0026;
         public static final int titre=0x7f0a001a;
         public static final int titre_article=0x7f0a0013;
-        public static final int titre_article_list_view=0x7f0a0028;
+        public static final int titre_article_list_view=0x7f0a0022;
         public static final int voyant=0x7f0a000f;
     }
     public static final class layout {
@@ -256,6 +253,8 @@ public final class R {
         public static final int item_drawer=0x7f03000e;
         public static final int item_list_view_article=0x7f03000f;
         public static final int shape_meteo=0x7f030010;
+        public static final int tab1=0x7f030011;
+        public static final int tab2=0x7f030012;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -271,6 +270,8 @@ public final class R {
         public static final int animaux_du_zoo=0x7f060005;
         public static final int app_name=0x7f06000f;
         public static final int aux_alentours=0x7f06000b;
+        public static final int body1=0x7f06001c;
+        public static final int body2=0x7f06001d;
         public static final int contact=0x7f06000d;
         public static final int description_image_chargement=0x7f060013;
         public static final int description_image_facebook=0x7f060019;
@@ -280,6 +281,8 @@ public final class R {
         public static final int fermeture=0x7f060001;
         public static final int informations_pratique=0x7f06000a;
         public static final int jeux_interactif=0x7f060008;
+        public static final int label1=0x7f06001a;
+        public static final int label2=0x7f06001b;
         /**  string propre au fragment "Accueil" 
          */
         public static final int meteo_lille=0x7f060011;
