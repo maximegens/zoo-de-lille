@@ -25,12 +25,12 @@ public class MainActivity extends FragmentActivity {
 	private ActionBarDrawerToggle mDrawerToggle;
 	private String categorieFragmentSave;
 	private ActionBar actionBar;
-	
-	
+    
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+			
 			
 		/************* Creation du Drawer *************/
 		drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
@@ -71,9 +71,8 @@ public class MainActivity extends FragmentActivity {
 			tx.replace(R.id.frameLayout,Fragment.instantiate(MainActivity.this, savedInstanceState.getString("categorieFragmentSave")));
         tx.commit();
         
-        
-		
 	}
+
 
 	/**
 	 * Methode excécutant du code lors du clique sur un item du Drawer. 

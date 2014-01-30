@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -14,7 +15,7 @@ import com.platine.zoodelille.dao.ArticleDao;
 import com.platine.zoodelille.dao.PracticalInformationDao;
 import com.platine.zoodelille.utils.RemplirBdd;
 
-public class ChargementActivity extends Activity {
+public class ChargementActivity extends FragmentActivity {
 
 	private RetreiveAllData retreiveAllData;
 	private ProgressBar loaderChargement;
@@ -30,11 +31,13 @@ public class ChargementActivity extends Activity {
 		loaderChargement = (ProgressBar)findViewById(R.id.progressBarChargement);	
 		actionBar = getActionBar();
 		getActionBar().hide();
-				
+					
 		retreiveAllData = new RetreiveAllData(this);
 		retreiveAllData.execute();
 	}
 
+
+	
 	/** 
 	 * AsynTask pour récupérer la temperature depuis la météo de Yahoo.
 	 * 

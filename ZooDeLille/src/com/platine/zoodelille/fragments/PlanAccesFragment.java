@@ -6,7 +6,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar.TabListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +20,7 @@ import com.platine.zoodelille.tab.TabVlilleFragment;
 import com.platine.zoodelille.tab.TabVoitureFragment;
 
 
-public class PlanAccesFragment extends FragmentActivity {
+public class PlanAccesFragment extends Fragment {
 	
 	ActionBar actionBar;
 	
@@ -26,9 +28,24 @@ public class PlanAccesFragment extends FragmentActivity {
 
 		View myInflatedView = inflater.inflate(R.layout.fragment_plan_acces, container, false);
 		
-		actionBar = getActionBar();
+		actionBar = getActivity().getActionBar();
 
-//		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+
+		Tab tabA = actionBar.newTab().setText("Animaux");
+		Tab tabB = actionBar.newTab().setText("Contact");
+
+		Fragment fragmentA = new AnimauxFragment();
+		Fragment fragmentB = new JeuxInteractifFragment();
+		tabA.setTabListener(new MyTabsListener(fragmentA));
+		tabB.setTabListener(new MyTabsListener(fragmentB));
+
+		
+		
+		actionBar.addTab(tabA);
+		actionBar.addTab(tabB);
+		
+		
 //
 //		String en_voiture = getResources().getString(R.string.voiture);
 //		Tab tab_voiture = actionBar.newTab();
@@ -64,79 +81,35 @@ public class PlanAccesFragment extends FragmentActivity {
 		
 	}
 
+	
+	protected class MyTabsListener implements ActionBar.TabListener{
+	private Fragment fragment;
+	private boolean addok = false;
+	
+	android.support.v4.app.FragmentTransaction fft = getActivity().getSupportFragmentManager().beginTransaction();
+	FragmentManager fm = getFragmentManager();
+	
+    public MyTabsListener(Fragment fragment){
+    	this.fragment = fragment;
+    }
 
-	private class TabListener<T extends Fragment> implements ActionBar.TabListener{
-		private android.app.Fragment mFragment;
-		private final Activity mActivity;
-		private final String mTag;
-		private final Class<T> mClass;
+	@Override
+	public void onTabReselected(Tab tab, android.app.FragmentTransaction ft) {
+		// TODO Auto-generated method stub
 		
-		/**
-		 * Constructor used each time a new tab is created.
-		 * 
-		 * @param activity
-		 *            The host Activity, used to instantiate the fragment
-		 * @param tag
-		 *            The identifier tag for the fragment
-		 * @param clz
-		 *            The fragment's Class, used to instantiate the fragment
-		 */
-		public TabListener(Activity activity, String tag, Class<T> clz) {
-			mActivity = activity;
-			mTag = tag;
-			mClass = clz;
-		}
-		
-//		public void onTabSelected(Tab tab, FragmentTransaction ft) {
-//			// Check if the fragment is already initialized
-//			if (mFragment == null) {
-//				// If not, instantiate and add it to the activity
-//				mFragment = Fragment.instantiate(mActivity, mClass.getName());
-//				ft.add(android.R.id.content, mFragment, mTag);
-//			} else {
-//				// If it exists, simply attach it in order to show it
-//				ft.attach(mFragment);
-//			}
-//		}
-//		
-//		public void onTabUnselected(Tab tab, FragmentTransaction ft) {
-//			if (mFragment != null) {
-//				// Detach the fragment, because another one is being attached
-//				ft.detach(mFragment);
-//			}
-//		}
-//		
-//		public void onTabReselected(Tab tab, FragmentTransaction ft) {
-//			// User selected the already selected tab. Usually do nothing.
-//		}
-	
-		@Override
-		public void onTabReselected(Tab tab, android.app.FragmentTransaction ft) {
-			// TODO Auto-generated method stub
-			
-		}
-	
-		@Override
-		public void onTabSelected(Tab tab, android.app.FragmentTransaction ft) {
-			// Check if the fragment is already initialized
-			if (mFragment == null) {
-				// If not, instantiate and add it to the activity
-			//	mFragment = Fragment.instantiate(mActivity, mClass.getName());
-				ft.add(android.R.id.content, mFragment, mTag);
-			} else {
-				// If it exists, simply attach it in order to show it
-				ft.attach(mFragment);
-			}
-			
-		}
-	
-		@Override
-		public void onTabUnselected(Tab tab, android.app.FragmentTransaction ft) {
-			if (mFragment != null) {
-				// Detach the fragment, because another one is being attached
-				ft.detach(mFragment);
-			}
-			
-		}
 	}
+	@Override
+	public void onTabSelected(Tab tab, android.app.FragmentTransaction ft) {
+			if(addok == false){
+				fft.replace(R.id.frameLayout, fragment).commit();
+				addok = true;
+			}else{
+				fft.replace(R.id.frameLayout, fragment);
+			}
+	}
+	@Override
+	public void onTabUnselected(Tab tab, android.app.FragmentTransaction ft) {
+			fft.remove(fragment);
+	}
+}
 }
