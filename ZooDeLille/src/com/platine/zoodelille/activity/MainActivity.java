@@ -30,43 +30,12 @@ public class MainActivity extends FragmentActivity {
 	private ActionBarDrawerToggle mDrawerToggle;
 	private String categorieFragmentSave;
 	private ActionBar actionBar;
-	private AnimalDao animalDao;
 	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-
-		
-		/************* Creation et remplissage de la base de données *************/
-		// initialisation du databaseManager, Obligatoire et à faire qu'une seule fois dans toutes l'application
-		DatabaseManager.init(this);
-		
-		
-		LocatableElementDao locElmDao = DatabaseManager.getDao().getLocatableElementDao();
-		if(locElmDao.count() == 0)
-		{
-			Log.v("----- MainActivity", "Remplissage de la bdd en Elements localisables");
-			
-			RemplirBdd.addRestroom(this);
-			RemplirBdd.addGarbages(this);
-			RemplirBdd.addEnclosures(this);
-	
-		}
-		Log.v("----- MainActivity", "Il y a "+locElmDao.count()+" elements localisables dans la bdd");
-		
-		animalDao = DatabaseManager.getDao().getAnimalDao();
-		
-		// ajout des animaux dans la base si celle ci est vide
-		if (animalDao.count() == 0) {
-			Log.v("----- MainActivity", "Remplissage de la bdd en Animaux");
-			RemplirBdd.ajouterDesAnimaux();
-			
-		}
-		
-		Log.v("----- MainActivity", "Il y a "+animalDao.count()+" animaux dans la bdd");
-		
+		setContentView(R.layout.activity_main);		
 
 		/************* Creation du Drawer *************/
 		drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);

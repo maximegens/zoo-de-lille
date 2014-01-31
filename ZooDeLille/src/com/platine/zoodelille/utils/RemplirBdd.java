@@ -4,8 +4,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
-import android.content.Context;
-
 import com.platine.zoodelille.bdd.DatabaseManager;
 import com.platine.zoodelille.beans.Animal;
 import com.platine.zoodelille.beans.Article;
@@ -30,9 +28,9 @@ import com.platine.zoodelille.dao.RestroomDao;
  */
 public class RemplirBdd {
 
+	
 	/**
 	 * Permet de remplir la base de données avec des animaux.
-	 * @param ctx Le contexte d'application.
 	 */
 	public static void ajouterDesAnimaux(){
 		
@@ -178,6 +176,7 @@ public class RemplirBdd {
 		articleDao.save(a5);
 	}
 	
+	
 	public static void ajouterPraticalInformation(){
 		
 		PracticalInformationDao practicalInformationDao = DatabaseManager.getDao().getPracticalInformationDao();			
@@ -208,9 +207,8 @@ public class RemplirBdd {
 	
 	/**
 	 * Ajoute les poubelles à la base de données
-	 * @param ctx
 	 */
-	public static void addGarbages(Context ctx){
+	public static void addGarbages(){
 		GarbageDao gDao = DatabaseManager.getDao().getGarbageDao();
 		Garbage g1 = new Garbage(new LocatableElement(86,49));
 		Garbage g2 = new Garbage(new LocatableElement(68,93));
@@ -221,9 +219,8 @@ public class RemplirBdd {
 	
 	/**
 	 * Ajoute les toilettes à la base de données
-	 * @param ctx
 	 */
-	public static void addRestroom(Context ctx){
+	public static void addRestroom(){
 		RestroomDao rDao = DatabaseManager.getDao().getRestroomDao();
 		Restroom r1 = new Restroom(new LocatableElement(81, 53));
 		
@@ -232,9 +229,8 @@ public class RemplirBdd {
 	
 	/**
 	 * Ajoute les enclos à la base de données
-	 * @param ctx
 	 */
-	public static void addEnclosures(Context ctx){
+	public static void addEnclosures(){
 		EnclosureDao eDao = DatabaseManager.getDao().getEnclosureDao();
 		
 		Enclosure ile_singes = new Enclosure("Ile des singes", new LocatableElement(24, 25));
