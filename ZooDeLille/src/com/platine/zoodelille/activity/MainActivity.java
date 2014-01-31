@@ -152,7 +152,7 @@ public class MainActivity extends FragmentActivity {
 		if(categorieFragmentSave.equals("com.platine.zoodelille.fragments.ContactFragment"))
 			return getResources().getString(R.string.contact);
 		if(categorieFragmentSave.equals("com.platine.zoodelille.fragments.AProposFragment"))
-			return getResources().getString(R.string.a_propos);
+			return getResources().getString(R.string.app_name);
 	
 		return getResources().getString(R.string.app_name);
 		

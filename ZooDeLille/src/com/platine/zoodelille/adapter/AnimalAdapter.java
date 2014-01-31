@@ -23,13 +23,12 @@ public class AnimalAdapter extends BaseAdapter {
 
     public AnimalAdapter(Context context,List<Animal> animalList) {
         inflater = LayoutInflater.from(context);
-        animalList = animalList;
+        this.animalList = animalList;
         ctx=context;
     }
 
     @Override
     public int getCount() {
-
         return animalList.size();
     }
 

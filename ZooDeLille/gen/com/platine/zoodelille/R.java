@@ -241,18 +241,19 @@ public final class R {
         public static final int fragment_accueil=0x7f030002;
         public static final int fragment_accueil_affichage_article=0x7f030003;
         public static final int fragment_activite_pedadogique=0x7f030004;
-        public static final int fragment_animaux=0x7f030005;
-        public static final int fragment_aux_alentours=0x7f030006;
-        public static final int fragment_contact=0x7f030007;
-        public static final int fragment_informations_pratique=0x7f030008;
-        public static final int fragment_jeux_interactif=0x7f030009;
-        public static final int fragment_plan_acces=0x7f03000a;
-        public static final int fragment_plan_du_zoo=0x7f03000b;
-        public static final int fragment_reglages=0x7f03000c;
-        public static final int item_drawer=0x7f03000d;
-        public static final int item_list_view_animal=0x7f03000e;
-        public static final int item_list_view_article=0x7f03000f;
-        public static final int shape_meteo=0x7f030010;
+        public static final int fragment_affichage_animal=0x7f030005;
+        public static final int fragment_animaux=0x7f030006;
+        public static final int fragment_aux_alentours=0x7f030007;
+        public static final int fragment_contact=0x7f030008;
+        public static final int fragment_informations_pratique=0x7f030009;
+        public static final int fragment_jeux_interactif=0x7f03000a;
+        public static final int fragment_plan_acces=0x7f03000b;
+        public static final int fragment_plan_du_zoo=0x7f03000c;
+        public static final int fragment_reglages=0x7f03000d;
+        public static final int item_drawer=0x7f03000e;
+        public static final int item_list_view_animal=0x7f03000f;
+        public static final int item_list_view_article=0x7f030010;
+        public static final int shape_meteo=0x7f030011;
     }
     public static final class menu {
         public static final int main=0x7f090000;
