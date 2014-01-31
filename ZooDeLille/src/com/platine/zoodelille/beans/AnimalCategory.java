@@ -1,11 +1,13 @@
 package com.platine.zoodelille.beans;
 
+import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 import com.platine.zoodelille.dao.AnimalCategoryDao;
 
 @DatabaseTable(daoClass=AnimalCategoryDao.class)
-public class AnimalCategory {
+public class AnimalCategory implements NamableElement {
 	
 	@DatabaseField(generatedId=true)
 	private int id;
@@ -13,12 +15,15 @@ public class AnimalCategory {
 	@DatabaseField(canBeNull=false)
 	private String name;
 	
+	@ForeignCollectionField(eager = false)
+    private ForeignCollection<Animal> animals;
+	
 	public AnimalCategory() {
 		super();
 	}
-	public AnimalCategory(int id, String name) {
+	public AnimalCategory(String name) {
 		super();
-		this.id = id;
+		
 		this.name = name;
 	}
 	public int getId() {
@@ -34,5 +39,19 @@ public class AnimalCategory {
 		this.name = name;
 	}
 	
+	public void setAnimals(ForeignCollection<Animal> animals)
+	{
+		this.animals = animals;
+	}
+	
+	public ForeignCollection<Animal> getAnimals()
+	{
+		return animals;
+	}
+	
+	public String toString()
+	{
+		return "[id=" + id + ",name=" + name + "]";
+	}
 
 }

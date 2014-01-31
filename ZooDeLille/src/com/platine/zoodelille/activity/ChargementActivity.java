@@ -1,5 +1,6 @@
 package com.platine.zoodelille.activity;
 
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -11,8 +12,10 @@ import android.widget.ProgressBar;
 
 import com.platine.zoodelille.R;
 import com.platine.zoodelille.bdd.DatabaseManager;
+import com.platine.zoodelille.dao.AnimalCategoryDao;
 import com.platine.zoodelille.dao.AnimalDao;
 import com.platine.zoodelille.dao.ArticleDao;
+import com.platine.zoodelille.dao.CountryDao;
 import com.platine.zoodelille.dao.LocatableElementDao;
 import com.platine.zoodelille.dao.PracticalInformationDao;
 import com.platine.zoodelille.utils.RemplirBdd;
@@ -78,6 +81,30 @@ public class ChargementActivity extends FragmentActivity {
 			}
 			
 			Log.v("----- MainActivity", "Il y a "+locElmDao.count()+" elements localisables dans la bdd");
+			
+			AnimalCategoryDao animalCategoryDao = DatabaseManager.getDao().getAnimalCategoryDao();
+			
+			if(animalCategoryDao.count() == 0)
+			{
+				Log.v("----- MainActivity", "Remplissage de la bdd en categorie d'animal");
+				
+				RemplirBdd.addAnimalCategories();
+			}
+			
+			Log.v("----- MainActivity", "Il y a "+ animalCategoryDao.count()+" categorie dans la bdd");
+			
+			CountryDao countryDao = DatabaseManager.getDao().getCountryDao();
+			
+			if(countryDao.count() == 0)
+			{
+				Log.v("----- MainActivity", "Remplissage de la bdd en country");
+				
+				RemplirBdd.addAnimalCountries();
+			}
+			
+			Log.v("----- MainActivity", "Il y a "+ countryDao.count()+" country dans la bdd");
+			
+			
 			
 			AnimalDao animalDao = DatabaseManager.getDao().getAnimalDao();
 			

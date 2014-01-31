@@ -14,7 +14,7 @@ import com.platine.zoodelille.dao.EnclosureDao;
  */
 
 @DatabaseTable(daoClass=EnclosureDao.class)
-public class Enclosure {
+public class Enclosure implements NamableElement {
 	@DatabaseField(generatedId=true)
 	private int id;
 	

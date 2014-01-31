@@ -9,16 +9,16 @@ import com.platine.zoodelille.dao.AnimalDao;
  *
  */
 @DatabaseTable(daoClass = AnimalDao.class)
-public class Animal {
+public class Animal implements NamableElement {
 
 	@DatabaseField(generatedId=true)
 	private int id;
 	@DatabaseField(canBeNull=false)
 	private String name;
-	@DatabaseField(canBeNull=false)
-	private int category_id;
-	@DatabaseField(canBeNull=false)
-	private int country_id;
+	@DatabaseField(canBeNull=false, foreign=true, foreignAutoRefresh = true)
+	private AnimalCategory category;
+	@DatabaseField(canBeNull=false, foreign=true, foreignAutoRefresh = true)
+	private Country country;
 	@DatabaseField
 	private String description;
 	@DatabaseField
@@ -44,8 +44,8 @@ public class Animal {
 	/**
 	 * Constructeur.
 	 * @param name Le nom de l'animal.
-	 * @param category_id L'id de la catégorie de l'animal ( Mammifére, Reptile etc ).
-	 * @param country_id L'id du pays de l'animal.
+	 * @param category La catégorie de l'animal ( Mammifére, Reptile etc ).
+	 * @param country Le pays de l'animal.
 	 * @param description La description de l'animal.
 	 * @param environnement L'environnement de l'animal.
 	 * @param longevity La durée de vie moyenne de l'animal.
@@ -55,14 +55,14 @@ public class Animal {
 	 * @param picture_location Le chemin de la photo de l'animal.
 	 * @param enclosure L'enclos dans lequel l'animal se trouve.
 	 */
-	public Animal(String name, int category_id, int country_id,
+	public Animal(String name, AnimalCategory category, Country country,
 			String description, String environnement, String longevity,
 			int protected_animal, float weight, int gestation,
 			String picture_locationn, Enclosure enclosure) {
 		super();
 		this.name = name;
-		this.category_id = category_id;
-		this.country_id = country_id;
+		this.category = category;
+		this.country = country;
 		this.description = description;
 		this.environnement = environnement;
 		this.longevity = longevity;
@@ -87,20 +87,20 @@ public class Animal {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getCategory_id() {
-		return category_id;
+	public AnimalCategory getCategory() {
+		return category;
 	}
 
-	public void setCategory_id(int category_id) {
-		this.category_id = category_id;
+	public void setCategory(AnimalCategory category) {
+		this.category = category;
 	}
 
-	public int getCountry_id() {
-		return country_id;
+	public Country getCountry() {
+		return country;
 	}
 
-	public void setCountry_id(int country_id) {
-		this.country_id = country_id;
+	public void setCountry(Country country) {
+		this.country = country;
 	}
 	public String getDescription() {
 		return description;
@@ -157,8 +157,8 @@ public class Animal {
 	
 	@Override
 	public String toString() {
-		return "Animal [id=" + id + ", name=" + name + ", category_id="
-				+ category_id + ", country_id=" + country_id + ", description="
+		return "Animal [id=" + id + ", name=" + name + ", category="
+				+ category + ", country=" + country + ", description="
 				+ description + ", environnement=" + environnement
 				+ ", longevity=" + longevity + ", protected_animal="
 				+ protected_animal + ", weight=" + weight + ", gestation="
