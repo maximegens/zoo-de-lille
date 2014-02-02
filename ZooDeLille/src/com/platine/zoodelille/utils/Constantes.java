@@ -27,6 +27,8 @@ public class Constantes {
 	public static String CONNEXION_INTERNET_FAILED = "Aucune connexion";
 	public static String PROCHAIN_HORAIRE = "Jusque ";
 	public static String HEURE = "H ";
+	public static String COORDONNEES_GPS_ZOO_LATITUDE = "50.63828789999999";
+	public static String COORDONNEES_GPS_ZOO_LONGITUDE = "3.0455561999999645";
 	
 	/** horaire Zoo.
 	 * Cela devra être modifier pour communiquer avec la base de donnée.

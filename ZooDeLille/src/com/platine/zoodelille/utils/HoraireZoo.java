@@ -58,14 +58,28 @@ public class HoraireZoo {
 		closing_period = new Interval(annual_closing, annual_openning);
 		
 	    /** Les périodes d’été et d’hiver correspondent aux dates officielles de changement d’heure d’été et d’hiver. **/
-		Instant summer_start = new DateTime(2014,04,01,0,0,0,0).toInstant(); //fin mars = 1 avril
-		Instant summer_end = new DateTime(2014,10,31,0,0,0,0).toInstant(); // fin octobre = 31 octobre
+		Instant summer_start = new DateTime(now.getYear(),04,01,0,0,0,0).toInstant(); //fin mars = 1 avril
+		Instant summer_end = new DateTime(now.getYear(),10,31,0,0,0,0).toInstant(); // fin octobre = 31 octobre
 		summer = new Interval(summer_start, summer_end);
 		
-		Instant winter_start = new DateTime(2014,11,1,0,0,0,0).toInstant(); // fin octobre = 1novembre
-		Instant winter_end = new DateTime(2015,03,31,0,0,0,0).toInstant(); //fin mars = 31 mars
+		Instant winter_start = new DateTime(now.getYear(),11,1,0,0,0,0).toInstant(); // fin octobre = 1novembre
+		Instant winter_end = new DateTime(now.getYear()+1,03,31,0,0,0,0).toInstant(); //fin mars = 31 mars
 		winter = new Interval(winter_start, winter_end);
 		
+		
+	}
+	
+	/**
+	 * Permet de savoir si on est en été ou hiver
+	 * @return 1 pour l'été, 2 pour l'hiver, 0 si erreur
+	 */
+	public int SummerOrWinter(){
+		if(summer.contains(now))
+			return 1;
+		else if(winter.contains(now))
+			return 2;
+		else 
+			return 0;
 	}
 	
 	/**
