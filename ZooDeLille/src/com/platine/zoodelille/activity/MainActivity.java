@@ -1,13 +1,14 @@
 package com.platine.zoodelille.activity;
 
 import android.app.ActionBar;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -73,7 +74,28 @@ public class MainActivity extends FragmentActivity {
         
 	}
 
+	/**
+	 * Gérer la pression du bouton "Back" en demandant à l'utilisateur si il souhaite quitter l'application.
+	 */
+    public void onBackPressed() {
 
+    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(R.string.quitter_application)
+               .setPositiveButton("Oui", new DialogInterface.OnClickListener() {
+                   public void onClick(DialogInterface dialog, int id) {
+                	   finish();
+                   }
+               })
+               .setNegativeButton("Non", new DialogInterface.OnClickListener() {
+                   public void onClick(DialogInterface dialog, int id) {
+                       
+                   }
+               });
+        builder.show();
+        
+    } 
+	
+	
 	/**
 	 * Methode excécutant du code lors du clique sur un item du Drawer. 
 	 *
@@ -99,12 +121,7 @@ public class MainActivity extends FragmentActivity {
 		if (mDrawerToggle.onOptionsItemSelected(item)) {
 			return true;
 		}
-		switch (item.getItemId()) {
-		  case R.id.action_settings:
-			return true;
-		  default:
-			return super.onOptionsItemSelected(item);
-		}
+		return super.onOptionsItemSelected(item);
 	}
 	
 	/**
@@ -159,13 +176,4 @@ public class MainActivity extends FragmentActivity {
         	outState.putString("categorieFragmentSave", categorieFragmentSave);
 	        super.onSaveInstanceState(outState);
 	    }
-	
-	/**
-	 * Menu.
-	 */
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
 }

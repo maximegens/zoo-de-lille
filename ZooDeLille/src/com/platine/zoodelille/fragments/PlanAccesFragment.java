@@ -1,6 +1,7 @@
 package com.platine.zoodelille.fragments;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -40,12 +41,30 @@ public class PlanAccesFragment extends Fragment {
 		acces.setText("Par l’A1 et l’A22 : suivre Lille Centre Ville. Le zoo se trouve au bout du boulevard de la Liberté\n"
 				+"Par l’A25 : sortie 5, Port Fluvial, suivre la direction Vauban et Citadelle.");	
 		
+		voiture.setTextColor(getResources().getColor(R.color.a_la_une));
+		voiture.setTypeface(null, Typeface.BOLD);
+		acces.setTypeface(null, Typeface.BOLD);
+	
+		
+
+		
 		voiture.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				acces.setText("Par l’A1 et l’A22 : suivre Lille Centre Ville. Le zoo se trouve au bout du boulevard de la Liberté\n"
-						+"Par l’A25 : sortie 5, Port Fluvial, suivre la direction Vauban et Citadelle.");	
+						+"Par l’A25 : sortie 5, Port Fluvial, suivre la direction Vauban et Citadelle.");
+				
+				voiture.setTextColor(getResources().getColor(R.color.a_la_une));
+				voiture.setTypeface(null, Typeface.BOLD);
+				
+				metro.setTextColor(getResources().getColor(R.color.Black));
+				metro.setTypeface(null, Typeface.NORMAL);
+				bus.setTextColor(getResources().getColor(R.color.Black));
+				bus.setTypeface(null, Typeface.NORMAL);
+				velo.setTextColor(getResources().getColor(R.color.Black));
+				velo.setTypeface(null, Typeface.NORMAL);
+			
 			}
 		});
 		
@@ -54,6 +73,16 @@ public class PlanAccesFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				acces.setText("Métro ligne 1 : station République ( à 15 mintues à pied)");	
+				
+				metro.setTextColor(getResources().getColor(R.color.a_la_une));
+				metro.setTypeface(null, Typeface.BOLD);
+				
+				voiture.setTextColor(getResources().getColor(R.color.Black));
+				voiture.setTypeface(null, Typeface.NORMAL);
+				bus.setTextColor(getResources().getColor(R.color.Black));
+				bus.setTypeface(null, Typeface.NORMAL);
+				velo.setTextColor(getResources().getColor(R.color.Black));
+				velo.setTypeface(null, Typeface.NORMAL);
 			}
 		});
 		
@@ -64,6 +93,16 @@ public class PlanAccesFragment extends Fragment {
 				acces.setText("Bus Liane 1 : arrêt champs de mars\n"
 						+"Bus Liane 90 : arrêt champs de mars\n"
 						+"Bus Liane 12 : arrêt Jardin Vauban");	
+				
+				bus.setTextColor(getResources().getColor(R.color.a_la_une));
+				bus.setTypeface(null, Typeface.BOLD);
+				
+				voiture.setTextColor(getResources().getColor(R.color.Black));
+				voiture.setTypeface(null, Typeface.NORMAL);
+				metro.setTextColor(getResources().getColor(R.color.Black));
+				metro.setTypeface(null, Typeface.NORMAL);
+				velo.setTextColor(getResources().getColor(R.color.Black));
+				velo.setTypeface(null, Typeface.NORMAL);
 			}
 		});
 		
@@ -72,6 +111,16 @@ public class PlanAccesFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				acces.setText("V’Lille : station Jardin Vauban 1 min");	
+				
+				velo.setTextColor(getResources().getColor(R.color.a_la_une));
+				velo.setTypeface(null, Typeface.BOLD);
+				
+				voiture.setTextColor(getResources().getColor(R.color.Black));
+				voiture.setTypeface(null, Typeface.NORMAL);
+				metro.setTextColor(getResources().getColor(R.color.Black));
+				metro.setTypeface(null, Typeface.NORMAL);
+				bus.setTextColor(getResources().getColor(R.color.Black));
+				bus.setTypeface(null, Typeface.NORMAL);
 			}
 		});
 		

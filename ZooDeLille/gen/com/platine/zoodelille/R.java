@@ -186,78 +186,80 @@ public final class R {
         public static final int dernier_jour=0x7f020003;
         public static final int ic_launcher=0x7f020004;
         public static final int icone_zoo_lille=0x7f020005;
-        public static final int logo_zoo_lille=0x7f020006;
-        public static final int no_image=0x7f020007;
-        public static final int se_rendre_au_zoo=0x7f020008;
-        public static final int singe_echappe=0x7f020009;
-        public static final int singe_information=0x7f02000a;
-        public static final int voyant_rouge=0x7f02000b;
-        public static final int voyant_vert=0x7f02000c;
-        public static final int zoo_asiatique=0x7f02000d;
-        public static final int zoo_avenir=0x7f02000e;
-        public static final int zoo_avenir_elephant=0x7f02000f;
+        public static final int logo_parc=0x7f020006;
+        public static final int logo_video=0x7f020007;
+        public static final int logo_zoo_lille=0x7f020008;
+        public static final int maps=0x7f020009;
+        public static final int no_image=0x7f02000a;
+        public static final int se_rendre_au_zoo=0x7f02000b;
+        public static final int singe_echappe=0x7f02000c;
+        public static final int singe_information=0x7f02000d;
+        public static final int voyant_rouge=0x7f02000e;
+        public static final int voyant_vert=0x7f02000f;
+        public static final int zoo_asiatique=0x7f020010;
+        public static final int zoo_avenir=0x7f020011;
+        public static final int zoo_avenir_elephant=0x7f020012;
     }
     public static final class id {
-        public static final int a_la_une=0x7f0a0012;
-        public static final int action_settings=0x7f0a003b;
-        public static final int button_bus=0x7f0a002e;
-        public static final int button_metro=0x7f0a002d;
-        public static final int button_summer=0x7f0a0022;
-        public static final int button_velo=0x7f0a002f;
-        public static final int button_voiture=0x7f0a002c;
-        public static final int button_winter=0x7f0a0023;
-        public static final int chargement_layout=0x7f0a0000;
-        public static final int conseil_venir_acces=0x7f0a0031;
-        public static final int content_acces=0x7f0a0030;
-        public static final int content_summer_winter_horaire=0x7f0a0025;
-        public static final int contenu_article=0x7f0a001a;
-        public static final int dans_heure=0x7f0a000b;
-        public static final int descriptionEtatZooInfoPratique=0x7f0a001d;
-        public static final int description_affichage_article=0x7f0a0016;
-        public static final int drawer_layout=0x7f0a0004;
-        public static final int etatZooInfoPratique=0x7f0a001e;
-        public static final int etat_zoo=0x7f0a000f;
-        public static final int fermeture_annuelle=0x7f0a0026;
-        public static final int frameLayout=0x7f0a0005;
-        public static final int how_acces=0x7f0a002a;
-        public static final int icone_temps=0x7f0a000c;
-        public static final int id_article_list_view=0x7f0a0034;
-        public static final int imageBulleSing=0x7f0a0028;
-        public static final int imageSingeInformationPratique=0x7f0a0027;
-        public static final int imageViewChargement=0x7f0a0003;
-        public static final int imageViewIconeZooChargement=0x7f0a0002;
-        public static final int image_se_rendre_au_zoo=0x7f0a0032;
-        public static final int img_article=0x7f0a0017;
-        public static final int img_article_list_view=0x7f0a0033;
-        public static final int l1=0x7f0a0021;
-        public static final int l2=0x7f0a0024;
-        public static final int layout_article=0x7f0a0015;
-        public static final int layout_how_acces=0x7f0a002b;
-        public static final int layout_meteo=0x7f0a0009;
-        public static final int layout_summer_winter=0x7f0a0020;
-        public static final int list_view_article=0x7f0a0013;
-        public static final int my_drawer=0x7f0a0006;
-        public static final int nom_categorie=0x7f0a0008;
-        public static final int partage_facebook=0x7f0a0019;
-        public static final int prochain_horaire=0x7f0a0011;
-        public static final int prochaineOuvertureInfopratique=0x7f0a001f;
-        public static final int progressBarChargement=0x7f0a0001;
-        public static final int progressBarMeteo=0x7f0a000a;
-        public static final int separator=0x7f0a000e;
-        public static final int summary_article=0x7f0a0018;
-        public static final int summary_article__list_view=0x7f0a0036;
-        public static final int tab1=0x7f0a0039;
-        public static final int tab2=0x7f0a0037;
-        public static final int temperature=0x7f0a000d;
-        public static final int textView1=0x7f0a0007;
-        public static final int textView2=0x7f0a0038;
-        public static final int textView_plan_acces=0x7f0a003a;
-        public static final int titreAdresseZoo=0x7f0a0029;
-        public static final int titrePrixZoo=0x7f0a001b;
-        public static final int titre_article=0x7f0a0014;
-        public static final int titre_article_list_view=0x7f0a0035;
-        public static final int voyant=0x7f0a0010;
-        public static final int voyantZooInfoPratique=0x7f0a001c;
+        public static final int a_la_une=0x7f090012;
+        public static final int button_bus=0x7f09002e;
+        public static final int button_metro=0x7f09002d;
+        public static final int button_summer=0x7f090022;
+        public static final int button_velo=0x7f09002f;
+        public static final int button_voiture=0x7f09002c;
+        public static final int button_winter=0x7f090023;
+        public static final int chargement_layout=0x7f090000;
+        public static final int conseil_venir_acces=0x7f090031;
+        public static final int content_acces=0x7f090030;
+        public static final int content_summer_winter_horaire=0x7f090025;
+        public static final int contenu_article=0x7f09001a;
+        public static final int dans_heure=0x7f09000b;
+        public static final int descriptionEtatZooInfoPratique=0x7f09001d;
+        public static final int description_affichage_article=0x7f090016;
+        public static final int drawer_layout=0x7f090004;
+        public static final int etatZooInfoPratique=0x7f09001e;
+        public static final int etat_zoo=0x7f09000f;
+        public static final int fermeture_annuelle=0x7f090026;
+        public static final int frameLayout=0x7f090005;
+        public static final int how_acces=0x7f09002a;
+        public static final int icone_temps=0x7f09000c;
+        public static final int id_article_list_view=0x7f090034;
+        public static final int imageBulleSing=0x7f090028;
+        public static final int imageSingeInformationPratique=0x7f090027;
+        public static final int imageView1=0x7f090003;
+        public static final int imageViewIconeZooChargement=0x7f090002;
+        public static final int image_se_rendre_au_zoo=0x7f090032;
+        public static final int img_article=0x7f090017;
+        public static final int img_article_list_view=0x7f090033;
+        public static final int l1=0x7f090021;
+        public static final int l2=0x7f090024;
+        public static final int layout_article=0x7f090015;
+        public static final int layout_how_acces=0x7f09002b;
+        public static final int layout_meteo=0x7f090009;
+        public static final int layout_summer_winter=0x7f090020;
+        public static final int list_view_article=0x7f090013;
+        public static final int my_drawer=0x7f090006;
+        public static final int nom_categorie=0x7f090008;
+        public static final int partage_facebook=0x7f090019;
+        public static final int prochain_horaire=0x7f090011;
+        public static final int prochaineOuvertureInfopratique=0x7f09001f;
+        public static final int progressBarChargement=0x7f090001;
+        public static final int progressBarMeteo=0x7f09000a;
+        public static final int separator=0x7f09000e;
+        public static final int summary_article=0x7f090018;
+        public static final int summary_article__list_view=0x7f090036;
+        public static final int tab1=0x7f090039;
+        public static final int tab2=0x7f090037;
+        public static final int temperature=0x7f09000d;
+        public static final int textView1=0x7f090007;
+        public static final int textView2=0x7f090038;
+        public static final int textView_plan_acces=0x7f09003a;
+        public static final int titreAdresseZoo=0x7f090029;
+        public static final int titrePrixZoo=0x7f09001b;
+        public static final int titre_article=0x7f090014;
+        public static final int titre_article_list_view=0x7f090035;
+        public static final int voyant=0x7f090010;
+        public static final int voyantZooInfoPratique=0x7f09001c;
     }
     public static final class layout {
         public static final int activity_chargement=0x7f030000;
@@ -281,16 +283,12 @@ public final class R {
         public static final int tab2=0x7f030012;
         public static final int tab_plan_acces=0x7f030013;
     }
-    public static final class menu {
-        public static final int main=0x7f090000;
-    }
     public static final class string {
         public static final int a_la_une=0x7f060015;
         public static final int a_propos=0x7f06000e;
         /**  Liste des items du slider correspondant aux catégories de l'application Zoo de Lille 
          */
         public static final int accueil=0x7f060004;
-        public static final int action_settings=0x7f060010;
         public static final int activite_pedagogique=0x7f060007;
         /**  string propre au fragment "Plan d'acces" 
          */
@@ -330,6 +328,7 @@ public final class R {
         /**  string propre au fragment "Information Pratique" 
          */
         public static final int prix_entree=0x7f060025;
+        public static final int quitter_application=0x7f060010;
         public static final int reglages=0x7f06000c;
         public static final int summer=0x7f060027;
         public static final int titre_apres_ouverture=0x7f060003;

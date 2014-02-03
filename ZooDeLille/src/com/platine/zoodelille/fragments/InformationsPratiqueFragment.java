@@ -2,6 +2,7 @@ package com.platine.zoodelille.fragments;
 
 import java.util.List;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -73,10 +74,12 @@ public class InformationsPratiqueFragment extends Fragment {
 		 * Au lancement du fragment afin de ne pas avoir un champs vide on se position directement sur l'été
 		 * 
 		 **/
+			summer.setTextColor(getResources().getColor(R.color.a_la_une));
+			summer.setTypeface(null, Typeface.BOLD);
 			horaireSummer = p.summer_week_opening_time+"h - "+p.summer_week_closing_time+"h en semaine"+"\n"
 			  +p.summer_weekend_opening_time+"h - "+p.summer_weekend_closing_time+"h le week end et jours fériés";
 			contentSummerWinterHoraire.setText(horaireSummer);
-			
+			contentSummerWinterHoraire.setTypeface(null, Typeface.BOLD);
 		
 
 		/** Gestion des clics sur les bouton Eté ou Hiver **/
@@ -84,7 +87,12 @@ public class InformationsPratiqueFragment extends Fragment {
 			
 			@Override
 			public void onClick(View v) {
-	
+				summer.setTextColor(getResources().getColor(R.color.a_la_une));
+				winter.setTextColor(getResources().getColor(R.color.Black));
+				summer.setTypeface(null, Typeface.BOLD);
+				winter.setTypeface(null, Typeface.NORMAL);
+				contentSummerWinterHoraire.setTypeface(null, Typeface.BOLD);
+				
 				String text;
 				text = p.summer_week_opening_time+"h - "+p.summer_week_closing_time+"h en semaine"+"\n"
 					  +p.summer_weekend_opening_time+"h - "+p.summer_weekend_closing_time+"h le week end et jours fériés";
@@ -97,6 +105,10 @@ public class InformationsPratiqueFragment extends Fragment {
 			
 			@Override
 			public void onClick(View v) {
+				winter.setTextColor(getResources().getColor(R.color.a_la_une));
+				summer.setTextColor(getResources().getColor(R.color.Black));
+				winter.setTypeface(null, Typeface.BOLD);
+				summer.setTypeface(null, Typeface.NORMAL);
 				String text;
 				text = p.winter_week_opening_time+"h - "+p.winter_week_closing_time+"h en semaine"+"\n"
 					  +p.winter_weekend_opening_time+"h - "+p.winter_weekend_closing_time+"h le week end et jours fériés";

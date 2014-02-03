@@ -19,20 +19,22 @@
        android:id="@+id/imageViewIconeZooChargement"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:layout_above="@+id/progressBarChargement"
+       android:layout_below="@+id/progressBarChargement"
        android:layout_centerHorizontal="true"
-       android:layout_marginBottom="30dp"
+       android:layout_marginTop="20dp"
        android:contentDescription="@string/description_image_chargement"
        android:src="@drawable/icone_zoo_lille" />
 
    <ImageView
-       android:id="@+id/imageViewChargement"
+       android:id="@+id/imageView1"
+       android:contentDescription="@string/description_image_chargement"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:layout_below="@+id/progressBarChargement"
+	   android:layout_marginLeft="10dp"
+	   android:layout_marginRight="10dp"
+       android:layout_alignParentTop="true"
        android:layout_centerHorizontal="true"
-       android:layout_marginTop="15dp"
-       android:contentDescription="@string/description_image_chargement"
-       android:src="@drawable/logo_zoo_lille" />
+       android:layout_marginTop="20dp"
+       android:src="@drawable/logo_video" />
     
 </RelativeLayout>
