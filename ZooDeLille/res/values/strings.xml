@@ -40,5 +40,14 @@
     <string name="description_image_singe">Petit singe tout mignon qui indique le dernier accès au zoo</string>
     <string name="indication_zoo">Le Zoo est actuellement</string>
     
+       	<!-- string propre au fragment "Contact" -->
+    <string name="votre_objet_mail">Objet du message</string>
+    <string name="votre_message">Votre message</string>
+   	<string name="description_image_tel">image telephone</string>
+    <string name="button_envoyer_mail">Envoyer l\'email</string>
+    <string name="appel">Appeler le zoo</string>
+    <string name="info_contact">Pour toute information complémentaire, n’hésitez pas à prendre contact avec l’équipe du zoo </string>
+    
+
     
 </resources>

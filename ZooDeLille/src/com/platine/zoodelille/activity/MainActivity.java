@@ -1,8 +1,6 @@
 package com.platine.zoodelille.activity;
 
 import android.app.ActionBar;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
@@ -74,26 +72,26 @@ public class MainActivity extends FragmentActivity {
         
 	}
 
-	/**
-	 * Gérer la pression du bouton "Back" en demandant à l'utilisateur si il souhaite quitter l'application.
-	 */
-    public void onBackPressed() {
-
-    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage(R.string.quitter_application)
-               .setPositiveButton("Oui", new DialogInterface.OnClickListener() {
-                   public void onClick(DialogInterface dialog, int id) {
-                	   finish();
-                   }
-               })
-               .setNegativeButton("Non", new DialogInterface.OnClickListener() {
-                   public void onClick(DialogInterface dialog, int id) {
-                       
-                   }
-               });
-        builder.show();
-        
-    } 
+//	/**
+//	 * Gérer la pression du bouton "Back" en demandant à l'utilisateur si il souhaite quitter l'application.
+//	 */
+//    public void onBackPressed() {
+//
+//    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//        builder.setMessage(R.string.quitter_application)
+//               .setPositiveButton("Oui", new DialogInterface.OnClickListener() {
+//                   public void onClick(DialogInterface dialog, int id) {
+//                	   finish();
+//                   }
+//               })
+//               .setNegativeButton("Non", new DialogInterface.OnClickListener() {
+//                   public void onClick(DialogInterface dialog, int id) {
+//                       
+//                   }
+//               });
+//        builder.show();
+//        
+//    } 
 	
 	
 	/**

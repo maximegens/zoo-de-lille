@@ -29,10 +29,9 @@ public class Constantes {
 	public static String HEURE = "H ";
 	public static String COORDONNEES_GPS_ZOO_LATITUDE = "50.63828789999999";
 	public static String COORDONNEES_GPS_ZOO_LONGITUDE = "3.0455561999999645";
-	
-	/** horaire Zoo.
-	 * Cela devra être modifier pour communiquer avec la base de donnée.
-	 */
+	public static String ADRESSE_MAIL = "developpement.zoo.lille@gmail.com";
+	public static String NUMERO_TEL_ZOO = "0328520700";
+
 	
 	
 }
