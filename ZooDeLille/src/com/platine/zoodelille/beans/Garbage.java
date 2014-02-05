@@ -6,7 +6,6 @@ import com.platine.zoodelille.dao.GarbageDao;
 
 /**
  * 
- * @author olivier
  * Classe correspondant à la table garbage (poubelle)
  *
  */

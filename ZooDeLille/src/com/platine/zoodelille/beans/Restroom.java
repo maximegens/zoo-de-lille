@@ -6,7 +6,6 @@ import com.platine.zoodelille.dao.RestroomDao;
 
 /**
  * 
- * @author olivier
  * Classe correspondant à la table restroom (toilette)
  *
  */

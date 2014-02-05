@@ -8,7 +8,6 @@ import com.platine.zoodelille.dao.LocatableElementDao;
 
 /**
  * 
- * @author olivier
  * Classe correspondant à la table locatable_element (utilisé pour Garbage, Restroom et Enclosure)
  *
  */

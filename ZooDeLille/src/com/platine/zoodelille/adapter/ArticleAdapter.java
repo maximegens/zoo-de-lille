@@ -17,7 +17,6 @@ import com.platine.zoodelille.beans.Article;
 
 /**
  * Adaptateur permettant de mettre en forme et d'afficher chaque item, dans un style personnalisÃ©, de la listeView pour la page d'accueil.
- * @author Maxime
  *
  */
 public class ArticleAdapter extends BaseAdapter {

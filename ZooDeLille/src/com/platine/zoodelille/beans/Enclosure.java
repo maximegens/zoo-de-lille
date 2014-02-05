@@ -8,7 +8,6 @@ import com.platine.zoodelille.dao.EnclosureDao;
 
 /**
  * 
- * @author olivier
  * Classe correspondant à la table enclosure (enclos)
  *
  */
