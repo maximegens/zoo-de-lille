@@ -10,7 +10,7 @@ public class PracticalInformation {
 	
 	@DatabaseField(generatedId=true)
 	public int id;
-	
+	 
 	//Summer
 	
 	//Week

@@ -5,24 +5,36 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@color/color_theme_green_zoo"
     >
-    
+
    <ProgressBar
-	   android:id="@+id/progressBarChargement"
-	   style="?android:attr/progressBarStyleLarge"
-	   android:layout_width="wrap_content"
-	   android:layout_height="wrap_content"
-	   android:layout_centerInParent="true"
-	   android:visibility="invisible"
-    />
+       android:id="@+id/progressBarChargement"
+       style="?android:attr/progressBarStyleLarge"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerHorizontal="true"
+       android:layout_centerVertical="true"
+       android:visibility="invisible" />
 
    <ImageView
-       android:id="@+id/imageViewChargement"
+       android:id="@+id/imageViewIconeZooChargement"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/progressBarChargement"
+       android:layout_centerHorizontal="true"
+       android:layout_marginTop="20dp"
+       android:contentDescription="@string/description_image_chargement"
+       android:src="@drawable/icone_zoo_lille" />
+
+   <ImageView
+       android:id="@+id/imageView1"
        android:contentDescription="@string/description_image_chargement"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:layout_above="@+id/progressBarChargement"
+	   android:layout_marginLeft="10dp"
+	   android:layout_marginRight="10dp"
+       android:layout_alignParentTop="true"
        android:layout_centerHorizontal="true"
-       android:layout_marginBottom="20dp"
-       android:src="@drawable/logo_zoo_lille" />
+       android:layout_marginTop="20dp"
+       android:src="@drawable/logo_video" />
     
 </RelativeLayout>

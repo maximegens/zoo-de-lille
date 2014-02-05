@@ -1,87 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:android1="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content">
+	<RelativeLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" >
+	    <TextView
+	        android:id="@+id/titreAdresseZoo"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="10dp"
+	        android:layout_marginBottom="25dp"
+	        android:text="@string/adresse_zoo"
+	        android:gravity="center"
+	        android:padding="10dp"
+	        android:textStyle="bold"
+			/>
+	
+	    <TextView
+	        android:id="@+id/how_acces"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/titreAdresseZoo"
+	        android:layout_marginLeft="10dp"
+	        android:textStyle="italic"
+	        android:text="@string/how_acces" />
+	    
+	    <LinearLayout
+	        android:id="@+id/layout_how_acces"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/how_acces"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginRight="10dp"
+	        android:layout_marginTop="5dp"
+	        android:background="@layout/shape_onglet"
+	        android:gravity="center_horizontal"
+	        android:orientation="vertical" >
+	
+	        <LinearLayout
+	            android:id="@+id/l1"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="center_horizontal"
+	            android:orientation="horizontal" >
+	
+	            <Button
+	                android:id="@+id/button_voiture"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:text="@string/voiture" />
+	
+	            <Button
+	                android:id="@+id/button_metro"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:text="@string/metro" />
+	            
+	            <Button
+	                android:id="@+id/button_bus"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:text="@string/bus" />
+	            
+	            <Button
+	                android:id="@+id/button_velo"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:text="@string/velo" />
+	            
+	        </LinearLayout>
+	
+	        <LinearLayout
+	            android:id="@+id/l2"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:gravity="center_horizontal"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:id="@+id/content_acces"
+	                android:layout_width="0dp"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:gravity="center"
+	                android:padding="5dp" />
+	        </LinearLayout>
+	        
+	    </LinearLayout>
+	
+	    <TextView
+	        android:id="@+id/conseil_venir_acces"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/layout_how_acces"
+	        android:layout_centerHorizontal="true"
+	        android:padding="10dp"
+	        android:textStyle="italic"
+	        android:layout_marginTop="15dp"
+	        android:text="@string/conseil_acces" />
+	
+	    <ImageButton
+	        android:id="@+id/image_se_rendre_au_zoo"
+	        android:contentDescription="@string/description_image_se_rendre_zoo"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/conseil_venir_acces"
+	        android:layout_marginTop="15dp"
+	        android:layout_marginBottom="5dp"
+	        android:layout_centerHorizontal="true"
+	        android:src="@drawable/se_rendre_au_zoo" 
+	        android:background="@color/background"
+	        />
 
-    <TextView
-        android1:id="@+id/Accessadresse"
-        android1:layout_width="wrap_content"
-        android1:layout_height="wrap_content"
-        android1:layout_alignParentTop="true"
-        android1:layout_marginLeft="50dp"
-        android1:layout_marginRight="50dp"
-        android1:layout_marginTop="20dp"
-        android1:text="Le Parc Zoologique de Lille est situé dans le Parc de la Citadelle, Avenue Mathias Delobel." />
-
-    <TextView
-        android1:id="@+id/acess"
-        android1:layout_width="wrap_content"
-        android1:layout_height="wrap_content"
-        android1:layout_alignParentLeft="true"
-        android1:layout_below="@+id/Accessadresse"
-        android1:layout_marginLeft="23dp"
-        android1:layout_marginTop="20dp"
-        android1:text="Comment accéder :" />
-
-    <Button
-        android1:id="@+id/goToZooButton"
-        android1:layout_width="wrap_content"
-        android1:layout_height="wrap_content"
-        android1:layout_alignParentBottom="true"
-        android1:layout_below="@+id/tabhost"
-        android1:layout_centerHorizontal="true"
-        android1:layout_marginBottom="132dp"
-        android1:text="Se rendre au Zoo" />
-
-    <TabHost
-        android1:id="@android:id/tabhost"
-        android1:layout_width="match_parent"
-        android1:layout_height="match_parent"
-        android1:layout_alignParentLeft="true"
-        android1:layout_below="@+id/acess"
-        android1:layout_marginTop="19dp" >
-
-        <LinearLayout
-            android1:layout_width="match_parent"
-            android1:layout_height="match_parent"
-            android1:orientation="vertical" >
-
-            <TabWidget
-                android1:id="@android:id/tabs"
-                android1:layout_width="match_parent"
-                android1:layout_height="wrap_content" >
-            </TabWidget>
-
-            <FrameLayout
-                android1:id="@android:id/tabcontent"
-                android1:layout_width="match_parent"
-                android1:layout_height="match_parent" >
-
-                <LinearLayout
-                    android1:id="@+id/tab1"
-                    android1:layout_width="match_parent"
-                    android1:layout_height="match_parent"
-                    android1:orientation="horizontal" >
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android1:id="@+id/tab2"
-                    android1:layout_width="match_parent"
-                    android1:layout_height="match_parent"
-                    android1:orientation="horizontal" >
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android1:id="@+id/tab3"
-                    android1:layout_width="match_parent"
-                    android1:layout_height="match_parent"
-                    android1:orientation="horizontal" >
-                </LinearLayout>
-            </FrameLayout>
-        </LinearLayout>
-    </TabHost>
-
-</RelativeLayout>
+	    <ImageView
+	        android:id="@+id/imageView1"
+	        android:layout_width="50dp"
+	        android:background="@color/background"
+	        android:layout_height="50dp"
+	        android:layout_above="@+id/layout_how_acces"
+	        android:layout_alignRight="@+id/layout_how_acces"
+	        android:src="@drawable/maps" />
+	    
+	</RelativeLayout>
+</ScrollView>

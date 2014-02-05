@@ -54,4 +54,5 @@ public class AnimalCategory implements NamableElement {
 		return "[id=" + id + ",name=" + name + "]";
 	}
 
+
 }

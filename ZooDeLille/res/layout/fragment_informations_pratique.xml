@@ -1,94 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:android1="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
-    <TextView
-        android:id="@+id/titre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp"
-        android:text="TextView" />
-
-    <TextView
-        android1:id="@+id/informationFermetureJour"
-        android1:layout_width="wrap_content"
-        android1:layout_height="wrap_content"
-        android1:layout_alignTop="@+id/fermeture"
-        android1:layout_marginTop="70dp"
-        android1:layout_toLeftOf="@+id/titre"
-        android1:text="TextView" />
-
-    <TabHost
-        android1:id="@android:id/tabhost"
-        android1:layout_width="wrap_content"
-        android1:layout_height="wrap_content"
-        android1:layout_alignParentLeft="true"
-        android1:layout_below="@+id/horraireDuJour" >
-
-        <LinearLayout
-            android1:layout_width="match_parent"
-            android1:layout_height="match_parent"
-            android1:orientation="vertical" >
-
-            <TabWidget
-                android1:id="@android:id/tabs"
-                android1:layout_width="320dp"
-                android1:layout_height="wrap_content" >
-            </TabWidget>
-
-            <FrameLayout
-                android1:id="@android:id/tabcontent"
-                android1:layout_width="match_parent"
-                android1:layout_height="match_parent" >
-
-                <LinearLayout
-                    android1:id="@+id/tab1"
-                    android1:layout_width="match_parent"
-                    android1:layout_height="match_parent"
-                    android1:orientation="horizontal" >
-                </LinearLayout>
-
-                <LinearLayout
-                    android1:id="@+id/tab2"
-                    android1:layout_width="match_parent"
-                    android1:layout_height="match_parent"
-                    android1:orientation="horizontal" >
-                </LinearLayout>
-
-            </FrameLayout>
-        </LinearLayout>
-    </TabHost>
-
-    <ImageView
-        android1:id="@+id/imageView1"
-        android1:layout_width="wrap_content"
-        android1:layout_height="wrap_content"
-        android1:layout_alignParentBottom="true"
-        android1:layout_marginLeft="25dp"
-        android1:layout_toLeftOf="@+id/titre"
-        android1:src="@drawable/singe_information" />
-
-    <TextView
-        android1:id="@+id/fermeture"
-        android1:layout_width="wrap_content"
-        android1:layout_height="wrap_content"
-        android1:layout_above="@+id/imageView1"
-        android1:layout_alignLeft="@+id/horraireDuJour"
-        android1:layout_marginBottom="18dp"
-        android1:text="TextView" />
-
-    <TextView
-        android1:id="@+id/horraireDuJour"
-        android1:layout_width="wrap_content"
-        android1:layout_height="wrap_content"
-        android1:layout_alignLeft="@+id/imageView1"
-        android1:layout_below="@+id/titre"
-        android1:layout_marginLeft="20dp"
-        android1:layout_marginTop="16dp"
-        android1:text="TextView" />
-
-</RelativeLayout>
+<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content">
+	<RelativeLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" >
+	
+	    <TextView
+	        android:id="@+id/titrePrixZoo"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="20dp"
+	        android:text="@string/prix_entree"
+	        android:textColor="@color/a_la_une"
+	        android:textStyle="bold"
+	        android:textAppearance="?android:attr/textAppearanceLarge" />
+	
+	    <ImageView
+	        android:id="@+id/voyantZooInfoPratique"
+	        android:contentDescription="@string/description_image_voyant_zoo"
+	        android:layout_width="50dp"
+	        android:layout_height="50dp"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginRight="30dp"
+	        android:layout_below="@+id/titrePrixZoo"
+	        android:layout_marginTop="10dp"
+	        android:src="@drawable/voyant_vert" />
+	
+	    <TextView
+	        android:id="@+id/descriptionEtatZooInfoPratique"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+			android:layout_toLeftOf="@+id/voyantZooInfoPratique"
+	        android:layout_alignTop="@+id/voyantZooInfoPratique"
+	        android:layout_alignParentLeft="true"
+		    android:layout_marginLeft="15dp"
+	        android:layout_marginTop="2dp"
+	        android:layout_centerHorizontal="true"
+	        android:paddingRight="10dp"
+	        android:text="@string/indication_zoo"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	    
+	    <TextView
+		    android:id="@+id/etatZooInfoPratique"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentLeft="true"
+		    android:layout_marginLeft="15dp"
+		    android:layout_below="@+id/descriptionEtatZooInfoPratique"
+		    android:textAppearance="?android:attr/textAppearanceMedium" />
+	    
+		<TextView
+		    android:id="@+id/prochaineOuvertureInfopratique"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_below="@+id/descriptionEtatZooInfoPratique"
+		    android:layout_toRightOf="@+id/etatZooInfoPratique"
+		    android:layout_marginLeft="2dp"
+		    android:textAppearance="?android:attr/textAppearanceMedium" />
+	    
+	      <View
+	        android:id="@+id/separator"
+	        android:layout_width="wrap_content"
+	        android:layout_marginTop="20dp"
+	        android:layout_marginBottom="20dp"
+	        android:layout_marginLeft="20dp"
+	        android:layout_marginRight="20dp"
+	        android:layout_height="2dp"
+	        android:layout_centerHorizontal="true"
+	        android:layout_below="@+id/voyantZooInfoPratique"
+	        android:background="@color/separator_marron" />
+	       
+		<LinearLayout 
+		   android:id="@+id/layout_summer_winter"
+		   android:layout_below="@id/separator"
+		   android:orientation="vertical"
+		   android:layout_width="match_parent"
+		   android:layout_height="wrap_content"
+		   android:gravity="center_horizontal"
+	
+		   android:layout_marginLeft="10dp"
+		   android:layout_marginRight="10dp"
+	       android:background="@layout/shape_onglet"
+	        >
+	
+		    <LinearLayout 
+			   android:id="@+id/l1"
+			   android:orientation="horizontal"
+			   android:layout_width="match_parent"
+			   android:layout_height="wrap_content"
+			   android:gravity="center_horizontal"
+			   >
+		       
+		      <Button
+		          android:id="@+id/button_summer"       
+		          android:layout_width="match_parent"
+		          android:layout_height="wrap_content"
+		          android:layout_weight="1"
+		          android:text="@string/summer"
+		          
+		           />
+		
+		      <Button
+		          android:id="@+id/button_winter"
+		          android:layout_width="match_parent"
+		          android:layout_height="wrap_content"
+		          android:layout_weight="1"
+		          android:text="@string/winter" 
+		          
+		          />
+		      
+		   </LinearLayout>
+		   <LinearLayout         
+			   android:id="@+id/l2"
+			   android:orientation="horizontal"
+			   android:layout_width="fill_parent"
+			   android:layout_height="wrap_content"
+			   android:gravity="center_horizontal">
+		      
+				<TextView 
+					android:id="@+id/content_summer_winter_horaire"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:padding="5dp"
+					android:gravity="center"
+					android:layout_weight="1"
+				/>
+	       	</LinearLayout>
+	       	
+	      </LinearLayout>
+	
+		<TextView
+		    android:id="@+id/fermeture_annuelle"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_below="@+id/layout_summer_winter"
+		    android:layout_centerHorizontal="true"
+		    android:layout_marginTop="20dp"
+		    android:text="@string/period_close"
+		    android:gravity="center_horizontal"
+		    android:textStyle="italic"
+		 />
+	
+		<ImageView
+		    android:id="@+id/imageSingeInformationPratique"
+		    android:layout_width="150dp"
+		    android:layout_height="150dp"
+		    android:layout_below="@+id/fermeture_annuelle"
+		    android:contentDescription="@string/description_image_singe"
+		    android:layout_alignParentLeft="true"
+		    android:layout_marginLeft="5dp"
+		    android:layout_alignParentBottom="true"
+		    android:src="@drawable/singe_information" />
+	
+		<ImageView
+		    android:id="@+id/imageBulleSing"
+		    android:contentDescription="@string/description_image_singe"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_toRightOf="@+id/imageSingeInformationPratique"
+		    android:layout_alignTop="@+id/imageSingeInformationPratique"
+		    android:src="@drawable/bulle" 
+		    />
+	
+	</RelativeLayout>
+</ScrollView>

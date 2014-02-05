@@ -1,6 +1,6 @@
 package com.platine.zoodelille.activity;
 
-
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -26,19 +26,22 @@ public class ChargementActivity extends FragmentActivity {
 	private ProgressBar loaderChargement;
 	private ArticleDao articleDao;
 	private PracticalInformationDao practicalInformationDao;
+	ActionBar actionBar;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_chargement);
 		
-		loaderChargement = (ProgressBar)findViewById(R.id.progressBarChargement);
+		loaderChargement = (ProgressBar)findViewById(R.id.progressBarChargement);	
+		actionBar = getActionBar();
 		getActionBar().hide();
-		
+					
 		retreiveAllData = new RetreiveAllData(this);
 		retreiveAllData.execute();
-			
 	}
+
+
 	
 	/** 
 	 * AsynTask pour récupérer la temperature depuis la météo de Yahoo.
@@ -127,8 +130,8 @@ public class ChargementActivity extends FragmentActivity {
 		}
 	    
 	    protected void onPostExecute(Boolean param) {
-	    	loaderChargement.setVisibility(View.INVISIBLE);
 	    	Intent accueil = new Intent(activity, MainActivity.class);
+	    	loaderChargement.setVisibility(View.INVISIBLE);
 	    	activity.startActivity(accueil);
 	    	activity.finish();
 	    }

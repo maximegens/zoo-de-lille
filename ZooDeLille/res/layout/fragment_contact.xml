@@ -1,16 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout 
-	xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
-    <TextView
-        android:id="@+id/nom_categorie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/contact" 
-        />
-
-</RelativeLayout>
+<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content">
+	<RelativeLayout 
+		    
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content" >
+	
+	    <TextView
+	        android:id="@+id/textView1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        android:padding="5dp"
+	        android:layout_marginTop="10dp"
+	        android:text="@string/votre_objet_mail"
+	        android:textStyle="italic"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	    <EditText
+	        android:id="@+id/objet_mail"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/textView1"
+	        android:layout_marginTop="10dp"
+	        android:padding="5dp"
+	        android:ems="10"
+	        android:inputType="text"
+	  		 >
+	
+	        <requestFocus />
+	    </EditText>
+	
+	    <TextView
+	        android:id="@+id/textView2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/objet_mail"
+	        android:textStyle="italic"
+	        android:layout_marginTop="10dp"
+	        android:text="@string/votre_message"
+	        android:padding="5dp"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	    <EditText
+	        android:id="@+id/contenu_message"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/textView2"
+	        android:layout_marginTop="10dp"
+	        android:padding="5dp"
+	        android:lines="4"
+	        android:ems="10"
+	        android:inputType="textMultiLine" />
+	
+	    <Button
+	        android:id="@+id/button_envoyer_mail"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/contenu_message"
+	        android:layout_centerHorizontal="true"
+	        android:text="@string/button_envoyer_mail"
+	        android:padding="5dp"
+	        android:background="@color/color_theme_green_zoo" 
+	        
+	        />
+	
+	    <TextView
+	        android:id="@+id/textView3"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/button_envoyer_mail"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="30dp"
+	        android:padding="10dp"
+	        android:text="@string/info_contact" />
+	
+	    <ImageView
+	        android:id="@+id/imagetel"
+	        android:contentDescription="@string/description_image_tel"
+	        android:layout_width="50dp"
+	        android:layout_height="50dp"
+	        android:layout_below="@+id/textView3"
+	        android:layout_centerHorizontal="true"
+	        android:src="@drawable/tel" />
+	
+	    <TextView
+	        android:id="@+id/textView4"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+	        android:layout_margin="5dp"
+	        android:layout_below="@+id/imagetel"
+	        android:text="@string/appel" />
+		
+	</RelativeLayout>
+</ScrollView>

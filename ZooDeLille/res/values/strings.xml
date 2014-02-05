@@ -2,18 +2,52 @@
 <resources>
  
     <string name="app_name">Zoo de Lille</string>
-    <string name="action_settings">Settings</string>
+    <string name="quitter_application">Voulez quitter l\'application ?</string>
     
     <!-- string propre au fragment "Accueil" -->
     <string name="meteo_lille">Météo de Lille</string>
     <string name="description_image_meteo">Image représentant le temps actuel</string>
     <string name="description_image_chargement">Image pour le chargement de l\'application</string>
-    <string name="description_image_voyant_zoo">Image indiquant si le Zoo est ouvert (vcouleur verte) ou fermé (couleur rouge)</string>
+    <string name="description_image_voyant_zoo">Image indiquant si le Zoo est ouvert (couleur verte) ou fermé (couleur rouge)</string>
     <string name="a_la_une">A la Une</string>
     <string name="zoo_ouvert">Zoo\nouvert</string>
     <string name="zoo_ferme">Zoo\nfermé</string>
+    <string name="ouvert">ouvert</string>
+    <string name="ferme">fermé</string>
     <string name="description_image_illustration_article">Image d\'illustration de l\'article</string>
     <string name="description_image_facebook">Partager l\'article sur Facebook</string>
     
+     <!-- string propre au fragment "Plan d'acces" -->
+    <string name="adresse_zoo">Le Parc Zoologique de Lille est situé dans le Parc de la Citadelle, Avenue Mathias Delobel.</string>
+    <string name="description_image_se_rendre_zoo">Image indiquant comment se rendre au zoo</string>
+    <string name="how_acces"><u>Comment accéder :</u></string>
+    <string name="voiture">Voiture</string>
+    <string name="metro">Métro</string>
+    <string name="bus">Bus</string>
+    <string name="velo">V\'Lille</string>
+    <string name="mapKey">AIzaSyC0FN8rKv4B2ta5z4SyQhML5duB8UrwcWg</string>
+    <string name="conseil_acces">Afin de profiter au mieux de votre visite en évitant les périodes de forte affluence, 
+        nous vous invitons à venir le matin pendant les week-ends et les vacances scolaires. 
+        Vous pourrez ainsi observer les animaux en toute tranquillité.</string>
+    
+    
+   	<!-- string propre au fragment "Information Pratique" -->
+    <string name="prix_entree">Entrée Gratuite !</string>
+    <string name="dernier_acces">Dernier accès au zoo 30 minutes avant la fermeture des portes</string>
+    <string name="summer">Eté</string>
+    <string name="winter">Hiver</string>
+    <string name="period_close">Période de fermeture annuelle :\n</string>
+    <string name="description_image_singe">Petit singe tout mignon qui indique le dernier accès au zoo</string>
+    <string name="indication_zoo">Le Zoo est actuellement</string>
+    
+       	<!-- string propre au fragment "Contact" -->
+    <string name="votre_objet_mail">Objet du message</string>
+    <string name="votre_message">Votre message</string>
+   	<string name="description_image_tel">image telephone</string>
+    <string name="button_envoyer_mail">Envoyer l\'email</string>
+    <string name="appel">Appeler le zoo</string>
+    <string name="info_contact">Pour toute information complémentaire, n’hésitez pas à prendre contact avec l’équipe du zoo </string>
+    
+
     
 </resources>
