@@ -24,18 +24,18 @@ public class AProposFragment extends Fragment {
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
         builder.setTitle("A Propos");
-		builder.setMessage("Version 0.0 \nZoo de lille 2013 \nRéalisé par des étudiants de l'université Lille 1: \n    Olivier Debreu \n    Maxime Gens \n    Matthieu Poudroux \nFormation : Master Informatique E-Service \n\nTout droit réservé !")
+
+		builder.setMessage("Version 0.0 \nZoo de lille 2013 \nRéalisé par des étudiants de l'université Lille 1: \n		Olivier Debreu\n		Maxime Gens \n		Matthieu Poudroux \nFormation : Master Informatique E-Services \nTout droit réservé !")
 
                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
 
                    public void onClick(DialogInterface dialog, int id) {
-                	   
+	   
                 	String categorieFragmentSave = Constantes.fragments[0];
            			FragmentTransaction tx = getFragmentManager().beginTransaction();
            			tx.setCustomAnimations(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
            			tx.replace(R.id.frameLayout, Fragment.instantiate(getActivity(), categorieFragmentSave));
            			tx.commit();
-                       
                    }
                });
 
@@ -43,9 +43,6 @@ public class AProposFragment extends Fragment {
         builder.create();
         builder.show();
 
-        
-		
-		
 		return myInflatedView;
 	}
 }

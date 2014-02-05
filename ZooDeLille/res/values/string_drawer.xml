@@ -15,7 +15,7 @@
     <string name="activite_pedagogique">Activités pédagogique</string>
     <string name="jeux_interactif">Jeux interactif</string>
     <string name="plan_acces">Plan d\'accès</string>
-    <string name="informations_pratique">Informations pratique</string>
+    <string name="informations_pratique">Informations pratiques</string>
     <string name="aux_alentours">Aux alentours</string>
     <string name="reglages">Réglages</string>
     <string name="contact">Contact</string>
@@ -25,12 +25,12 @@
         <item>@string/accueil</item>
         <item>@string/animaux_du_zoo</item>
         <item>@string/plan_du_zoo</item>
-        <item>@string/activite_pedagogique</item>
-        <item>@string/jeux_interactif</item>
+<!--         <item>@string/activite_pedagogique</item> -->
+<!--         <item>@string/jeux_interactif</item> -->
         <item>@string/plan_acces</item>
         <item>@string/informations_pratique</item>
-        <item>@string/aux_alentours</item>
-        <item>@string/reglages</item>
+<!--         <item>@string/aux_alentours</item> -->
+<!--         <item>@string/reglages</item> -->
         <item>@string/contact</item>
         <item>@string/a_propos</item>
     </string-array>

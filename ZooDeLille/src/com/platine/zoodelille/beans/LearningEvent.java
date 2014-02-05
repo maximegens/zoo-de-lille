@@ -27,8 +27,6 @@ public class LearningEvent {
 	@DatabaseField
 	public String picture_location_number2;
 
-
-
 	public LearningEvent() {
 		super();
 	}
@@ -120,7 +118,4 @@ public class LearningEvent {
 				+ picture_location_number1 + ", picture_location_number2="
 				+ picture_location_number2 + "]";
 	}
-	
-	
-
 }

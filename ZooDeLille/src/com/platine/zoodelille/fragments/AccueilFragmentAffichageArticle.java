@@ -70,7 +70,4 @@ public class AccueilFragmentAffichageArticle extends Fragment {
 		
 		return myInflatedView;
 	}
-
 }
-
-

@@ -70,5 +70,4 @@ public class Entry {
 				+ description + ", temperature=" + temperature
 				+ ", code_image=" + code_image + "]";
 	}
-
 }

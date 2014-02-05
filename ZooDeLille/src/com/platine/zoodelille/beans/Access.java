@@ -5,7 +5,6 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 import com.platine.zoodelille.dao.AccessDao;
 
-
 @DatabaseTable(daoClass=AccessDao.class)
 public class Access {
 	
@@ -59,6 +58,4 @@ public class Access {
 		return "Access [id=" + id + ", transport_mode=" + transport_mode
 				+ ", explanation=" + explanation + "]";
 	}
-
 }
-

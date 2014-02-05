@@ -88,5 +88,4 @@ public class AnimalCategoryDao  extends BaseDaoImpl<AnimalCategory,Integer>  {
 		}
 		return 0;
 	}
-
 }

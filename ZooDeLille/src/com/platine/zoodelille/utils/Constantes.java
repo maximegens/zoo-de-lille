@@ -11,12 +11,12 @@ public class Constantes {
             "com.platine.zoodelille.fragments.AccueilFragment",
             "com.platine.zoodelille.fragments.AnimauxFragment",
             "com.platine.zoodelille.fragments.PlanDuZooFragment",
-            "com.platine.zoodelille.fragments.ActivitesPedagogiqueFragment",
-            "com.platine.zoodelille.fragments.JeuxInteractifFragment",
+//            "com.platine.zoodelille.fragments.ActivitesPedagogiqueFragment",
+//            "com.platine.zoodelille.fragments.JeuxInteractifFragment",
             "com.platine.zoodelille.fragments.PlanAccesFragment",
             "com.platine.zoodelille.fragments.InformationsPratiqueFragment",
-            "com.platine.zoodelille.fragments.AuxAlentoursFragment",
-            "com.platine.zoodelille.fragments.ReglagesFragment",
+//            "com.platine.zoodelille.fragments.AuxAlentoursFragment",
+//            "com.platine.zoodelille.fragments.ReglagesFragment",
             "com.platine.zoodelille.fragments.ContactFragment",
             "com.platine.zoodelille.fragments.AProposFragment"
 	};
@@ -27,10 +27,9 @@ public class Constantes {
 	public static String CONNEXION_INTERNET_FAILED = "Aucune connexion";
 	public static String PROCHAIN_HORAIRE = "Jusque ";
 	public static String HEURE = "H ";
-	
-	/** horaire Zoo.
-	 * Cela devra être modifier pour communiquer avec la base de donnée.
-	 */
-	
-	
+	public static String COORDONNEES_GPS_ZOO_LATITUDE = "50.63828789999999";
+	public static String COORDONNEES_GPS_ZOO_LONGITUDE = "3.0455561999999645";
+	public static String ADRESSE_MAIL = "developpement.zoo.lille@gmail.com";
+	public static String NUMERO_TEL_ZOO = "0328520700";
+
 }

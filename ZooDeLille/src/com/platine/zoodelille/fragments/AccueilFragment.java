@@ -171,5 +171,3 @@ public class AccueilFragment extends Fragment {
 	    }
 	}
 }
-
-

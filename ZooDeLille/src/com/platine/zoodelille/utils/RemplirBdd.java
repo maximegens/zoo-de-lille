@@ -1,17 +1,27 @@
 package com.platine.zoodelille.utils;
 
 import java.util.Date;
-
-import android.content.Context;
+import java.util.HashMap;
+import java.util.List;
 
 import com.platine.zoodelille.bdd.DatabaseManager;
 import com.platine.zoodelille.beans.Animal;
+import com.platine.zoodelille.beans.AnimalCategory;
 import com.platine.zoodelille.beans.Article;
+import com.platine.zoodelille.beans.Country;
+import com.platine.zoodelille.beans.Enclosure;
+import com.platine.zoodelille.beans.Garbage;
+import com.platine.zoodelille.beans.LocatableElement;
 import com.platine.zoodelille.beans.PracticalInformation;
+import com.platine.zoodelille.beans.Restroom;
+import com.platine.zoodelille.dao.AnimalCategoryDao;
 import com.platine.zoodelille.dao.AnimalDao;
 import com.platine.zoodelille.dao.ArticleDao;
+import com.platine.zoodelille.dao.CountryDao;
+import com.platine.zoodelille.dao.EnclosureDao;
+import com.platine.zoodelille.dao.GarbageDao;
 import com.platine.zoodelille.dao.PracticalInformationDao;
-
+import com.platine.zoodelille.dao.RestroomDao;
 
 /**
  * Classe de développement servant à remplir manuellement la base de données. 
@@ -19,100 +29,136 @@ import com.platine.zoodelille.dao.PracticalInformationDao;
  */
 public class RemplirBdd {
 
+	public static void addAnimalCategories()
+	{
+		AnimalCategoryDao animalCategoryDao = DatabaseManager.getDao().getAnimalCategoryDao();
+		
+		AnimalCategory mamifere = new AnimalCategory("Mamifère");
+		AnimalCategory oiseau = new AnimalCategory("Oiseau");
+		AnimalCategory reptile = new AnimalCategory("Reptile");
+		
+		animalCategoryDao.save(mamifere);
+		animalCategoryDao.save(oiseau);
+		animalCategoryDao.save(reptile);
+	}
+	
+	public static void addAnimalCountries()
+	{
+		CountryDao countryDao = DatabaseManager.getDao().getCountryDao();
+		
+		Country australie = new Country("Australie");
+		Country congo = new Country("Congo");
+		Country bresil = new Country("Brésil");
+		Country canada = new Country("Canada");
+		
+		countryDao.save(australie);
+		countryDao.save(congo);
+		countryDao.save(bresil);
+		countryDao.save(canada);
+	}
+	
 	/**
 	 * Permet de remplir la base de données avec des animaux.
-	 * @param ctx Le contexte d'application.
 	 */
-	public static void ajouterDesAnimaux(Context ctx){
+	public static void ajouterDesAnimaux(){
+		CountryDao countryDao = DatabaseManager.getDao().getCountryDao();
+		EnclosureDao enclosureDao = DatabaseManager.getDao().getEnclosureDao();
+		AnimalCategoryDao animalCategoryDao = DatabaseManager.getDao().getAnimalCategoryDao();
+		List<Enclosure> enclosures = enclosureDao.findAll();
+		List<AnimalCategory> animalCategories = animalCategoryDao.findAll();
+		List<Country> countries = countryDao.findAll();
+		HashMap<String, Enclosure> enclosures_dico = NamableElementHelper.transformToHashMap(enclosures);
+		HashMap<String, Country> countries_dico = NamableElementHelper.transformToHashMap(countries);
+		HashMap<String, AnimalCategory> animalCategories_dico = NamableElementHelper.transformToHashMap(animalCategories);
 		
 		/** Les Mamiféres **/
-//		AnimalDao animalDao = DatabaseManager.getDao().getAnimalDao();
-//		Animal alpaga = new Animal("Alpaga", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
-//		Animal capucinBrun = new Animal("Capucin brun", 1, 1, "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null);
-//		Animal capybara = new Animal("Capybara", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
-//		Animal chatPecheur = new Animal("Chat pêcheur", 1, 1, "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null);
-//		Animal coatiBrun = new Animal("Coati brun", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
-//		Animal gibbonAMainsBlanches = new Animal("Gibbon à mains blanches", 1, 1, "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null);
-//		Animal elandDuCap = new Animal("Eland du Cap", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
-//		Animal kinkajou = new Animal("Kinkajou", 1, 1, "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null);
-//		Animal lievreDePatagonie = new Animal("Lièvre de Patagonie", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
-//		Animal lorisLentPygmee = new Animal("Loris lent pygmée", 1, 1, "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null);
-//		Animal makiCatta = new Animal("Maki catta", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
-//		Animal mangousteJaune = new Animal("Mangouste jaune", 1, 1, "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null);
-//		Animal ouistitiDeGeoffroy = new Animal("Ouistiti de Geoffroy", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
-//		Animal pandaRoux = new Animal("Panda roux", 1, 1, "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null);
-//		Animal petitChevrotainMalais = new Animal("Petit chevrotain malais", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
-//		Animal porcEpicACrete = new Animal("Porc-épic à crête", 1, 1, "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null);
-//		Animal renardVolant = new Animal("Renard volant", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
-//		Animal rhinocerosBlanc = new Animal("Rhinocéros blanc", 1, 1, "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null);
-//		Animal siamang = new Animal("Siamang", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
-//		Animal suricate = new Animal("Suricate", 1, 1, "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null);
-//		Animal tamarinEmpereur = new Animal("Tamarin empereur", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
-//		Animal tamarinLabie = new Animal("Tamarin labié", 1, 1, "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null);
-//		Animal tapirTerrestre = new Animal("Tapir terrestre", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
-//		Animal variNoirEtBlanc = new Animal("Vari noir et blanc", 1, 1, "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null);
-//		Animal variRoux = new Animal("Vari roux", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
-//		Animal zebreDeBurchell = new Animal("Zèbre de Burchell", 1, 1, "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null);
+		AnimalDao animalDao = DatabaseManager.getDao().getAnimalDao();
+		Animal alpaga = new Animal("Alpaga",  animalCategories_dico.get("Mamifère"), countries_dico.get("Australie"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Terre d'Asie"));
+		Animal capucinBrun = new Animal("Capucin brun", animalCategories_dico.get("Mamifère"), countries_dico.get("Congo"), "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null, enclosures_dico.get("Volières"));
+		Animal capybara = new Animal("Capybara", animalCategories_dico.get("Mamifère"), countries_dico.get("Brésil"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Terre d'Afrique"));
+		Animal chatPecheur = new Animal("Chat pêcheur", animalCategories_dico.get("Mamifère"), countries_dico.get("Brésil"), "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null, enclosures_dico.get("Terre d'Asie"));
+		Animal coatiBrun = new Animal("Coati brun", animalCategories_dico.get("Mamifère"), countries_dico.get("Brésil"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Terre d'Amérique"));
+		Animal gibbonAMainsBlanches = new Animal("Gibbon à mains blanches", animalCategories_dico.get("Mamifère"), countries_dico.get("Australie"), "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null, enclosures_dico.get("Terre d'Afrique"));
+		Animal elandDuCap = new Animal("Eland du Cap", animalCategories_dico.get("Mamifère"), countries_dico.get("Canada"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Terre d'Amérique"));
+		Animal kinkajou = new Animal("Kinkajou", animalCategories_dico.get("Mamifère"), countries_dico.get("Brésil"), "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null, enclosures_dico.get("Terre d'Afrique"));
+		Animal lievreDePatagonie = new Animal("Lièvre de Patagonie", animalCategories_dico.get("Mamifère"), countries_dico.get("Brésil"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Terre d'Afrique"));
+		Animal lorisLentPygmee = new Animal("Loris lent pygmée", animalCategories_dico.get("Mamifère"), countries_dico.get("Brésil"), "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null, enclosures_dico.get("Terre d'Afrique"));
+		Animal makiCatta = new Animal("Maki catta", animalCategories_dico.get("Mamifère"), countries_dico.get("Australie"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Terre d'Amérique"));
+		Animal mangousteJaune = new Animal("Mangouste jaune", animalCategories_dico.get("Mamifère"), countries_dico.get("Australie"), "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null, enclosures_dico.get("Madagascar"));
+		Animal ouistitiDeGeoffroy = new Animal("Ouistiti de Geoffroy", animalCategories_dico.get("Mamifère"), countries_dico.get("Australie"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Ile des singes"));
+		Animal pandaRoux = new Animal("Panda roux", animalCategories_dico.get("Mamifère"), countries_dico.get("Australie"), "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null, enclosures_dico.get("Terre d'Asie"));
+		Animal petitChevrotainMalais = new Animal("Petit chevrotain malais", animalCategories_dico.get("Mamifère"), countries_dico.get("Australie"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Terre d'Afrique"));
+		Animal porcEpicACrete = new Animal("Porc-épic à crête", animalCategories_dico.get("Mamifère"), countries_dico.get("Australie"), "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null, enclosures_dico.get("Terre d'Afrique"));
+		Animal renardVolant = new Animal("Renard volant", animalCategories_dico.get("Mamifère"), countries_dico.get("Australie"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Terre d'Afrique"));
+		Animal rhinocerosBlanc = new Animal("Rhinocéros blanc", animalCategories_dico.get("Mamifère"), countries_dico.get("Australie"), "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null, enclosures_dico.get("Volières"));
+		Animal siamang = new Animal("Siamang", animalCategories_dico.get("Mamifère"), countries_dico.get("Australie"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Ile des singes"));
+		Animal suricate = new Animal("Suricate", animalCategories_dico.get("Mamifère"), countries_dico.get("Australie"), "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null, enclosures_dico.get("Madagascar"));
+		Animal tamarinEmpereur = new Animal("Tamarin empereur", animalCategories_dico.get("Mamifère"), countries_dico.get("Australie"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Terre d'Afrique"));
+		Animal tamarinLabie = new Animal("Tamarin labié", animalCategories_dico.get("Mamifère"),countries_dico.get("Australie"), "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null, enclosures_dico.get("Terre d'Afrique"));
+		Animal tapirTerrestre = new Animal("Tapir terrestre", animalCategories_dico.get("Mamifère"), countries_dico.get("Australie"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Terre d'Afrique"));
+		Animal variNoirEtBlanc = new Animal("Vari noir et blanc", animalCategories_dico.get("Mamifère"), countries_dico.get("Australie"), "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null, enclosures_dico.get("Terre d'Afrique"));
+		Animal variRoux = new Animal("Vari roux", animalCategories_dico.get("Mamifère"), countries_dico.get("Australie"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Volières"));
+		Animal zebreDeBurchell = new Animal("Zèbre de Burchell", animalCategories_dico.get("Mamifère"), countries_dico.get("Australie"), "Ceci est un perroquet féroce", "arbres ou en cage", "5 a 10 ans", 1, 12, 5, null, enclosures_dico.get("Madagascar"));
 		
-//		animalDao.save(alpaga);
-//		animalDao.save(capucinBrun);
-//		animalDao.save(capybara);
-//		animalDao.save(chatPecheur);
-//		animalDao.save(coatiBrun);
-//		animalDao.save(gibbonAMainsBlanches);
-//		animalDao.save(elandDuCap);
-//		animalDao.save(kinkajou);
-//		animalDao.save(lievreDePatagonie);
-//		animalDao.save(lorisLentPygmee);
-//		animalDao.save(makiCatta);
-//		animalDao.save(mangousteJaune);
-//		animalDao.save(ouistitiDeGeoffroy);
-//		animalDao.save(pandaRoux);
-//		animalDao.save(petitChevrotainMalais);
-//		animalDao.save(porcEpicACrete);
-//		animalDao.save(renardVolant);
-//		animalDao.save(rhinocerosBlanc);
-//		animalDao.save(siamang);
-//		animalDao.save(suricate);
-//		animalDao.save(tamarinEmpereur);
-//		animalDao.save(tamarinLabie);
-//		animalDao.save(tapirTerrestre);
-//		animalDao.save(variNoirEtBlanc);
-//		animalDao.save(variRoux);
-//		animalDao.save(zebreDeBurchell);
-		
+		animalDao.save(alpaga);
+		animalDao.save(capucinBrun);
+		animalDao.save(capybara);
+		animalDao.save(chatPecheur);
+		animalDao.save(coatiBrun);
+		animalDao.save(gibbonAMainsBlanches);
+		animalDao.save(elandDuCap);
+		animalDao.save(kinkajou);
+		animalDao.save(lievreDePatagonie);
+		animalDao.save(lorisLentPygmee);
+		animalDao.save(makiCatta);
+		animalDao.save(mangousteJaune);
+		animalDao.save(ouistitiDeGeoffroy);
+		animalDao.save(pandaRoux);
+	/*	animalDao.save(petitChevrotainMalais);
+		animalDao.save(porcEpicACrete);
+		animalDao.save(renardVolant);
+		animalDao.save(rhinocerosBlanc);
+		animalDao.save(siamang);
+		animalDao.save(suricate);
+		animalDao.save(tamarinEmpereur);
+		animalDao.save(tamarinLabie);
+		animalDao.save(tapirTerrestre);
+		animalDao.save(variNoirEtBlanc);
+		animalDao.save(variRoux);
+		animalDao.save(zebreDeBurchell);
+		*/
 		/** Les Reptiles **/
-//		Animal agameCommun = new Animal("Agame commun", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
-//		Animal boaConstrictor = new Animal("Boa constrictor", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
-//		Animal boaDesArbresDeMadagascar = new Animal("Boa des arbres de Madagascar", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
-//		Animal couleuvreDAsie = new Animal("Couleuvre d’Asie", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
-//		Animal couleuvreDelAmour = new Animal("Couleuvre de l'Amour", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
-//		Animal iguaneVert = new Animal("Iguane vert", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
-//		Animal pelomeduseRoussatre = new Animal("Péloméduse roussâtre", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
-//		Animal serpentDeLait = new Animal("Serpent de lait", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
-//		Animal serpentDesBles = new Animal("Serpent des blés", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
-//		Animal serpentRoi = new Animal("Serpent roi", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
-//		Animal tortueDAldabra = new Animal("Tortue d’Aldabra", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
-//		Animal tortueDeFloride = new Animal("Tortue de Floride", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
-//		Animal tortueGrecque = new Animal("Tortue grecque", 1, 1, "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null);
+		Animal agameCommun = new Animal("Agame commun", animalCategories_dico.get("Reptile"), countries_dico.get("Australie"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Terre d'Afrique"));
+		Animal boaConstrictor = new Animal("Boa constrictor", animalCategories_dico.get("Reptile"), countries_dico.get("Australie"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Maison tropicale"));
+		Animal boaDesArbresDeMadagascar = new Animal("Boa des arbres de Madagascar", animalCategories_dico.get("Reptile"), countries_dico.get("Australie"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Maison tropicale"));
+		Animal couleuvreDAsie = new Animal("Couleuvre d’Asie", animalCategories_dico.get("Reptile"), countries_dico.get("Australie"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Maison tropicale"));
+		Animal couleuvreDelAmour = new Animal("Couleuvre de l'Amour", animalCategories_dico.get("Reptile"), countries_dico.get("Australie"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Maison tropicale"));
+		Animal iguaneVert = new Animal("Iguane vert", animalCategories_dico.get("Reptile"), countries_dico.get("Australie"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Maison tropicale"));
+		Animal pelomeduseRoussatre = new Animal("Péloméduse roussâtre", animalCategories_dico.get("Reptile"), countries_dico.get("Australie"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Terre d'Afrique"));
+		Animal serpentDeLait = new Animal("Serpent de lait", animalCategories_dico.get("Reptile"), countries_dico.get("Australie"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Maison tropicale"));
+		Animal serpentDesBles = new Animal("Serpent des blés", animalCategories_dico.get("Reptile"), countries_dico.get("Australie"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Maison tropicale"));
+		Animal serpentRoi = new Animal("Serpent roi", animalCategories_dico.get("Reptile"), countries_dico.get("Australie"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Maison tropicale"));
+		Animal tortueDAldabra = new Animal("Tortue d’Aldabra", animalCategories_dico.get("Reptile"), countries_dico.get("Australie"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Maison tropicale"));
+		Animal tortueDeFloride = new Animal("Tortue de Floride", animalCategories_dico.get("Reptile"), countries_dico.get("Australie"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Maison tropicale"));
+		Animal tortueGrecque = new Animal("Tortue grecque", animalCategories_dico.get("Reptile"), countries_dico.get("Australie"), "Ceci est un lion féroce", "jungle", "5 a 10 ans", 1, 125, 9, null, enclosures_dico.get("Maison tropicale"));
 		
-//		animalDao.save(agameCommun);
-//		animalDao.save(boaConstrictor);
-//		animalDao.save(boaDesArbresDeMadagascar);
-//		animalDao.save(couleuvreDAsie);
-//		animalDao.save(couleuvreDelAmour);
-//		animalDao.save(iguaneVert);
-//		animalDao.save(pelomeduseRoussatre);
-//		animalDao.save(serpentDeLait);
-//		animalDao.save(serpentDesBles);
-//		animalDao.save(serpentRoi);
-//		animalDao.save(tortueDAldabra);
-//		animalDao.save(tortueDeFloride);
-//		animalDao.save(tortueGrecque);
+		animalDao.save(agameCommun);
+		animalDao.save(boaConstrictor);
+		animalDao.save(boaDesArbresDeMadagascar);
+		animalDao.save(couleuvreDAsie);
+		animalDao.save(couleuvreDelAmour);
+		animalDao.save(iguaneVert);
+		animalDao.save(pelomeduseRoussatre);
+		animalDao.save(serpentDeLait);
+		animalDao.save(serpentDesBles);
+		animalDao.save(serpentRoi);
+		animalDao.save(tortueDAldabra);
+		animalDao.save(tortueDeFloride);
+		animalDao.save(tortueGrecque);
 	
 	}	
 	
-	public static void ajouterArticle(Context context){
+	public static void ajouterArticle(){
 		ArticleDao articleDao = DatabaseManager.getDao().getArticleDao();
 		Article a1= new Article("Le Zoo se cherche un avenir", "Il est nécessaire de faire aboutir le projet d’agrandissement et modernisation du zoo de Lille. C’est le message que rappelle à la mairie l'association Zooalil, " +
 				"qui a participé à une étude préalable, lancée il y a trois ans par la municipalité."+
@@ -162,6 +208,7 @@ public class RemplirBdd {
 		articleDao.save(a5);
 	}
 	
+	
 	public static void ajouterPraticalInformation(){
 		
 		PracticalInformationDao practicalInformationDao = DatabaseManager.getDao().getPracticalInformationDao();			
@@ -190,4 +237,48 @@ public class RemplirBdd {
 		practicalInformationDao.save(p);	
 	}
 	
+	/**
+	 * Ajoute les poubelles à la base de données
+	 */
+	public static void addGarbages(){
+		GarbageDao gDao = DatabaseManager.getDao().getGarbageDao();
+		Garbage g1 = new Garbage(new LocatableElement(86,49));
+		Garbage g2 = new Garbage(new LocatableElement(68,93));
+
+		gDao.save(g1);
+		gDao.save(g2);
+	}
+	
+	/**
+	 * Ajoute les toilettes à la base de données
+	 */
+	public static void addRestroom(){
+		RestroomDao rDao = DatabaseManager.getDao().getRestroomDao();
+		Restroom r1 = new Restroom(new LocatableElement(81, 53));
+		
+		rDao.save(r1);
+	}
+	
+	/**
+	 * Ajoute les enclos à la base de données
+	 */
+	public static void addEnclosures(){
+		EnclosureDao eDao = DatabaseManager.getDao().getEnclosureDao();
+		
+		Enclosure ile_singes = new Enclosure("Ile des singes", new LocatableElement(24, 25));
+		Enclosure amerique = new Enclosure("Terre d'Amérique", new LocatableElement(57, 56));
+		Enclosure tropicale = new Enclosure("Maison tropicale", new LocatableElement(76, 42));
+		Enclosure voliere = new Enclosure("Volières", new LocatableElement(87, 65));
+		Enclosure asie = new Enclosure("Terre d'Asie", new LocatableElement(43, 24));
+		Enclosure madagascar = new Enclosure("Madagascar", new LocatableElement(76, 68));
+		Enclosure afrique = new Enclosure("Terre d'Afrique", new LocatableElement(38, 79));
+		
+		eDao.save(ile_singes);
+		eDao.save(amerique);
+		eDao.save(tropicale);
+		eDao.save(voliere);
+		eDao.save(asie);
+		eDao.save(madagascar);
+		eDao.save(afrique);
+	}
 }
