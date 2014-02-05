@@ -11,12 +11,12 @@ public class Constantes {
             "com.platine.zoodelille.fragments.AccueilFragment",
             "com.platine.zoodelille.fragments.AnimauxFragment",
             "com.platine.zoodelille.fragments.PlanDuZooFragment",
-            "com.platine.zoodelille.fragments.ActivitesPedagogiqueFragment",
-            "com.platine.zoodelille.fragments.JeuxInteractifFragment",
+//            "com.platine.zoodelille.fragments.ActivitesPedagogiqueFragment",
+//            "com.platine.zoodelille.fragments.JeuxInteractifFragment",
             "com.platine.zoodelille.fragments.PlanAccesFragment",
             "com.platine.zoodelille.fragments.InformationsPratiqueFragment",
-            "com.platine.zoodelille.fragments.AuxAlentoursFragment",
-            "com.platine.zoodelille.fragments.ReglagesFragment",
+//            "com.platine.zoodelille.fragments.AuxAlentoursFragment",
+//            "com.platine.zoodelille.fragments.ReglagesFragment",
             "com.platine.zoodelille.fragments.ContactFragment",
             "com.platine.zoodelille.fragments.AProposFragment"
 	};

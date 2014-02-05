@@ -25,12 +25,12 @@
         <item>@string/accueil</item>
         <item>@string/animaux_du_zoo</item>
         <item>@string/plan_du_zoo</item>
-        <item>@string/activite_pedagogique</item>
-        <item>@string/jeux_interactif</item>
+<!--         <item>@string/activite_pedagogique</item> -->
+<!--         <item>@string/jeux_interactif</item> -->
         <item>@string/plan_acces</item>
         <item>@string/informations_pratique</item>
-        <item>@string/aux_alentours</item>
-        <item>@string/reglages</item>
+<!--         <item>@string/aux_alentours</item> -->
+<!--         <item>@string/reglages</item> -->
         <item>@string/contact</item>
         <item>@string/a_propos</item>
     </string-array>
