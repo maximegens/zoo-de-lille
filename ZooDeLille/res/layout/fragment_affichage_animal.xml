@@ -4,89 +4,177 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" 
     >
-   <TextView 
-     android:id="@+id/titre_article"
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"
-     android:gravity="center_horizontal"
-     android:paddingTop="12dp"
-     android:textSize="22sp"
-     android:textStyle="bold"
-    />
 
-   	<RelativeLayout
-   	    android:id="@+id/layout_article"
-   	    android:layout_width="match_parent"
-   	    android:layout_height="wrap_content"
-   	    android:layout_centerHorizontal="true"
-   	    android:layout_below="@+id/titre_article"
-   	    android:layout_margin="10dp"
-   	    android:layout_marginTop="44dp"
-   	    android:background="@color/White" >
-   	    
-		<LinearLayout
-		    android:orientation="horizontal"
-		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
-		    android:id="@+id/description_affichage_article"
-		    >
-		 
-		    <ImageView
-				android:id="@+id/img_article"
-				android:contentDescription="@string/description_image_illustration_article"
-			   	android:layout_width="150dp"
-		        android:layout_height="150dp"
-		        android:paddingLeft="10dp"
-				/>
-		 
-			<LinearLayout
-			    android:orientation="vertical"
-			    android:layout_width="0dp"
-			    android:layout_height="wrap_content"
-			   	android:layout_gravity="center_vertical"
-			   	android:paddingLeft="10dp"
-			    android:layout_weight="1"
-			    >
+    <Gallery
+        android:id="@+id/gallery01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp" >
 
-				<TextView
-				    android:id="@+id/summary_article"
-				    android:layout_width="match_parent"
-				    android:layout_height="match_parent"
-				    android:lines="5"
-				    android:paddingLeft="5dp"
-				    android:paddingRight="5dp"
-				    android:textSize="12sp"
-				    android:textStyle="bold" />
-		 
-			    <ImageButton
-			         android:id="@+id/partage_facebook"
-			         android:layout_width="wrap_content"
-			         android:contentDescription="@string/description_image_facebook"
-			         android:layout_height="wrap_content"
-					 android:src="@drawable/button_facebook"
-					 android:layout_gravity="center"
-			    />
-		 
-		    </LinearLayout>
-		 
-		</LinearLayout>
-	<ScrollView
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:layout_below="@+id/description_affichage_article"
-		>
-			
-	<TextView
-	     android:id="@+id/contenu_article"
-	     android:layout_width="match_parent"
-	     android:layout_height="wrap_content"
-	     android:paddingRight="5dp"
-	     android:paddingLeft="5dp"
-	     />
+    </Gallery>
 
-   
-	</ScrollView>
-		
-   	</RelativeLayout>
+    <TextView
+        android:id="@+id/animalName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gallery01"
+        android:layout_centerHorizontal="true"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/animalName"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="25dp"
+        android:text="Description :" />
+
+    <TextView
+        android:id="@+id/description_information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/description"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/White"
+        android:text="TextView" />
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/description_information"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="94dp" >
+
+        <TableRow
+            android:id="@+id/TableRow06"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/protec_animal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Animal Protégé :" />
+
+            <TextView
+                android:id="@+id/animal_protect_information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TableRow05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categorie :" />
+
+            <TextView
+                android:id="@+id/animal_category_information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TableRow04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/longevite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Longévité :" />
+
+            <TextView
+                android:id="@+id/animal_longevite_information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TableRow03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/poids"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Poids :" />
+
+            <TextView
+                android:id="@+id/animal_poids_information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TableRow02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/gestation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gestation :" />
+
+            <TextView
+                android:id="@+id/animal_gestation_information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/TableRow01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/pays"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pays :" />
+
+            <TextView
+                android:id="@+id/animal_pays_information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/environnement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Environnement :" />
+
+            <TextView
+                android:id="@+id/animal_environnement_information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+        </TableRow>
+    </TableLayout>
    	    
 </RelativeLayout>

@@ -9,7 +9,7 @@ android:layout_height="wrap_content">
 		    android:layout_height="wrap_content" >
 	
 	    <TextView
-	        android:id="@+id/textView1"
+	        android:id="@+id/animalname"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_alignParentLeft="true"
@@ -24,7 +24,7 @@ android:layout_height="wrap_content">
 	        android:id="@+id/objet_mail"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
-	        android:layout_below="@+id/textView1"
+	        android:layout_below="@+id/animalname"
 	        android:layout_marginTop="10dp"
 	        android:padding="5dp"
 	        android:ems="10"
@@ -35,7 +35,7 @@ android:layout_height="wrap_content">
 	    </EditText>
 	
 	    <TextView
-	        android:id="@+id/textView2"
+	        android:id="@+id/description"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/objet_mail"
@@ -49,7 +49,7 @@ android:layout_height="wrap_content">
 	        android:id="@+id/contenu_message"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
-	        android:layout_below="@+id/textView2"
+	        android:layout_below="@+id/description"
 	        android:layout_marginTop="10dp"
 	        android:padding="5dp"
 	        android:lines="4"

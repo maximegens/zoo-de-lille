@@ -45,7 +45,7 @@ public class AnimauxFragment extends Fragment {
 			@Override
 			public void onItemClick(AdapterView<?> a, View view, int position, long id) {
 				Animal a1 =  (Animal)listeViewAnimal.getItemAtPosition(position);
-				AccueilFragmentAffichageAnimal fragment_affichage = new AccueilFragmentAffichageAnimal();
+				FragmentAffichageAnimal fragment_affichage = new FragmentAffichageAnimal();
 			    Bundle args = new Bundle();
 			    args.putString("id", String.valueOf(a1.getId()));
 			    fragment_affichage.setArguments(args);
