@@ -38,21 +38,16 @@ public class AnimalCategory implements NamableElement {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
 	public void setAnimals(ForeignCollection<Animal> animals)
 	{
 		this.animals = animals;
 	}
-	
 	public ForeignCollection<Animal> getAnimals()
 	{
 		return animals;
 	}
-	
 	public String toString()
 	{
 		return "[id=" + id + ",name=" + name + "]";
 	}
-
-
 }

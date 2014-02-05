@@ -32,6 +32,4 @@ public class Constantes {
 	public static String ADRESSE_MAIL = "developpement.zoo.lille@gmail.com";
 	public static String NUMERO_TEL_ZOO = "0328520700";
 
-	
-	
 }

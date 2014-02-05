@@ -7,10 +7,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
-
-import android.util.Log;
-import android.view.Menu;
-
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,11 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.platine.zoodelille.R;
-import com.platine.zoodelille.bdd.DatabaseManager;
-import com.platine.zoodelille.dao.AnimalDao;
-import com.platine.zoodelille.dao.LocatableElementDao;
 import com.platine.zoodelille.utils.Constantes;
-import com.platine.zoodelille.utils.RemplirBdd;
 
 public class MainActivity extends FragmentActivity {
 
@@ -79,28 +71,6 @@ public class MainActivity extends FragmentActivity {
         tx.commit();
         
 	}
-
-//	/**
-//	 * Gérer la pression du bouton "Back" en demandant à l'utilisateur si il souhaite quitter l'application.
-//	 */
-//    public void onBackPressed() {
-//
-//    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//        builder.setMessage(R.string.quitter_application)
-//               .setPositiveButton("Oui", new DialogInterface.OnClickListener() {
-//                   public void onClick(DialogInterface dialog, int id) {
-//                	   finish();
-//                   }
-//               })
-//               .setNegativeButton("Non", new DialogInterface.OnClickListener() {
-//                   public void onClick(DialogInterface dialog, int id) {
-//                       
-//                   }
-//               });
-//        builder.show();
-//        
-//    } 
-	
 	
 	/**
 	 * Methode excécutant du code lors du clique sur un item du Drawer. 
@@ -183,4 +153,3 @@ public class MainActivity extends FragmentActivity {
 	        super.onSaveInstanceState(outState);
 	    }
 }
-

@@ -3,7 +3,6 @@ package com.platine.zoodelille.utils;
 import java.util.HashMap;
 import java.util.List;
 
-import com.platine.zoodelille.beans.Enclosure;
 import com.platine.zoodelille.beans.NamableElement;
 
 public class NamableElementHelper {

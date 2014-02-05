@@ -72,15 +72,12 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 				TableUtils.createTable(connectionSource, AnimalCategory.class);
 				TableUtils.createTable(connectionSource, Country.class);
 				TableUtils.createTable(connectionSource, Animal.class);
-
 				TableUtils.createTable(connectionSource, Article.class);
 				TableUtils.createTable(connectionSource, PracticalInformation.class);
-
 				TableUtils.createTable(connectionSource, LocatableElement.class);
 				TableUtils.createTable(connectionSource, Enclosure.class);
 				TableUtils.createTable(connectionSource, Garbage.class);
 				TableUtils.createTable(connectionSource, Restroom.class);
-
 				
 			} catch (java.sql.SQLException e) {
 				Log.e(DatabaseHelper.class.getName(), "Impossible de créer la BD", e);
@@ -96,7 +93,6 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	public void onUpgrade(SQLiteDatabase db, ConnectionSource connectionSource, int oldVersion, int newVersion) {
 			
 			try {
-				
 				Log.i(DatabaseHelper.class.getName(), "Mise à jour de la DataBase");
 				TableUtils.dropTable(connectionSource, Animal.class, true);
 				TableUtils.dropTable(connectionSource, AnimalCategory.class, true);

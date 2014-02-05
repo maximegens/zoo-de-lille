@@ -7,7 +7,6 @@ import com.platine.zoodelille.dao.PracticalInformationDao;
 @DatabaseTable(daoClass=PracticalInformationDao.class)
 public class PracticalInformation {
 	
-	
 	@DatabaseField(generatedId=true)
 	public int id;
 	 
@@ -177,11 +176,9 @@ public class PracticalInformation {
 		return annual_opening;
 	}
 
-
 	public void setAnnual_opening(String annual_opening) {
 		this.annual_opening = annual_opening;
 	}
-
 
 	@Override
 	public String toString() {
@@ -198,10 +195,4 @@ public class PracticalInformation {
 				+ winter_weekend_closing_time + ", annual_closing="
 				+ annual_closing + ", annual_opening=" + annual_opening + "]";
 	}
-
-
-	
-
-
 }
-

@@ -45,9 +45,6 @@ public class PlanAccesFragment extends Fragment {
 		voiture.setTypeface(null, Typeface.BOLD);
 		acces.setTypeface(null, Typeface.BOLD);
 	
-		
-
-		
 		voiture.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -135,8 +132,7 @@ public class PlanAccesFragment extends Fragment {
 				startActivity(intent);
 			}
 		});
-		
-		
+			
 		return myInflatedView;
 	}
 }

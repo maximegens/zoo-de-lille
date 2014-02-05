@@ -57,5 +57,4 @@ public class Country implements NamableElement{
 	{
 		return "[id=" + id + ",name=" + name + "]";
 	}
-
 }

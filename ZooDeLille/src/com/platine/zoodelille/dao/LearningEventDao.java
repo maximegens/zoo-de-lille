@@ -88,5 +88,4 @@ public class LearningEventDao extends BaseDaoImpl<LearningEvent,Integer> {
 		}
 		return 0;
 	}
-
 }

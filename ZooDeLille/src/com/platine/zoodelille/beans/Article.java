@@ -89,33 +89,10 @@ public class Article {
 	public void setLien_image(String lien_image) {
 		this.lien_image = lien_image;
 	}
-
 	@Override
 	public String toString() {
 		return "Article [id=" + id + ", title=" + title + ", content="
 				+ content + ", publication_date=" + publication_date
 				+ ", summary=" + summary + ", lien_image=" + lien_image + "]";
 	}
-
-
-	// methods
-	
-	
-	
-	
-	/**
-	 * Return List of article
-	 * Ne Focntionne pas manque la List des articles depuis la base de donnée ligne : for(Article article : ???? )
-	 
-	public List<Article> getCities() {
-		ArrayList articles = new ArrayList();
-		for(Article article : ??? ) {
-			articles.add(article);
-		}
-		return articles;
-	}
-	*/
-	
-	
-
 }

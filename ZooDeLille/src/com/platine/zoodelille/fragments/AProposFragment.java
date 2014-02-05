@@ -34,8 +34,6 @@ public class AProposFragment extends Fragment {
         builder.create();
         builder.show();
 
-		
-		
 		return myInflatedView;
 	}
 }

@@ -64,9 +64,7 @@ public class HoraireZoo {
 		
 		Instant winter_start = new DateTime(now.getYear(),11,1,0,0,0,0).toInstant(); // fin octobre = 1novembre
 		Instant winter_end = new DateTime(now.getYear()+1,03,31,0,0,0,0).toInstant(); //fin mars = 31 mars
-		winter = new Interval(winter_start, winter_end);
-		
-		
+		winter = new Interval(winter_start, winter_end);	
 	}
 	
 	/**
@@ -177,5 +175,4 @@ public class HoraireZoo {
 				return "indéfini";
 		}	
 	}
-	
 }

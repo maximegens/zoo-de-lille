@@ -88,5 +88,4 @@ public class CountryDao extends BaseDaoImpl<Country,Integer>  {
 		}
 		return 0;
 	}
-
 }

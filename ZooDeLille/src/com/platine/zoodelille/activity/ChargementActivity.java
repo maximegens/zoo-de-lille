@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -40,8 +39,6 @@ public class ChargementActivity extends FragmentActivity {
 		retreiveAllData = new RetreiveAllData(this);
 		retreiveAllData.execute();
 	}
-
-
 	
 	/** 
 	 * AsynTask pour récupérer la temperature depuis la météo de Yahoo.
@@ -68,57 +65,28 @@ public class ChargementActivity extends FragmentActivity {
 			
 			articleDao = DatabaseManager.getDao().getArticleDao();
 			practicalInformationDao = DatabaseManager.getDao().getPracticalInformationDao();
+			LocatableElementDao locElmDao = DatabaseManager.getDao().getLocatableElementDao();
+			AnimalDao animalDao = DatabaseManager.getDao().getAnimalDao();
+			AnimalCategoryDao animalCategoryDao = DatabaseManager.getDao().getAnimalCategoryDao();
+			CountryDao countryDao = DatabaseManager.getDao().getCountryDao();
 			
 			// remplissage de  la base de données.
 			
-			LocatableElementDao locElmDao = DatabaseManager.getDao().getLocatableElementDao();
-			
-			if(locElmDao.count() == 0)
-			{
-				Log.v("----- MainActivity", "Remplissage de la bdd en Elements localisables");
-				
+			if(locElmDao.count() == 0){
 				RemplirBdd.addRestroom();
 				RemplirBdd.addGarbages();
 				RemplirBdd.addEnclosures();
-		
 			}
-			
-			Log.v("----- MainActivity", "Il y a "+locElmDao.count()+" elements localisables dans la bdd");
-			
-			AnimalCategoryDao animalCategoryDao = DatabaseManager.getDao().getAnimalCategoryDao();
-			
-			if(animalCategoryDao.count() == 0)
-			{
-				Log.v("----- MainActivity", "Remplissage de la bdd en categorie d'animal");
-				
+			if(animalCategoryDao.count() == 0){
 				RemplirBdd.addAnimalCategories();
 			}
-			
-			Log.v("----- MainActivity", "Il y a "+ animalCategoryDao.count()+" categorie dans la bdd");
-			
-			CountryDao countryDao = DatabaseManager.getDao().getCountryDao();
-			
-			if(countryDao.count() == 0)
-			{
-				Log.v("----- MainActivity", "Remplissage de la bdd en country");
-				
+			if(countryDao.count() == 0){
 				RemplirBdd.addAnimalCountries();
 			}
 			
-			Log.v("----- MainActivity", "Il y a "+ countryDao.count()+" country dans la bdd");
-			
-			
-			
-			AnimalDao animalDao = DatabaseManager.getDao().getAnimalDao();
-			
-			// ajout des animaux dans la base si celle ci est vide
 			if (animalDao.count() == 0) {
-				Log.v("----- MainActivity", "Remplissage de la bdd en Animaux");
 				RemplirBdd.ajouterDesAnimaux();
-				
 			}
-			
-			Log.v("----- MainActivity", "Il y a "+animalDao.count()+" animaux dans la bdd");
 			
 			if (articleDao.count() == 0) {
 				RemplirBdd.ajouterArticle();
@@ -135,6 +103,5 @@ public class ChargementActivity extends FragmentActivity {
 	    	activity.startActivity(accueil);
 	    	activity.finish();
 	    }
-
 	}
 }

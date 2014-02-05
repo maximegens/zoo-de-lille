@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 
 import android.content.pm.ActivityInfo;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -413,7 +412,5 @@ public class PlanDuZooFragment extends Fragment implements OnGlobalLayoutListene
 				selectEnclosure(enclosure_id);
 			}
 		}
-		
-		
 	}
 }

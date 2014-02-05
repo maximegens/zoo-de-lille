@@ -73,11 +73,9 @@ public class Animal implements NamableElement {
 		this.enclosure = enclosure;
 	}
 	
-
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -90,15 +88,12 @@ public class Animal implements NamableElement {
 	public AnimalCategory getCategory() {
 		return category;
 	}
-
 	public void setCategory(AnimalCategory category) {
 		this.category = category;
 	}
-
 	public Country getCountry() {
 		return country;
 	}
-
 	public void setCountry(Country country) {
 		this.country = country;
 	}
@@ -144,12 +139,10 @@ public class Animal implements NamableElement {
 	public void setPicture_location(String picture_location) {
 		this.picture_location = picture_location;
 	}
-	
 	public void setEnclosure(Enclosure enclosure)
 	{
 		this.enclosure = enclosure;
 	}
-	
 	public Enclosure getEnclosure()
 	{
 		return enclosure;
@@ -164,5 +157,4 @@ public class Animal implements NamableElement {
 				+ protected_animal + ", weight=" + weight + ", gestation="
 				+ gestation + ", picture_location=" + picture_location + ", enclosure=" + enclosure + "]";
 	}	
-	
 }

@@ -44,6 +44,5 @@ public class DatabaseManager {
 	 */
 	static public DatabaseHelper getDao(){
 		return getInstance().getHelper();
-	}
-	
+	}	
 }

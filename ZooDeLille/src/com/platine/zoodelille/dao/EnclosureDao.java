@@ -3,8 +3,6 @@ package com.platine.zoodelille.dao;
 import java.sql.SQLException;
 import java.util.List;
 
-import android.util.Log;
-
 import com.j256.ormlite.dao.BaseDaoImpl;
 import com.j256.ormlite.support.ConnectionSource;
 import com.platine.zoodelille.beans.Enclosure;

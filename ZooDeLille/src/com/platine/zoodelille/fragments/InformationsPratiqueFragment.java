@@ -116,9 +116,7 @@ public class InformationsPratiqueFragment extends Fragment {
 				
 			}
 		});
-		
-		
-		
+
 		return myInflatedView;
 	}
 }

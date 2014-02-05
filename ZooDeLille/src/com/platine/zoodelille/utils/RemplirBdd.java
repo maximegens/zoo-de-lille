@@ -23,9 +23,6 @@ import com.platine.zoodelille.dao.GarbageDao;
 import com.platine.zoodelille.dao.PracticalInformationDao;
 import com.platine.zoodelille.dao.RestroomDao;
 
-
-
-
 /**
  * Classe de développement servant à remplir manuellement la base de données. 
  *

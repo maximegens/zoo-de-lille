@@ -1,8 +1,6 @@
 package com.platine.zoodelille.beans;
 
-import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.field.DatabaseField;
-import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 import com.platine.zoodelille.dao.LocatableElementDao;
 
@@ -69,6 +67,4 @@ public class LocatableElement
 		return "LocatableElement [id=" + id + ", x_location=" + x_location + ", y_location="
 				+ y_location + "]";
 	}	
-	
-	
 }
