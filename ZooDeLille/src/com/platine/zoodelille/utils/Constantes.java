@@ -33,7 +33,12 @@ public class Constantes {
 	public static String NUMERO_TEL_ZOO = "0328520700";
 	public static double GPS_LAT_USER = 50.63828789999999;
 	public static double GPS_LONG_USER = 3.0455561999999645;
-	public static boolean DEJAPASSE = false;
 	
-
+	public static String CONTENTU_APROPOS = "Application mobile Zoo de Lille\n\n" +
+			"Réalisé par les étudiants de l\'université Lille 1:\n" +
+			"\t\tOlivier Debreu\n" +
+			"\t\tMaxime Gens\n" +
+			"\t\tMatthieu Poudroux" +
+			"\n\nFormation : Master Informatique E Services 2013 2014\nTout droit réservé !";
+	
 }

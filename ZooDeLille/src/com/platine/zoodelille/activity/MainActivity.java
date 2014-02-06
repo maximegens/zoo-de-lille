@@ -1,6 +1,8 @@
 package com.platine.zoodelille.activity;
 
 import android.app.ActionBar;
+import android.app.AlertDialog;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -28,6 +30,7 @@ public class MainActivity extends FragmentActivity implements LocationListener{
 	public static String categorieFragmentSave;
 	private ActionBar actionBar;
 	private LocationManager lm;
+	String versionName ="1.0";
     
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -83,12 +86,25 @@ public class MainActivity extends FragmentActivity implements LocationListener{
 	private class MyDrawerItemClickListener implements ListView.OnItemClickListener {
 		@Override
 		public void onItemClick(AdapterView<?> adapter, View v, int pos, long id) {
+			
 			categorieFragmentSave = Constantes.fragments[pos];
-			FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
-			tx.setCustomAnimations(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
-
-			tx.replace(R.id.frameLayout, Fragment.instantiate(MainActivity.this, categorieFragmentSave));
-			tx.commit();
+			
+			if(categorieFragmentSave == Constantes.fragments[6] ){ /** le A Propos **/
+				AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+				try {
+					versionName = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
+				} catch (NameNotFoundException e) {
+					e.printStackTrace();
+				}
+				builder.setTitle("A Propos").setMessage("Version "+versionName+" \n"+Constantes.CONTENTU_APROPOS).setPositiveButton("OK", null);
+		        builder.create();
+		        builder.show();
+			}else{
+				FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
+				tx.setCustomAnimations(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+				tx.replace(R.id.frameLayout, Fragment.instantiate(MainActivity.this, categorieFragmentSave));
+				tx.commit();
+			}
 			drawerLayout.closeDrawer(myDrawer);
 		}
 	}

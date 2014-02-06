@@ -62,6 +62,6 @@
    <!-- string propre au fragment "Animaux du zoo" -->
     <string name="les_animaux">Les animaux du Zoo</string>
     <string name="explication_liste">Sélectionner un animal dans la liste pour voir sa fiche détaillée</string>
-
+    
     
 </resources>

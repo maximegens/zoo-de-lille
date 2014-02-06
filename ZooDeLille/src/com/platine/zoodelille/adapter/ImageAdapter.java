@@ -1,9 +1,6 @@
 package com.platine.zoodelille.adapter;
 
-import com.platine.zoodelille.R;
-
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;

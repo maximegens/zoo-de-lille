@@ -4,14 +4,4 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <TextView
-        android1:id="@+id/animalName"
-        android1:layout_width="wrap_content"
-        android1:layout_height="wrap_content"
-        android1:layout_alignParentLeft="true"
-        android1:layout_alignParentTop="true"
-        android1:layout_marginLeft="56dp"
-        android1:layout_marginTop="136dp"
-        android1:text="TextView" />
-
 </RelativeLayout>

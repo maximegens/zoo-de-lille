@@ -1,12 +1,6 @@
 package com.platine.zoodelille.adapter;
 
-import java.text.DecimalFormat;
 import java.util.List;
-
-import com.platine.zoodelille.R;
-import com.platine.zoodelille.bdd.DatabaseManager;
-import com.platine.zoodelille.beans.Animal;
-import com.platine.zoodelille.dao.AnimalDao;
 
 import android.content.Context;
 import android.util.Log;
@@ -16,6 +10,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.platine.zoodelille.R;
+import com.platine.zoodelille.bdd.DatabaseManager;
+import com.platine.zoodelille.beans.Animal;
+import com.platine.zoodelille.dao.AnimalDao;
 
 
 public class AnimalAdapter extends BaseAdapter {
