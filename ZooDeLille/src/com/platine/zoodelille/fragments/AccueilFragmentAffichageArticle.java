@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.platine.zoodelille.R;
+import com.platine.zoodelille.activity.MainActivity;
 import com.platine.zoodelille.bdd.DatabaseManager;
 import com.platine.zoodelille.beans.Article;
 import com.platine.zoodelille.dao.ArticleDao;
@@ -70,4 +71,22 @@ public class AccueilFragmentAffichageArticle extends Fragment {
 		
 		return myInflatedView;
 	}
+	
+	/**
+	 * Methode de restauration des paramétres sauvegardés.
+	 */
+	@Override
+	public void onActivityCreated(Bundle savedInstanceState) {
+		super.onActivityCreated(savedInstanceState);
+		MainActivity.categorieFragmentSave = savedInstanceState.getString("categorieFragmentSave");
+	}
+	
+	/**
+	 * Methode de sauvegarder des paramétres.
+	 */
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+    	outState.putString("categorieFragmentSave", MainActivity.categorieFragmentSave);
+        super.onSaveInstanceState(outState);
+      }
 }

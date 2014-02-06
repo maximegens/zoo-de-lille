@@ -25,7 +25,7 @@ public class MainActivity extends FragmentActivity implements LocationListener{
 	private ListView myDrawer;
 	private DrawerLayout drawerLayout;
 	private ActionBarDrawerToggle mDrawerToggle;
-	private String categorieFragmentSave;
+	public static String categorieFragmentSave;
 	private ActionBar actionBar;
 	private LocationManager lm;
     
