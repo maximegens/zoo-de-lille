@@ -59,7 +59,7 @@ public class Animal implements NamableElement {
 	public Animal(String name, AnimalCategory category, Country country,
 			String description, String environnement, String longevity,
 			int protected_animal, float weight, int gestation,
-			String picture_locationn, Enclosure enclosure) {
+			String picture_location, Enclosure enclosure) {
 		super();
 		this.name = name;
 		this.category = category;

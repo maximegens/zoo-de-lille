@@ -34,6 +34,7 @@ public class FragmentAffichageAnimal extends Fragment {
 	private TextView animalGestation;
 	private TextView animalPoids;
 	private TextView animalCountry;
+	private Integer[] tableau_image;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
@@ -77,11 +78,17 @@ public class FragmentAffichageAnimal extends Fragment {
 //			imgArticle.setImageResource(resID);
 //		}else
 //			imgArticle.setImageResource(R.drawable.no_image);
-//		
+
 		
-		 Integer[] tableau_image = {
-				 R.drawable.bonobo,R.drawable.singe_echappe
-		    };
+		String picture = a.getPicture_location();
+		String[] tab_picture = picture.split(",");
+		int resID=0;
+		tableau_image = new Integer[tab_picture.length];
+		for(int i =0;i<tab_picture.length;i++){
+			resID = getResources().getIdentifier(tab_picture[i], "drawable", myInflatedView.getContext().getPackageName());
+			tableau_image[i] = resID;
+		}
+
 		
 		
 		Gallery ga = (Gallery) myInflatedView.findViewById(R.id.gallery01);
