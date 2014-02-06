@@ -69,7 +69,7 @@ public class HoraireZoo {
 	
 	/**
 	 * Permet de savoir si on est en été ou hiver
-	 * @return 1 pour l'été, 2 pour l'hiver, 0 si erreur
+	 * @return 1 pour l'été, 2 pour l'hiver, 0 si non contenu
 	 */
 	public int SummerOrWinter(){
 		if(summer.contains(now))

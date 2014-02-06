@@ -71,15 +71,27 @@ public class InformationsPratiqueFragment extends Fragment {
 		closedAnnuel.setText(getResources().getString(R.string.period_close)+" du "+p.annual_closing+" au "+p.annual_opening+" inclus");
 		
 		/** 
-		 * Au lancement du fragment afin de ne pas avoir un champs vide on se position directement sur l'été
+		 * Au lancement du fragment afin de ne pas avoir un champs vide on se position en fonction de l'été ou l'hiver récupére par rapport à l'heure du téléphone
 		 * 
 		 **/
+		if(horaireZoo.SummerOrWinter() == 1){
 			summer.setTextColor(getResources().getColor(R.color.a_la_une));
 			summer.setTypeface(null, Typeface.BOLD);
 			horaireSummer = p.summer_week_opening_time+"h - "+p.summer_week_closing_time+"h en semaine"+"\n"
 			  +p.summer_weekend_opening_time+"h - "+p.summer_weekend_closing_time+"h le week end et jours fériés";
 			contentSummerWinterHoraire.setText(horaireSummer);
 			contentSummerWinterHoraire.setTypeface(null, Typeface.BOLD);
+		}else{
+			winter.setTextColor(getResources().getColor(R.color.a_la_une));
+			summer.setTextColor(getResources().getColor(R.color.Black));
+			winter.setTypeface(null, Typeface.BOLD);
+			summer.setTypeface(null, Typeface.NORMAL);
+			String text;
+			text = p.winter_week_opening_time+"h - "+p.winter_week_closing_time+"h en semaine"+"\n"
+				  +p.winter_weekend_opening_time+"h - "+p.winter_weekend_closing_time+"h le week end et jours fériés";
+			contentSummerWinterHoraire.setText(text);
+			contentSummerWinterHoraire.setTypeface(null, Typeface.BOLD);
+		}
 		
 
 		/** Gestion des clics sur les bouton Eté ou Hiver **/

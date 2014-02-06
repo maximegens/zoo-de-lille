@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
-import com.platine.zoodelille.R;
 import com.platine.zoodelille.bdd.DatabaseManager;
 import com.platine.zoodelille.beans.Animal;
 import com.platine.zoodelille.beans.AnimalCategory;

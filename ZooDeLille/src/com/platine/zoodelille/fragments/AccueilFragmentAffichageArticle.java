@@ -30,14 +30,15 @@ public class AccueilFragmentAffichageArticle extends Fragment {
 	ImageButton partager;
 	ArticleDao articleDao;
 	int idArticle;
+	String id_temp;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 		
 		View myInflatedView = inflater.inflate(R.layout.fragment_accueil_affichage_article, container,false);
 		
-		Bundle args = getArguments();
-		idArticle = Integer.parseInt(args.getString("id"));
+		id_temp = getArguments().getString("id");
+		idArticle = Integer.parseInt(id_temp);
 		
 		titreArticle = (TextView) myInflatedView.findViewById(R.id.titre_article);
 		summaryArticle = (TextView) myInflatedView.findViewById(R.id.summary_article);
@@ -73,19 +74,11 @@ public class AccueilFragmentAffichageArticle extends Fragment {
 	}
 	
 	/**
-	 * Methode de restauration des paramétres sauvegardés.
-	 */
-	@Override
-	public void onActivityCreated(Bundle savedInstanceState) {
-		super.onActivityCreated(savedInstanceState);
-		MainActivity.categorieFragmentSave = savedInstanceState.getString("categorieFragmentSave");
-	}
-	
-	/**
 	 * Methode de sauvegarder des paramétres.
 	 */
     @Override
     public void onSaveInstanceState(Bundle outState) {
+    	outState.putString("id", id_temp );
     	outState.putString("categorieFragmentSave", MainActivity.categorieFragmentSave);
         super.onSaveInstanceState(outState);
       }

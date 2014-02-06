@@ -33,5 +33,7 @@ public class Constantes {
 	public static String NUMERO_TEL_ZOO = "0328520700";
 	public static double GPS_LAT_USER = 50.63828789999999;
 	public static double GPS_LONG_USER = 3.0455561999999645;
+	public static boolean DEJAPASSE = false;
+	
 
 }
