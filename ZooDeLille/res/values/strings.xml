@@ -25,6 +25,7 @@
     <string name="metro">Métro</string>
     <string name="bus">Bus</string>
     <string name="velo">V\'Lille</string>
+    <string name="geo_access">Par géolocalisation de votre position</string>
     <string name="mapKey">AIzaSyC0FN8rKv4B2ta5z4SyQhML5duB8UrwcWg</string>
     <string name="conseil_acces">Afin de profiter au mieux de votre visite en évitant les périodes de forte affluence, 
         nous vous invitons à venir le matin pendant les week-ends et les vacances scolaires. 
@@ -46,6 +47,8 @@
    	<string name="description_image_tel">image telephone</string>
     <string name="button_envoyer_mail">Envoyer l\'email</string>
     <string name="appel">Appeler le zoo</string>
+    <string name="hint_objet">Indiquer l\'objet du message</string>
+    <string name="hint_contenu">Ici, faites-nous part de vos remarques questions et suggestions</string>
     <string name="info_contact">Pour toute information complémentaire, n’hésitez pas à prendre contact avec l’équipe du zoo </string>
     
     <!-- string propre au fragment "Plan du Zoo" -->

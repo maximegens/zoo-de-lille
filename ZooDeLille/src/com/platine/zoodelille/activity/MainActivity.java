@@ -1,6 +1,9 @@
 package com.platine.zoodelille.activity;
 
 import android.app.ActionBar;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
@@ -16,7 +19,7 @@ import android.widget.ListView;
 import com.platine.zoodelille.R;
 import com.platine.zoodelille.utils.Constantes;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends FragmentActivity implements LocationListener{
 
 	private String[] drawerItemsList;
 	private ListView myDrawer;
@@ -24,6 +27,7 @@ public class MainActivity extends FragmentActivity {
 	private ActionBarDrawerToggle mDrawerToggle;
 	private String categorieFragmentSave;
 	private ActionBar actionBar;
+	private LocationManager lm;
     
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -152,4 +156,51 @@ public class MainActivity extends FragmentActivity {
         	outState.putString("categorieFragmentSave", categorieFragmentSave);
 	        super.onSaveInstanceState(outState);
 	    }
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		lm = (LocationManager) this.getSystemService(LOCATION_SERVICE);
+		if (lm.isProviderEnabled(LocationManager.GPS_PROVIDER))
+			lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 10000, 0,
+					this);
+		lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 10000, 0,
+				this);
+	}
+	
+	@Override
+	protected void onPause() {
+		super.onPause();
+		lm.removeUpdates(this);
+	}
+	
+	protected boolean isRouteDisplayed() {
+		return false;
+	}
+	
+	/** Méthode pour la localisation GPS **/
+	@Override
+	public void onLocationChanged(Location location) {
+		Constantes.GPS_LAT_USER = location.getLatitude();
+		Constantes.GPS_LONG_USER = location.getLongitude();
+		
+	}
+
+	@Override
+	public void onProviderDisabled(String provider) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onProviderEnabled(String provider) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onStatusChanged(String provider, int status, Bundle extras) {
+		// TODO Auto-generated method stub
+		
+	}
 }

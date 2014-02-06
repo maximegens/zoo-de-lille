@@ -127,9 +127,12 @@ public class PlanAccesFragment extends Fragment {
 			public void onClick(View v) {
 				String lat = Constantes.COORDONNEES_GPS_ZOO_LATITUDE; 
 				String lon = Constantes.COORDONNEES_GPS_ZOO_LONGITUDE;
-				Intent intent = new Intent(android.content.Intent.ACTION_VIEW, 
-					   Uri.parse("geo:"+lat+","+lon+"?z=17"));
-				startActivity(intent);
+				String lat_user = String.valueOf(Constantes.GPS_LAT_USER); 
+				String lon_user = String.valueOf(Constantes.GPS_LONG_USER);
+				
+				Intent intentPositionToZoo = new Intent(android.content.Intent.ACTION_VIEW, 
+					   Uri.parse("http://maps.google.com/maps?saddr="+lat+","+lon+"&daddr="+lat_user+","+lon_user));
+				startActivity(intentPositionToZoo);
 			}
 		});
 			

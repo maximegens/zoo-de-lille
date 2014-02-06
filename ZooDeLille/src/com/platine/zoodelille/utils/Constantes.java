@@ -31,5 +31,7 @@ public class Constantes {
 	public static String COORDONNEES_GPS_ZOO_LONGITUDE = "3.0455561999999645";
 	public static String ADRESSE_MAIL = "developpement.zoo.lille@gmail.com";
 	public static String NUMERO_TEL_ZOO = "0328520700";
+	public static double GPS_LAT_USER = 50.63828789999999;
+	public static double GPS_LONG_USER = 3.0455561999999645;
 
 }

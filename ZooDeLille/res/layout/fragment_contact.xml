@@ -27,6 +27,7 @@ android:layout_height="wrap_content">
 	        android:layout_below="@+id/textView1"
 	        android:layout_marginTop="10dp"
 	        android:padding="5dp"
+	        android:hint="@string/hint_objet"
 	        android:ems="10"
 	        android:inputType="text"
 	  		 >
@@ -52,6 +53,7 @@ android:layout_height="wrap_content">
 	        android:layout_below="@+id/textView2"
 	        android:layout_marginTop="10dp"
 	        android:padding="5dp"
+	        android:hint="@string/hint_contenu"
 	        android:lines="4"
 	        android:ems="10"
 	        android:inputType="textMultiLine" />

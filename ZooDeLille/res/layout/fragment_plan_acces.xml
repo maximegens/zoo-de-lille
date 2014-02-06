@@ -128,6 +128,17 @@ android:layout_height="wrap_content">
 	        android:layout_above="@+id/layout_how_acces"
 	        android:layout_alignRight="@+id/layout_how_acces"
 	        android:src="@drawable/maps" />
+
+	    <TextView
+	        android:id="@+id/textView1"
+	        android:layout_below="@+id/image_se_rendre_au_zoo"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="5dp"
+	        android:textStyle="italic"
+	        android:layout_alignParentBottom="true"
+	        android:layout_centerHorizontal="true"
+	        android:text="@string/geo_access" />
 	    
 	</RelativeLayout>
 </ScrollView>
