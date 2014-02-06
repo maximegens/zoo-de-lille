@@ -5,7 +5,7 @@
     android:layout_height="match_parent" >
 
     <TextView
-        android1:id="@+id/textView1"
+        android1:id="@+id/animalName"
         android1:layout_width="wrap_content"
         android1:layout_height="wrap_content"
         android1:layout_alignParentLeft="true"

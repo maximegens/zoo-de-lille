@@ -55,10 +55,11 @@ public class Animal implements NamableElement {
 	 * @param picture_location Le chemin de la photo de l'animal.
 	 * @param enclosure L'enclos dans lequel l'animal se trouve.
 	 */
+
 	public Animal(String name, AnimalCategory category, Country country,
 			String description, String environnement, String longevity,
 			int protected_animal, float weight, int gestation,
-			String picture_locationn, Enclosure enclosure) {
+			String picture_location, Enclosure enclosure) {
 		super();
 		this.name = name;
 		this.category = category;
@@ -85,17 +86,21 @@ public class Animal implements NamableElement {
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public AnimalCategory getCategory() {
 		return category;
 	}
 	public void setCategory(AnimalCategory category) {
 		this.category = category;
 	}
+	
 	public Country getCountry() {
 		return country;
 	}
+
 	public void setCountry(Country country) {
 		this.country = country;
+
 	}
 	public String getDescription() {
 		return description;
