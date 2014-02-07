@@ -22,6 +22,8 @@ android:layout_height="wrap_content">
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/gallery01"
 	        android:layout_centerHorizontal="true"
+	        android:padding="5dp"
+	        android:textSize="16sp"
 	        android:textStyle="bold"
 	        android:textColor="@color/a_la_une"
 	        android:text="TextView" />
@@ -42,6 +44,7 @@ android:layout_height="wrap_content">
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/description"
+	        android:padding="5dp"
 	        android:layout_marginLeft="20dp"
 	        android:layout_marginRight="20dp"
 	        android:layout_marginTop="10dp"
@@ -67,7 +70,7 @@ android:layout_height="wrap_content">
 	                android:layout_width="wrap_content"
 	                android:layout_height="wrap_content"
 	                android:textStyle="italic|bold"
-	                android:text="Animal Protégé :" />
+	                android:text="Animal Protégé : " />
 	
 	            <TextView
 	                android:id="@+id/animal_protect_information"
@@ -86,7 +89,7 @@ android:layout_height="wrap_content">
 	                android:layout_width="wrap_content"
 	                android:layout_height="wrap_content"
 	                android:textStyle="italic|bold"
-	                android:text="Categorie :" />
+	                android:text="Categorie : " />
 	
 	            <TextView
 	                android:id="@+id/animal_category_information"
@@ -105,7 +108,7 @@ android:layout_height="wrap_content">
 	                android:layout_width="wrap_content"
 	                android:layout_height="wrap_content"
 	                android:textStyle="italic|bold"
-	                android:text="Longévité :" />
+	                android:text="Longévité : " />
 	
 	            <TextView
 	                android:id="@+id/animal_longevite_information"
@@ -124,7 +127,7 @@ android:layout_height="wrap_content">
 	                android:layout_width="wrap_content"
 	                android:layout_height="wrap_content"
 	                android:textStyle="italic|bold"
-	                android:text="Poids :" />
+	                android:text="Poids : " />
 	
 	            <TextView
 	                android:id="@+id/animal_poids_information"
@@ -143,7 +146,7 @@ android:layout_height="wrap_content">
 	                android:layout_width="wrap_content"
 	                android:layout_height="wrap_content"
 	                android:textStyle="italic|bold"
-	                android:text="Gestation :" />
+	                android:text="Gestation : " />
 	
 	            <TextView
 	                android:id="@+id/animal_gestation_information"
@@ -162,7 +165,7 @@ android:layout_height="wrap_content">
 	                android:layout_width="wrap_content"
 	                android:layout_height="wrap_content"
 	                android:textStyle="italic|bold"
-	                android:text="Pays :" />
+	                android:text="Pays : " />
 	
 	            <TextView
 	                android:id="@+id/animal_pays_information"
@@ -181,7 +184,7 @@ android:layout_height="wrap_content">
 	                android:layout_width="wrap_content"
 	                android:layout_height="wrap_content"
 	                android:textStyle="italic|bold"
-	                android:text="Environnement :" />
+	                android:text="Environnement : " />
 	
 	            <TextView
 	                android:id="@+id/animal_environnement_information"

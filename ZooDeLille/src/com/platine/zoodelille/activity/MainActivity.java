@@ -99,7 +99,7 @@ public class MainActivity extends FragmentActivity implements LocationListener{
 				builder.setTitle("A Propos").setMessage("Version "+versionName+" \n"+Constantes.CONTENTU_APROPOS).setPositiveButton("OK", null);
 		        builder.create();
 		        builder.show();
-			}else{
+			}else{ /** les autres categories **/
 				FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
 				tx.setCustomAnimations(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
 				tx.replace(R.id.frameLayout, Fragment.instantiate(MainActivity.this, categorieFragmentSave));
@@ -204,19 +204,16 @@ public class MainActivity extends FragmentActivity implements LocationListener{
 
 	@Override
 	public void onProviderDisabled(String provider) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void onProviderEnabled(String provider) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void onStatusChanged(String provider, int status, Bundle extras) {
-		// TODO Auto-generated method stub
 		
 	}
 }

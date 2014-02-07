@@ -3,7 +3,6 @@ package com.platine.zoodelille.activity;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
-import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
