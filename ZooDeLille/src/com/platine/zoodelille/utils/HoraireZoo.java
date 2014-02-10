@@ -6,6 +6,8 @@ import org.joda.time.DateTime;
 import org.joda.time.Instant;
 import org.joda.time.Interval;
 
+import android.util.Log;
+
 import com.platine.zoodelille.bdd.DatabaseManager;
 import com.platine.zoodelille.beans.PracticalInformation;
 import com.platine.zoodelille.dao.PracticalInformationDao;
@@ -25,6 +27,7 @@ public class HoraireZoo {
 	Interval closing_period;
 	Interval summer;
 	Interval winter;
+	Interval winter_precedent;
 	
 	public HoraireZoo(){
 		
@@ -64,7 +67,11 @@ public class HoraireZoo {
 		
 		Instant winter_start = new DateTime(now.getYear(),11,1,0,0,0,0).toInstant(); // fin octobre = 1novembre
 		Instant winter_end = new DateTime(now.getYear()+1,03,31,0,0,0,0).toInstant(); //fin mars = 31 mars
-		winter = new Interval(winter_start, winter_end);	
+		winter = new Interval(winter_start, winter_end);
+		
+		Instant winter_start_precedent = new DateTime(now.getYear()-1,11,1,0,0,0,0).toInstant(); // fin octobre = 1novembre
+		Instant winter_end_precedent = new DateTime(now.getYear(),03,31,0,0,0,0).toInstant(); //fin mars = 31 mars
+		winter_precedent = new Interval(winter_start_precedent, winter_end_precedent);
 	}
 	
 	/**
@@ -75,6 +82,8 @@ public class HoraireZoo {
 		if(summer.contains(now))
 			return 1;
 		else if(winter.contains(now))
+			return 2;
+		else if(winter_precedent.contains(now))
 			return 2;
 		else 
 			return 0;
@@ -103,6 +112,19 @@ public class HoraireZoo {
 				}
 			}
 			else if(winter.contains(now)){
+				if(now.getDayOfWeek() >= 1 && now.getDayOfWeek() <6){ //la semaine
+					if(now.getHourOfDay() >= Integer.parseInt(p.getWinter_week_opening_time()) && now.getHourOfDay() < Integer.parseInt(p.getWinter_week_closing_time()))
+						return true; 
+					else
+						return false;
+				}else{ //le week end
+					if(now.getHourOfDay() >= Integer.parseInt(p.getWinter_weekend_opening_time()) && now.getHourOfDay() < Integer.parseInt(p.getWinter_weekend_closing_time()))
+						return true; 
+					else
+						return false;
+				}
+			}
+			else if(winter_precedent.contains(now)){
 				if(now.getDayOfWeek() >= 1 && now.getDayOfWeek() <6){ //la semaine
 					if(now.getHourOfDay() >= Integer.parseInt(p.getWinter_week_opening_time()) && now.getHourOfDay() < Integer.parseInt(p.getWinter_week_closing_time()))
 						return true; 
@@ -152,6 +174,26 @@ public class HoraireZoo {
 				}
 			}
 			else if(winter.contains(now)){
+				if(now.getDayOfWeek() >= 1 && now.getDayOfWeek() <6){ //la semaine
+					if(now.getHourOfDay() >= Integer.parseInt(p.getWinter_week_opening_time()) && now.getHourOfDay() < Integer.parseInt(p.getWinter_week_closing_time()))
+						return p.getWinter_week_closing_time()+Constantes.HEURE; 
+					else{//fermé
+						if(now.getHourOfDay() == 5) // le lendemain on sera le weekend
+							return p.getWinter_weekend_opening_time()+Constantes.HEURE;
+						else
+							return p.getWinter_week_opening_time()+Constantes.HEURE;
+					}
+				}else{ //le week end
+					if(now.getHourOfDay() >= Integer.parseInt(p.getWinter_weekend_opening_time()) && now.getHourOfDay() < Integer.parseInt(p.getWinter_weekend_closing_time()))
+						return p.getWinter_weekend_closing_time()+Constantes.HEURE; 
+					else
+						if(now.getHourOfDay() == 7) // le lendemain on sera le lundi donc la semaine
+							return p.getWinter_week_opening_time()+Constantes.HEURE;
+						else
+							return p.getWinter_weekend_opening_time()+Constantes.HEURE;
+				}
+			}
+			else if(winter_precedent.contains(now)){
 				if(now.getDayOfWeek() >= 1 && now.getDayOfWeek() <6){ //la semaine
 					if(now.getHourOfDay() >= Integer.parseInt(p.getWinter_week_opening_time()) && now.getHourOfDay() < Integer.parseInt(p.getWinter_week_closing_time()))
 						return p.getWinter_week_closing_time()+Constantes.HEURE; 
