@@ -1,9 +1,10 @@
-# ---------- Application Android Zoo de Lille ---------- #
+# ----- Application Android Zoo de Lille ----- #
 
 > **Application mobile Android du parc zoologique de Lille**
 
 ![zoodelille](https://bytebucket.org/maximegens/zoo-de-lille/raw/bbb497443f4dc9c30130b410100bf4494e9039dc/Data/maquette_situation.png?token=368af6f760d22a20ca379be24aa0d28bb8d72c24)
 
+[Voir la video de presentation](https://www.youtube.com/watch?v=HpmAgvH2PBE)
 
 **Développeur** : 
 
